@@ -3,7 +3,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
 
 - Hacking Labs
   - [HackTheBox - $20/M](https://app.hackthebox.eu/home)
-  - [TryAndHackMe - $10/M](https://tryhackme.com/login)
+  - [TryHackMe - $10/M](https://tryhackme.com/login)
   - [VulnHub - $Free](https://www.vulnhub.com/)
   - [Proving Grounds - $20/M](https://www.offensive-security.com/labs/individual/)
 
@@ -27,7 +27,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
 
 - `[ ]` - HTB (Hack The Box)
   - `[ ]` - Linux
-    - `[ ]` - Lame
+    - `[X]` - Lame
     - `[ ]` - brainfuck
     - `[ ]` - shocker
     - `[ ]` - bashed
@@ -76,6 +76,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[X]` - legacy
     - `[X]` - Blue
     - `[X]` - Devel
+    - `[ ]` - Netmon
     - `[ ]` - Optimum
     - `[ ]` - Bastard
     - `[ ]` - granny
@@ -101,7 +102,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Json
 
 
-- `[ ]` - THM (Try And Hack Me)
+- `[ ]` - THM (TryHackMe)
   - `[ ]` - Kenobi
   - `[ ]` - Tony The Tiger
   - `[ ]` - Ghostcat

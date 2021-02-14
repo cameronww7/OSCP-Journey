@@ -5,6 +5,7 @@
 - [TABLE OF CONTENTS](#table-of-contents)
   - [Kali General Info](#kali-general-info)
   - [OSCP Guides](#oscp-guides)
+  - [Report Writing](#report-writing)
   - [Advice](#advice)
   - [Hacking Labs](#hacking-labs)
   - [General Resources](#general-resources)
@@ -80,15 +81,18 @@
 - [Reddit - Passed - 1st Attempt. Thoughts, Tips, Facts](https://www.reddit.com/r/oscp/comments/j4jp6w/passed_1st_attempt_thoughts_tips_facts/)
 
 
+## Report Writing
+- [OSCP - How to Write the Report](https://www.youtube.com/watch?v=Ohm0LhFFwVA)
+
 ## Advice 
-  - [OSCP - Advice For The Exam](https://www.youtube.com/watch?v=nzAMZvEC_Xc&feature=youtu.be)
+- [OSCP - Advice For The Exam](https://www.youtube.com/watch?v=nzAMZvEC_Xc&feature=youtu.be)
 
 
 ## Hacking Labs
-  - [HTB](https://app.hackthebox.eu/home)
-  - [THM](https://tryhackme.com/login)
-  - [VulnHub](https://www.vulnhub.com/)
-  - [Proving Grounds](https://www.offensive-security.com/labs/individual/)
+  - [HackTheBox - $20/M](https://app.hackthebox.eu/home)
+  - [TryHackMe - $10/M](https://tryhackme.com/login)
+  - [VulnHub - $Free](https://www.vulnhub.com/)
+  - [Proving Grounds - $20/M](https://www.offensive-security.com/labs/individual/)
 
 ## General Resources
 - OSCP
@@ -109,7 +113,7 @@
     - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
   - VulnHub
     - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
-  - THM (Try and Hack Me)
+  - THM (TryHackMe)
     - 
 
 - CheatSheet
