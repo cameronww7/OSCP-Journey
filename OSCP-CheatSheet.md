@@ -1,5 +1,58 @@
 # OSCP_CHEATSHEET
-## Kali General
+
+# TABLE OF CONTENTS
+- [OSCP_CHEATSHEET](#oscp_cheatsheet)
+- [TABLE OF CONTENTS](#table-of-contents)
+  - [Kali General Info](#kali-general-info)
+  - [OSCP Guides](#oscp-guides)
+  - [General Resources](#general-resources)
+  - [Windows Resources](#windows-resources)
+  - [Linux Resources](#linux-resources)
+  - [Buffer Overflow Resources](#buffer-overflow-resources)
+  - [Tool Resources](#tool-resources)
+  - [Enumeration](#enumeration)
+  - [FTP - 21](#ftp---21)
+  - [SSH - 22](#ssh---22)
+    - [SSH backdoor - post exploitation](#ssh-backdoor---post-exploitation)
+  - [DNS - 53](#dns---53)
+    - [DNS brute force](#dns-brute-force)
+  - [FINGER - 79](#finger---79)
+  - [HTTP - HTTPS - 80 - 443](#http---https---80---443)
+  - [KERBEROS - 88](#kerberos---88)
+  - [POP3 - 110](#pop3---110)
+  - [SNMP - 161](#snmp---161)
+  - [LDAP - 389](#ldap---389)
+  - [SMB - 445](#smb---445)
+  - [MSSQL - 1433](#mssql---1433)
+  - [NFS - 2049](#nfs---2049)
+  - [MYSQL - 3306](#mysql---3306)
+  - [RDP - 3389](#rdp---3389)
+  - [VNC - 5800 - 58001 - 5900 - 5901](#vnc---5800---58001---5900---5901)
+  - [WINRM - 5985 - 5986](#winrm---5985---5986)
+  - [CGI](#cgi)
+  - [DICTIONARY GENERATION](#dictionary-generation)
+  - [FILE TRANSFER](#file-transfer)
+  - [GIT](#git)
+  - [HASHES](#hashes)
+  - [MIMIKATZ](#mimikatz)
+  - [MISCELLANEOUS](#miscellaneous)
+  - [MSFVENOM PAYLOAD](#msfvenom-payload)
+  - [PASSWORD CRACKING](#password-cracking)
+  - [PIVOTING](#pivoting)
+  - [PRIVILEGE ESCALATION](#privilege-escalation)
+  - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
+  - [Linux Troubleshooting](#linux-troubleshooting)
+  - [Windows Privesc](#windows-privesc)
+  - [Windows Troublshooting](#windows-troublshooting)
+  - [PROOFS](#proofs)
+  - [REVERSE SHELL](#reverse-shell)
+  - [SHELLSHOCK](#shellshock)
+  - [USEFUL LINUX COMMANDS](#useful-linux-commands)
+  - [USEFUL WINDOWS COMMANDS](#useful-windows-commands)
+  - [ZIP](#zip)
+  - [Buffer Overflow](#buffer-overflow)
+
+## Kali General Info
 - Listen for pings to test if you remote command worked
 - `tcpdump -i interface icmp`
 - Download all files from an ftp service
@@ -38,7 +91,7 @@
   - [liodeus OSCP-exam-report-training](https://liodeus.github.io/2020/10/19/OSCP-exam-report-training.html)
 
 
-### Windows Resources
+## Windows Resources
 - Resources
   - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
   - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
@@ -903,7 +956,7 @@
   - <https://artkond.com/2017/03/23/pivoting-guide/>
 
 
-## PRIVILE ESCALATION
+## PRIVILEGE ESCALATION
 - Linux
   - Enumeration scripts
     - `bash LinEnum.sh`
