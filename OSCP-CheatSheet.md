@@ -5,6 +5,8 @@
 - [TABLE OF CONTENTS](#table-of-contents)
   - [Kali General Info](#kali-general-info)
   - [OSCP Guides](#oscp-guides)
+  - [Advice](#advice)
+  - [Hacking Labs](#hacking-labs)
   - [General Resources](#general-resources)
   - [Windows Resources](#windows-resources)
   - [Linux Resources](#linux-resources)
@@ -50,6 +52,7 @@
   - [ZIP](#zip)
   - [Buffer Overflow](#buffer-overflow)
 
+
 ## Kali General Info
 - Listen for pings to test if you remote command worked
 - `tcpdump -i interface icmp`
@@ -62,28 +65,62 @@
 - Useful tools
 - xclip
 
+
 ## OSCP Guides 
 - [Awesome OSCP GitHub](https://github.com/0x4D31/awesome-oscp)
 - [The Journey to Try Harder: TJnull’s Preparation Guide for PWK/OSCP](https://www.netsecfocus.com/oscp/2019/03/29/The_Journey_to_Try_Harder-_TJNulls_Preparation_Guide_for_PWK_OSCP.html)
 - [An Adventure to Try Harder: Tjnull's OSCP Journey](https://www.netsecfocus.com/oscp/review/2019/01/29/An_Adventure_to_Try_Harder_Tjnulls_OSCP_Journey.html)
+- [he Ultimate OSCP Preparation Guide, 2021 - johnjhacking](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
 - [How to prepare for PWK/OSCP, a noob-friendly guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob)
 - [How To Pass the OSCP – a Beginner Friendly Guide](https://kentosec.com/2019/10/09/how-to-pass-the-oscp-a-beginner-friendly-guide/)
 - [Hakluke’s Ultimate OSCP Guide: Part 1 — Is OSCP for you? Some things you should know before you start](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-1-is-oscp-for-you-b57cbcce7440)
 - [Hakluke’s Ultimate OSCP Guide: Part 2 — Workflow and documentation tips](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-2-workflow-and-documentation-tips-9dd335204a48)
 - [Hakluke’s Ultimate OSCP Guide: Part 3 — Practical hacking tips and tricks](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97)
+- [Reddit - OSCP Lab & Exam Review and Tips](https://www.reddit.com/r/oscp/comments/ix81m8/oscp_lab_exam_review_and_tips/)
+- [Reddit - Passed - 1st Attempt. Thoughts, Tips, Facts](https://www.reddit.com/r/oscp/comments/j4jp6w/passed_1st_attempt_thoughts_tips_facts/)
 
+
+## Advice 
+  - [OSCP - Advice For The Exam](https://www.youtube.com/watch?v=nzAMZvEC_Xc&feature=youtu.be)
+
+
+## Hacking Labs
+  - [HTB](https://app.hackthebox.eu/home)
+  - [THM](https://tryhackme.com/login)
+  - [VulnHub](https://www.vulnhub.com/)
+  - [Proving Grounds](https://www.offensive-security.com/labs/individual/)
 
 ## General Resources
+- OSCP
+  - [Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+- Courses
+  - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
+  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
+  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+
 - Video Guides
   - HTB (HackTheBox)
     - [Ippsec Youtube](https://www.youtube.com/c/ippsec)
     - [Ippsec Youtube Playlists](https://www.youtube.com/c/ippsec/playlists)
+    - [Ignitetechnologies - HackTheBox-CTF-Writeups](https://github.com/Ignitetechnologies/HackTheBox-CTF-Writeups)
+    - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
+    - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
+  - VulnHub
+    - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+  - THM (Try and Hack Me)
+    - 
 
 - CheatSheet
+  - [Oscp-Cheat-Sheet Megga - avi7611](https://github.com/avi7611/Oscp-Cheat-Sheet)
   - [liodeus OSCP-personal-cheatsheet](https://liodeus.github.io/2020/09/18/OSCP-personal-cheatsheet.html#enumeration)
   - [sushant747 total-oscp-guide](https://sushant747.gitbooks.io/total-oscp-guide/content/)
   - [TCM Prac Eth Hack Resources](https://github.com/TCM-Course-Resources/Practical-Ethical-Hacking-Resources)
   - [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
+  - [scund00r - Passing OSCP](https://scund00r.com/all/oscp/2018/02/25/passing-oscp.html)
+  - [noobsec - oscp-cheatsheet](https://www.noobsec.net/oscp-cheatsheet/)
+  - [bytefellow - oscp-ultimate-cheatsheet](https://www.bytefellow.com/oscp-ultimate-cheatsheet/)
 
 - Report Resources
   - [liodeus OSCP-exam-report-training](https://liodeus.github.io/2020/10/19/OSCP-exam-report-training.html)
@@ -91,17 +128,39 @@
 
 ## Windows Resources
 - Resources
-  - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
-  - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
+  - Windows Privilege Escalation
+    - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+    - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
+    - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
+    - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/
+    - [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
+    - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
+    - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+    - [SecWiki - windows-kernel-exploits](htps://github.com/SecWiki/windows-kernel-exploits)
+    - VulnHub
+      - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+  - Other
+    - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
 
 ## Linux Resources
 - Resources
   - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/)
+  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+  - [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+  - [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
+  - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
+  - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
+  - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
+
 
 ## Buffer Overflow Resources
 - Resoureces
   - [Buffer Overflows Made Easy - The Cyber Mentor](https://www.youtube.com/playlist?list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G)
+  - [TCM Buffer over Flows Made Easy](https://tcm-sec.com/buffer-overflows-made-easy/)
   - [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
+  - [Buffer Overflow Prep](https://tryhackme.com/room/bufferoverflowprep)
+
 
 ## Tool Resources
 - Tools
@@ -128,7 +187,7 @@
     - `sudo nmap -T4 -A -v -oN NMAP-MQS_<IP>_01.txt <IP>`
   - Full Scan
     - `sudo nmap -T3 -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
-  - Vulner Scan (Website only)
+  - [Vulner Scan (Website only)](https://github.com/vulnersCom/nmap-vulners)
     - `sudo nmap -sV -v --script=vulners -oN NMAP-VULNERS_01_<IP>_01.txt <IP>`
   - UDP Scan
     - `sudo nmap -T3 -sU -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
@@ -136,6 +195,7 @@
 - Faster NMAP full port scan (IPs Known)
   - Finds all open ports than loops through service and version detection for those discovered
     - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
+
 
 ## FTP - 21
 - Brute force
@@ -152,6 +212,7 @@
 - PASSIVE
   - BINARY
     - `put <FILE>`
+
 
 ## SSH - 22
 - Brute force
@@ -182,6 +243,7 @@
   - Connect
     - `ssh -i <FILENAME> <USER>@<IP>`
 
+
 ## DNS - 53
   - `dnsenum <DOMAIN>`
   - `dnsrecon -d <DOMAIN>`
@@ -193,6 +255,7 @@
 - DNS brute force
   - <https://github.com/blark/aiodnsbrute>
 
+
 ## FINGER - 79
 - User enumeration
   - `finger @<IP>`
@@ -201,6 +264,7 @@
 - Command execution
   - `finger "|/bin/id@<IP>"`
   - `finger "|/bin/ls -a /<IP>"`
+
 
 ## HTTP - HTTPS - 80 - 443
 - Automatic scanners
