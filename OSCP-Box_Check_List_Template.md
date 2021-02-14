@@ -8,7 +8,7 @@
 
 - Recommended Lists
   - [NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
-  - [FrostNiteCyberSec - OSCP Preparation Checklist](https://drive.google.com/file/d/)1zYQOcr2h2VnRelm0Unx9Sg0Qg1MYDWUg/view
+  - [FrostNiteCyberSec - OSCP Preparation Checklist](https://drive.google.com/file/d/1zYQOcr2h2VnRelm0Unx9Sg0Qg1MYDWUg/view)
   - [JSONSec OSCP Prep List](https://docs.google.com/spreadsheets/d/1wW2EOeUo5EkgePheuBfqeUh6Zuh4sPnYVwb7KusoSqc/edit#gid=0)
 
 - Guides/Help
