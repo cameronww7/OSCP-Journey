@@ -72,9 +72,9 @@
     - `[ ]` - Mango [Focus on creating your own Boolean Script]
 
   - `[ ]` - Windows
-    - `[X]` - legacy
-    - `[X]` - Blue
-    - `[X]` - Devel
+    - `[ ]` - legacy
+    - `[ ]` - Blue
+    - `[ ]` - Devel
     - `[ ]` - Optimum
     - `[ ]` - Bastard
     - `[ ]` - granny
