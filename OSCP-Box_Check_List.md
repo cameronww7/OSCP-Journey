@@ -1,10 +1,10 @@
 # OSCP-Box_Check_List
 
 - Hacking Labs
-  - [HTB](https://app.hackthebox.eu/home)
-  - [THM](https://tryhackme.com/login)
-  - [VulnHub](https://www.vulnhub.com/)
-  - Proving Grounds](https://www.offensive-security.com/labs/individual/)
+  - [HackTheBox - $20/M](https://app.hackthebox.eu/home)
+  - [TryAndHackMe - $10/M](https://tryhackme.com/login)
+  - [VulnHub - $Free](https://www.vulnhub.com/)
+  - [Proving Grounds - $20/M](https://www.offensive-security.com/labs/individual/)
 
 - Recommended Lists
   - [NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
