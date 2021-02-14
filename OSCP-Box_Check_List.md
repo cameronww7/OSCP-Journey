@@ -1,4 +1,5 @@
 # OSCP-Box_Check_List
+Note This list is for my tracking I created a Template Copy of this in this Repo
 
 - Hacking Labs
   - [HackTheBox - $20/M](https://app.hackthebox.eu/home)
