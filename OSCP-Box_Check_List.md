@@ -1,163 +1,163 @@
 # OSCP-Box_Check_List
 
 - Hacking Labs
-  - [HTB](https://app.hackthebox.eu/home)
-  - [THM](https://tryhackme.com/login)
-  - [VulnHub](https://www.vulnhub.com/)
-  - [Proving Grounds](https://www.offensive-security.com/labs/individual/)
+  - HTB](https://app.hackthebox.eu/home)
+  - THM](https://tryhackme.com/login)
+  - VulnHub](https://www.vulnhub.com/)
+  - Proving Grounds](https://www.offensive-security.com/labs/individual/)
 
 - Recommended Lists
-  - [NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
-  - [FrostNiteCyberSec - OSCP Preparation Checklist](https://drive.google.com/file/d/)1zYQOcr2h2VnRelm0Unx9Sg0Qg1MYDWUg/view
-  - [JSONSec OSCP Prep List](https://docs.google.com/spreadsheets/d/1wW2EOeUo5EkgePheuBfqeUh6Zuh4sPnYVwb7KusoSqc/edit#gid=0)
+  - NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
+  - FrostNiteCyberSec - OSCP Preparation Checklist](https://drive.google.com/file/d/)1zYQOcr2h2VnRelm0Unx9Sg0Qg1MYDWUg/view
+  - JSONSec OSCP Prep List](https://docs.google.com/spreadsheets/d/1wW2EOeUo5EkgePheuBfqeUh6Zuh4sPnYVwb7KusoSqc/edit#gid=0)
 
 - Guides/Help
-  - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
-  - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
-  - [IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
+  - HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
+  - HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
+  - IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
 
 - Courses
-  - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
-  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
-  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
-  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+  - Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
+  - Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+  - Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
+  - Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+  - Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
 
 
-- HTB (Hack The Box)
-  - Linux
-    - Lame
-    - brainfuck
-    - shocker
-    - bashed
-    - nibbles
-    - beep
-    - cronos
-    - nineveh
-    - sense
-    - solidstate
-    - node
-    - valentine
-    - poison
-    - sunday
-    - tartarsauce
-    - Irked
-    - Friendzone
-    - Swagshop
-    - Networked
-    - jarvis
-    - Mirai
-    - Popcorn
-    - Haircut
-    - Blocky
-    - Frolic
-    - Postman
-    - Mango
-    - Traverxec
-    - OpenAdmin
-    - Magic
-    - Admirer
-    - Blunder
-    - Tabby
-    - Doctor
-    - SneakyMailer
-    - Vault
-    - popcorn
-    - Celestial
-    - Blocky (Good to practice with JD-GUI)
-    - Falafel
-    - Zipper
-    - Unattended
-    - Help
-    - Mango [Focus on creating your own Boolean Script]
+- `[ ]` - HTB (Hack The Box)
+  - `[ ]` - Linux
+    - `[ ]` - Lame
+    - `[ ]` - brainfuck
+    - `[ ]` - shocker
+    - `[ ]` - bashed
+    - `[ ]` - nibbles
+    - `[ ]` - beep
+    - `[ ]` - cronos
+    - `[ ]` - nineveh
+    - `[ ]` - sense
+    - `[ ]` - solidstate
+    - `[ ]` - node
+    - `[ ]` - valentine
+    - `[ ]` - poison
+    - `[ ]` - sunday
+    - `[ ]` - tartarsauce
+    - `[ ]` - Irked
+    - `[ ]` - Friendzone
+    - `[ ]` - Swagshop
+    - `[ ]` - Networked
+    - `[ ]` - jarvis
+    - `[ ]` - Mirai
+    - `[ ]` - Popcorn
+    - `[ ]` - Haircut
+    - `[ ]` - Blocky
+    - `[ ]` - Frolic
+    - `[ ]` - Postman
+    - `[ ]` - Mango
+    - `[ ]` - Traverxec
+    - `[ ]` - OpenAdmin
+    - `[ ]` - Magic
+    - `[ ]` - Admirer
+    - `[ ]` - Blunder
+    - `[ ]` - Tabby
+    - `[ ]` - Doctor
+    - `[ ]` - SneakyMailer
+    - `[ ]` - Vault
+    - `[ ]` - popcorn
+    - `[ ]` - Celestial
+    - `[ ]` - Blocky (Good to practice with JD-GUI)
+    - `[ ]` - Falafel
+    - `[ ]` - Zipper
+    - `[ ]` - Unattended
+    - `[ ]` - Help
+    - `[ ]` - Mango [Focus on creating your own Boolean Script]
 
-  - Windows
-    - legacy
-    - Blue
-    - Devel
-    - Optimum
-    - Bastard
-    - granny
-    - Arctic
-    - grandpa
-    - silo
-    - bounty
-    - jerry
-    - conceal
-    - chatterbox
-    - Forest
-    - BankRobber
-    - secnotes
-    - Bastion
-    - Buff
-    - Servmon
-    - Active
-    - Remote
-    - Fuse
-    - Buff
-    - Omni
-    - Worker
-    - Json
-
-
-- THM (Try And Hack Me)
-  - Kenobi
-  - Tony The Tiger
-  - Ghostcat
-  - mindgames
-  - 0day
-  - Retro
-  - Blueprint
-  - Daily Bugle
-  - UltraTech
-  - Marketplace
-  - Internal
-  - jacob the boss
-  - wwbuddy
-  - Year of the Dog
-  - Jeff
-  - Gatekeeper
-  - cherryblossom
-  - blob blog
-  - Steel Mountain
-  - Alfred
-  - ackpark
-  - Game Zone
-  - Skynet
-  - Corp
-  - MrRobot
-  - Relevant
-  - Overpass2
-  - HackPark
-  - Blue
-  - Vulnversity
-  - Daily Bugle
-  - Blaster
-  - tomghost
+  - `[ ]` - Windows
+    - `[ ]` - legacy
+    - `[ ]` - Blue
+    - `[ ]` - Devel
+    - `[ ]` - Optimum
+    - `[ ]` - Bastard
+    - `[ ]` - granny
+    - `[ ]` - Arctic
+    - `[ ]` - grandpa
+    - `[ ]` - silo
+    - `[ ]` - bounty
+    - `[ ]` - jerry
+    - `[ ]` - conceal
+    - `[ ]` - chatterbox
+    - `[ ]` - Forest
+    - `[ ]` - BankRobber
+    - `[ ]` - secnotes
+    - `[ ]` - Bastion
+    - `[ ]` - Buff
+    - `[ ]` - Servmon
+    - `[ ]` - Active
+    - `[ ]` - Remote
+    - `[ ]` - Fuse
+    - `[ ]` - Buff
+    - `[ ]` - Omni
+    - `[ ]` - Worker
+    - `[ ]` - Json
 
 
-- OSPG (OffSec Proving Grounds)
-  - Lampiao
-  - Sar
-  - Inclusiveness
-  - LazySysAdmin
-  - FowSniff
-  - Funbox
-  - Nullbyte
-  - Dawn
-  - Sunset Midnight
-  - MyCMS-MS
-  - Vegata1
-  - NoName
-  - BossPlayersCTF
-  - Bratarina
-  - Dawn2
-  - Covfefe
-  - helpdesk
-  - Hackerfest19
-  - Internal
-  - JISCTF
-  - Pelican
-  - Pwnlab
-  - Webcal
-  - ZenPhoto
+- `[ ]` - THM (Try And Hack Me)
+  - `[ ]` - Kenobi
+  - `[ ]` - Tony The Tiger
+  - `[ ]` - Ghostcat
+  - `[ ]` - mindgames
+  - `[ ]` - 0day
+  - `[ ]` - Retro
+  - `[ ]` - Blueprint
+  - `[ ]` - Daily Bugle
+  - `[ ]` - UltraTech
+  - `[ ]` - Marketplace
+  - `[ ]` - Internal
+  - `[ ]` - jacob the boss
+  - `[ ]` - wwbuddy
+  - `[ ]` - Year of the Dog
+  - `[ ]` - Jeff
+  - `[ ]` - Gatekeeper
+  - `[ ]` - cherryblossom
+  - `[ ]` - blob blog
+  - `[ ]` - Steel Mountain
+  - `[ ]` - Alfred
+  - `[ ]` - ackpark
+  - `[ ]` - Game Zone
+  - `[ ]` - Skynet
+  - `[ ]` - Corp
+  - `[ ]` - MrRobot
+  - `[ ]` - Relevant
+  - `[ ]` - Overpass2
+  - `[ ]` - HackPark
+  - `[ ]` - Blue
+  - `[ ]` - Vulnversity
+  - `[ ]` - Daily Bugle
+  - `[ ]` - Blaster
+  - `[ ]` - tomghost
+
+
+- `[ ]` - OSPG (OffSec Proving Grounds)
+  - `[ ]` - Lampiao
+  - `[ ]` - Sar
+  - `[ ]` - Inclusiveness
+  - `[ ]` - LazySysAdmin
+  - `[ ]` - FowSniff
+  - `[ ]` - Funbox
+  - `[ ]` - Nullbyte
+  - `[ ]` - Dawn
+  - `[ ]` - Sunset Midnight
+  - `[ ]` - MyCMS-MS
+  - `[ ]` - Vegata1
+  - `[ ]` - NoName
+  - `[ ]` - BossPlayersCTF
+  - `[ ]` - Bratarina
+  - `[ ]` - Dawn2
+  - `[ ]` - Covfefe
+  - `[ ]` - helpdesk
+  - `[ ]` - Hackerfest19
+  - `[ ]` - Internal
+  - `[ ]` - JISCTF
+  - `[ ]` - Pelican
+  - `[ ]` - Pwnlab
+  - `[ ]` - Webcal
+  - `[ ]` - ZenPhoto
