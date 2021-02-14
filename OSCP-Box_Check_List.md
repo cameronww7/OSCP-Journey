@@ -1,27 +1,27 @@
 # OSCP-Box_Check_List
 
 - Hacking Labs
-  - HTB](https://app.hackthebox.eu/home)
-  - THM](https://tryhackme.com/login)
-  - VulnHub](https://www.vulnhub.com/)
+  - [HTB](https://app.hackthebox.eu/home)
+  - [THM](https://tryhackme.com/login)
+  - [VulnHub](https://www.vulnhub.com/)
   - Proving Grounds](https://www.offensive-security.com/labs/individual/)
 
 - Recommended Lists
-  - NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
-  - FrostNiteCyberSec - OSCP Preparation Checklist](https://drive.google.com/file/d/)1zYQOcr2h2VnRelm0Unx9Sg0Qg1MYDWUg/view
-  - JSONSec OSCP Prep List](https://docs.google.com/spreadsheets/d/1wW2EOeUo5EkgePheuBfqeUh6Zuh4sPnYVwb7KusoSqc/edit#gid=0)
+  - [NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
+  - [FrostNiteCyberSec - OSCP Preparation Checklist](https://drive.google.com/file/d/)1zYQOcr2h2VnRelm0Unx9Sg0Qg1MYDWUg/view
+  - [JSONSec OSCP Prep List](https://docs.google.com/spreadsheets/d/1wW2EOeUo5EkgePheuBfqeUh6Zuh4sPnYVwb7KusoSqc/edit#gid=0)
 
 - Guides/Help
-  - HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
-  - HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
-  - IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
+  - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
+  - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
+  - [IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
 
 - Courses
-  - Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
-  - Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
-  - Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
-  - Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+  - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
+  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
+  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
 
 
 - `[ ]` - HTB (Hack The Box)
