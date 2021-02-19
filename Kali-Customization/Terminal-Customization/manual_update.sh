@@ -7,14 +7,6 @@
 # chmod +x terminal_setup.sh
 
 
-# Terminal Tools
-# ---------------------------------------
-sudo apt install terminator
-sudo apt install atuojump
-sudo apt install tree
-sudo apt-get install acpi
-
-
 # Install Plugins
 # ---------------------------------------
 # Install oh-my-zsh
@@ -36,16 +28,3 @@ sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
 # Install .zshrc file 
 # ---------------------------------------
 # sudo git clone https://github.com/cameronww7/path to zshrc
-
-
-# Add Plugin Update Code to Update File
-# ---------------------------------------
-#echo "printf "\n${BLUE}%s${RESET}\n" "Updating custom plugins"
-#		cd custom/plugins
-#
-#		for plugin in */; do
-#		  if [ -d "$plugin/.git" ]; then
-#			 printf "${YELLOW}%s${RESET}\n" "${plugin%/}"
-#			 git -C "$plugin" pull
-#		  fi
-#s		done" >> $ZSH/tools/upgrade.sh
