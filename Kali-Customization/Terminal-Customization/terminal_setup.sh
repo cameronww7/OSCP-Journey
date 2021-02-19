@@ -12,14 +12,18 @@
 sudo apt install terminator
 sudo apt install atuojump
 sudo apt install tree
-sudo apt-get install acpi
+sudo apt install acpi
+sudo apt install git
 
 
-# Install Plugins
+# Install Oh-My_ZSH
 # ---------------------------------------
 # Install oh-my-zsh
 sudo curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh; zsh
 
+
+# Install Plugins
+# ---------------------------------------
 # add highlighting
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
 
