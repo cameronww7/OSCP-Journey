@@ -2,7 +2,40 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kali/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
+
+setopt autocd              # change directory just by typing its name
+#setopt correct            # auto correct mistakes
+setopt interactivecomments # allow comments in interactive mode
+setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
+setopt nonomatch           # hide error message if there is no match for the pattern
+setopt notify              # report the status of background jobs immediately
+setopt numericglobsort     # sort filenames numerically when it makes sense
+setopt promptsubst         # enable command substitution in prompt
+
+WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
+
+# hide EOL sign ('%')
+PROMPT_EOL_MARK=""
+
+# configure key keybindings
+bindkey -e                                        # emacs key bindings
+bindkey ' ' magic-space                           # do history expansion on space
+bindkey '^[[3;5~' kill-word                       # ctrl + Supr
+bindkey '^[[3~' delete-char                       # delete
+bindkey '^[[1;5C' forward-word                    # ctrl + ->
+bindkey '^[[1;5D' backward-word                   # ctrl + <-
+bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+bindkey '^[[6~' end-of-buffer-or-history          # page down
+bindkey '^[[H' beginning-of-line                  # home
+bindkey '^[[F' end-of-line                        # end
+bindkey '^[[Z' undo                               # shift + tab undo last action
+
+# enable completion features
+autoload -Uz compinit
+compinit -d ~/.cache/zcompdump
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -20,81 +53,74 @@ prompt_zsh_internet_signal(){
 }
 
 
-prompt_codetalk() {
+prompt_tryHarder() {
     local content='%F{46}\uF17C TryHard3r'
     $1_prompt_segment "$0" "$2" "black" "white" "$content" "#"
 }
 
+# TryHarder
+POWERLINE9K_TRYHARDER_DEFAULT_BACKGROUND='black'
+POWERLINE9K_TRYHARDER_DEFAULT_FOREGROUND='green1'
 
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+# DIR
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_beginning"
 
+# RVM
 POWERLEVEL9K_RVM_BACKGROUND="black"
 POWERLEVEL9K_RVM_FOREGROUND="249"
 POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
 
+# Time
 POWERLEVEL9K_TIME_BACKGROUND="black"
 POWERLEVEL9K_TIME_FOREGROUND="green1"
 POWERLEVEL9K_TIME_FORMAT="%D{\UF133 %m.%d.%y} %@"
 
-POWERLEVEL9K_RVM_BACKGROUND="black"
-POWERLEVEL9K_RVM_FOREGROUND="249"
-POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
-
+# VCS
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='46'
-
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='orange'
-
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
-
 POWERLEVEL9K_VCS_HIDE_TAGS='false'
 
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='white'
-
-POWERLEVEL9K_FOLDER_ICON=''
-
-POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
-POWERLEVEL9K_STATUS_VERBOSE=true
-
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-
+# VCS Icons
 POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
 POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
 POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
 POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 
+# Command Execution Time
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='white'
+
+POWERLEVEL9K_FOLDER_ICON=''
+
+#POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+#POWERLEVEL9K_STATUS_VERBOSE=true
+
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+
+# Context
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n💀%m"
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='black'
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='green1'
 
-POWERLINE9K_CODETALK_DEFAULT_BACKGROUND='black'
-POWERLINE9K_CODETALK_DEFAULT_FOREGROUND='red'
+# Prompt
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{46}\u256D\u2500%f"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" %F{46}▶ "
-
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{46}└─▶ "
 
 DISABLE_UPDATE_PROMPT=true
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(codetalk custom_internet_signal ssh root_indicator dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status context time battery)
-
-
-
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Command Line Display Prompts
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(tryHarder custom_internet_signal ssh root_indicator dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpn_ip context time battery)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -140,10 +166,22 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status context time battery)
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
+
+HISTFILE=~/.zsh_history
+
 HIST_STAMPS="mm/dd/yyyy"
 
 HISTSIZE=5000
 SAVEHIST=5000
+
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+#setopt share_history         # share command history data
+
+# force zsh to show the complete history
+alias history="history 0"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -186,9 +224,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias ll="k -a"
-alias ls="k"
-alias his="history"
+# some more ls aliases
+alias ll='k'
+alias la='k -A'
+alias l='ls -CF'
+alias his='history'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
