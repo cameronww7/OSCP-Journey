@@ -3,6 +3,7 @@
 # ***** Path to your oh-my-zsh installation *****
 # ---------------------------------------
 export ZSH=$HOME/.oh-my-zsh
+# ---------------------------------------
 
 
 # ***** Setup setopt *****
@@ -17,11 +18,13 @@ setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
+# ---------------------------------------
 
 
 # ***** Hides EOL Sign ('%') *****
 # ---------------------------------------
 PROMPT_EOL_MARK=""
+# ---------------------------------------
 
 
 # ***** Configure Key Keybindings *****
@@ -37,6 +40,7 @@ bindkey '^[[6~' end-of-buffer-or-history          # page down
 bindkey '^[[H' beginning-of-line                  # home
 bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + tab undo last action
+# ---------------------------------------
 
 
 # ***** Enable Completion Features *****
@@ -45,6 +49,7 @@ autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+# ---------------------------------------
 
 
 # ***** Setup ZSH Base *****
@@ -56,6 +61,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab
 # Also see for status - https://gitmemory.com/issue/bhilburn/powerlevel9k/501/500341341
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
+# ---------------------------------------
 
 
 # ***** Setup Custom Displays *****
@@ -73,6 +79,7 @@ prompt_tryHarder() {
     local content='%F{46}\uF17C TryHard3r'
     $1_prompt_segment "$0" "$2" "black" "white" "$content" "#"
 }
+# ---------------------------------------
 
 
 # ***** Setup Powerline9k *****
@@ -179,6 +186,7 @@ POWERLEVEL9K_FOLDER_ICON=''
 # ***** Command Line Display Prompts *****
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(tryHarder custom_internet_signal ssh root_indicator dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpn_ip context time battery)
+# ---------------------------------------
 
 
 # ***** Setup Plugins *****
@@ -195,6 +203,7 @@ plugins=(git
          k
          vscode
          colored-man-pages)
+# ---------------------------------------
 
 
 # ***** Setup History *****
@@ -220,6 +229,12 @@ setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded 
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+# ---------------------------------------
+
+
+# ***** Sources ZSH *****
+# ---------------------------------------
+source $ZSH/oh-my-zsh.sh
 
 
 # ***** User configuration *****
@@ -243,9 +258,6 @@ alias his='history'
 
 # force zsh to show the complete history
 alias history="history 0"
-
-# ***** Sources ZSH *****
 # ---------------------------------------
-source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
