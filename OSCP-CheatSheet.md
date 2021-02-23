@@ -142,31 +142,46 @@
 
 ## Windows Resources
 - Resources
-  - Windows Privilege Escalation
-    - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
-    - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
-    - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
-    - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
-    - [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
-    - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
-    - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
-    - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
-    - VulnHub
-      - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
-  - Other
-    - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
+  - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
+  - [Win File Perms](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line)
+- PrivEsc Courses
+  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
+  - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
+- PrivEsc Cheatsheets/Script
+  - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
+  - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
+  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+  - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
+  - [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
+  - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
+  - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+  - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
+- VulnHub
+  - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+- Other
+  - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
 
 ## Linux Resources
 - Resources
   - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/)
+  - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
+  - [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
+  - [Restricted Linux Shell Escaping Techniques](https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/)
+- PrivEsc Courses
   - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
   - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+- PrivEsc Cheatsheets/SCripts
+  - [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
+  - [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
+  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+  - [GTFOBins](https://gtfobins.github.io/)
   - [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
   - [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
   - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
   - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
   - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
-
+- Other
 
 ## Buffer Overflow Resources
 - Resoureces
@@ -177,9 +192,31 @@
 
 
 ## Tool Resources
-- Tools
+- Tools To Know
   - [Autorecon](https://github.com/Tib3rius/AutoRecon)
   - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
+  - nmap
+  - ncat
+  - tmux
+  - SSH
+  - sparta
+  - gobuster
+  - burp suite
+  - nikto
+  - hydra
+  - enum4linux
+  - rpcclient
+  - snmpwalk
+  - icacls
+  - dotdotpwn
+  - searchsploit
+  - ftp
+  - smtp (in general)
+  - linenum.sh
+  - linux exploit suggester
+  - msfvenom
+  - wireshark
+  - sherlock.ps1
 
 
 ## Enumeration
@@ -401,6 +438,8 @@
 
 - Local File Inclusion / Remote File Inclusion - LFI / RFI
   - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion>
+  - <https://highon.coffee/blog/lfi-cheat-sheet/>
+  - <https://nets.ec/Coldfusion_hacking#Remote_File_Disclosure_of_Password_Hashes>
 
   - Wrappers
     - Wrapper php://filter
@@ -454,6 +493,8 @@
   - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files>
 
 - SQL injection
+  - <http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet>
+  - <https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/>
   - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection>
   - <https://blog.cobalt.io/a-pentesters-guide-to-sql-injection-sqli-16fd570c3532>
 
@@ -673,6 +714,7 @@
 
 
 ## NFS - 2049
+- [Guide](https://www.youtube.com/watch?v=FlRAA-1UXWQ&feature=youtu.be)
 - Show Mountable NFS Shares
   - `showmount -e <IP>`
   - `nmap --script=nfs-showmount -oN mountable_shares <IP>`
@@ -864,6 +906,8 @@
 
 
 ## FILE TRANSFER
+- [Transferring Files to Windows](https://sushant747.gitbooks.io/total-oscp-guide/content/transfering_files_to_windows.html)
+- [Transferring Files to Linux](https://sushant747.gitbooks.io/total-oscp-guide/content/transfering_files.html)
 - Linux
   - PYTHON
     - `python -m SimpleHTTPServer <PORT>`
