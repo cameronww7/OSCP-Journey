@@ -71,6 +71,7 @@
 ## Terminal Resources
 - [How to use Tumx](https://www.youtube.com/watch?v=Lqehvpe_djs)
 - [Tmux CheatSheet](https://tmuxcheatsheet.com/)
+- [tmux Wiki](https://github.com/tmux/tmux/wiki)
 - [My Custom Terminal Settings](https://github.com/cameronww7/Terminal-Customization)
 
 ## OSCP Guides 
