@@ -6,6 +6,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
   - [TryHackMe - $10/M](https://tryhackme.com/login)
   - [VulnHub - $Free](https://www.vulnhub.com/)
   - [Proving Grounds - $20/M](https://www.offensive-security.com/labs/individual/)
+  - [Virtual Hacking Labs - $99/M](https://www.virtualhackinglabs.com/)
 
 - Recommended Lists
   - [NetSecFocus List](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0)
@@ -15,7 +16,10 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
 - Guides/Help
   - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
   - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
-  - [IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
+  - [HTB IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
+  - [HTB Oxdf](https://0xdf.gitlab.io/)
+  - [HTB Rana-Khalil](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes)
+  - [HTB Hacking Articles](https://www.hackingarticles.in/category/ctf-challenges/)
 
 - Courses
   - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
@@ -163,3 +167,19 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
   - `[ ]` - Pwnlab
   - `[ ]` - Webcal
   - `[ ]` - ZenPhoto
+
+- `[ ]` - VulnHub
+  - `[ ]` - GoldenEye1
+  - `[ ]` - Mr-Robot
+  - `[ ]` - XVWA
+  - `[ ]` - DVWA
+  - `[ ]` - Stapler
+  - `[ ]` - VulnOS2
+  - `[ ]` - SickOS1.2
+  - `[ ]` - Droopy
+  - `[ ]` - FristiLeaks
+  - `[ ]` - Lord of the Root
+  - `[ ]` - Brainpan
+  - `[ ]` - Sokar
+  - `[ ]` - Skytower
+  - `[ ]` - Kioptrix
