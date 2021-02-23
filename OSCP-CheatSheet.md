@@ -70,6 +70,7 @@
 
 ## Terminal Resources
 - [How to use Tumx](https://www.youtube.com/watch?v=Lqehvpe_djs)
+- [Tmux CheatSheet](https://tmuxcheatsheet.com/)
 - [My Custom Terminal Settings](https://github.com/cameronww7/Terminal-Customization)
 
 ## OSCP Guides 
@@ -197,7 +198,6 @@
   - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
   - [nmap](https://nmap.org/)
   - [ncat](https://nmap.org/ncat/)
-  - [tmux](https://github.com/tmux/tmux/wiki)
   - [SSH](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
   - [gobuster](https://github.com/OJ/gobuster)
   - [burp suite](https://portswigger.net/burp)
