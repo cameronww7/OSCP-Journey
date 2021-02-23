@@ -4,6 +4,7 @@
 - [OSCP_CHEATSHEET](#oscp_cheatsheet)
 - [TABLE OF CONTENTS](#table-of-contents)
   - [Kali General Info](#kali-general-info)
+  - [Terminal Resources](#terminal-resources)
   - [OSCP Guides](#oscp-guides)
   - [Report Writing](#report-writing)
   - [Advice](#advice)
@@ -55,6 +56,7 @@
 
 
 ## Kali General Info
+- [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
 - Listen for pings to test if you remote command worked
 - `tcpdump -i interface icmp`
 - Download all files from an ftp service
@@ -66,6 +68,9 @@
 - Useful tools
 - xclip
 
+## Terminal Resources
+- [How to use Tumx](https://www.youtube.com/watch?v=Lqehvpe_djs)
+- [My Custom Terminal Settings](https://github.com/cameronww7/Terminal-Customization)
 
 ## OSCP Guides 
 - [Awesome OSCP GitHub](https://github.com/0x4D31/awesome-oscp)
@@ -79,6 +84,11 @@
 - [Hakluke’s Ultimate OSCP Guide: Part 3 — Practical hacking tips and tricks](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97)
 - [Reddit - OSCP Lab & Exam Review and Tips](https://www.reddit.com/r/oscp/comments/ix81m8/oscp_lab_exam_review_and_tips/)
 - [Reddit - Passed - 1st Attempt. Thoughts, Tips, Facts](https://www.reddit.com/r/oscp/comments/j4jp6w/passed_1st_attempt_thoughts_tips_facts/)
+- [OSCP Preparation 2021 — Learning Path](https://ltsirkov.medium.com/oscp-preparation-2021-learning-path-41a88eb1a4b)
+- [More Lessons Learned About Trying Harder and Passing the Offensive Security Certified Professional Exam (OSCP)](https://www.tripwire.com/state-of-security/security-data-protection/passing-offensive-security-certified-professional-exam-oscp/)
+- [The Penultimate Guide to Defeat the OSCP](https://www.linkedin.com/pulse/penultimate-guide-defeat-oscp-corey-ball-oscp-cissp-cism/)
+- [A BEGINNERS GUIDE TO OSCP 2021](https://hxrrvs.medium.com/a-beginners-guide-to-oscp-2021-adb234be1ba0)
+- [59 Hosts to Glory — Passing the OSCP](https://medium.com/@Tib3rius/59-hosts-to-glory-passing-the-oscp-acf0fd384371)
 
 
 ## Report Writing
