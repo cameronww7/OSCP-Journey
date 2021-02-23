@@ -195,28 +195,26 @@
 - Tools To Know
   - [Autorecon](https://github.com/Tib3rius/AutoRecon)
   - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
-  - nmap
-  - ncat
-  - tmux
-  - SSH
-  - sparta
-  - gobuster
-  - burp suite
-  - nikto
-  - hydra
-  - enum4linux
-  - rpcclient
-  - snmpwalk
-  - icacls
-  - dotdotpwn
-  - searchsploit
-  - ftp
-  - smtp (in general)
-  - linenum.sh
-  - linux exploit suggester
-  - msfvenom
-  - wireshark
-  - sherlock.ps1
+  - [nmap](https://nmap.org/)
+  - [ncat](https://nmap.org/ncat/)
+  - [tmux](https://github.com/tmux/tmux/wiki)
+  - [SSH](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
+  - [gobuster](https://github.com/OJ/gobuster)
+  - [burp suite](https://portswigger.net/burp)
+  - [nikto](https://tools.kali.org/information-gathering/nikto)
+  - [hydra](https://www.hackingarticles.in/comprehensive-guide-on-hydra-a-brute-forcing-tool/)
+  - [enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)
+  - [rpcclient](https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html)
+  - [snmpwalk](https://linux.die.net/man/1/snmpwalk)
+  - [icacls](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls)
+  - [dotdotpwn](https://www.cyberpunk.rs/dotdotpwn-the-directory-traversal-fuzzer#:~:text=DotDotPwn%20is%20an%20intelligent%20fuzzing,TFTP%2C%20HTTP%2C%20and%20FTP.)
+  - [searchsploit](https://www.exploit-db.com/searchsploit)
+  - [ftp](https://tldp.org/HOWTO/FTP-3.html)
+  - [smtp](https://www.gmass.co/blog/smtp/)
+  - [linenum.sh](https://github.com/rebootuser/LinEnum)
+  - [linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
+  - [msfvenom](https://www.offensive-security.com/metasploit-unleashed/msfvenom/)
+  - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
 
 
 ## Enumeration
