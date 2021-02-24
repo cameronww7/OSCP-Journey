@@ -69,7 +69,8 @@
 - xclip
 
 ## Terminal Resources
-- [How to use Tumx](https://www.youtube.com/watch?v=Lqehvpe_djs)
+- [How to use Tumx - IppSec](https://www.youtube.com/watch?v=Lqehvpe_djs)
+- [Basic tmux Tutorial](https://www.youtube.com/watch?v=BHhA_ZKjyxo)
 - [Tmux CheatSheet](https://tmuxcheatsheet.com/)
 - [tmux Wiki](https://github.com/tmux/tmux/wiki)
 - [My Custom Terminal Settings](https://github.com/cameronww7/Terminal-Customization)
