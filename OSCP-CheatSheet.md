@@ -195,6 +195,7 @@
 
 
 ## Tool Resources
+- [Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
 - Tools To Know
   - [Autorecon](https://github.com/Tib3rius/AutoRecon)
   - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
