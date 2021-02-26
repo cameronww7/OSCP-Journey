@@ -95,7 +95,10 @@
 
 
 ## Report Writing
+- [OffSec Offical Test Report](https://www.offensive-security.com/pwk-online/PWK-Example-Report-v1.pdf)
+- [OffSec Linux Report Writing](https://help.offensive-security.com/hc/en-us/articles/360046787731-Penetration-Testing-with-Kali-Linux-Reporting)
 - [OSCP - How to Write the Report](https://www.youtube.com/watch?v=Ohm0LhFFwVA)
+- [OSCP Report Made Easy](https://www.youtube.com/watch?v=O9JWmF3Bgis)
 
 ## Advice 
 - [OSCP - Advice For The Exam](https://www.youtube.com/watch?v=nzAMZvEC_Xc&feature=youtu.be)
