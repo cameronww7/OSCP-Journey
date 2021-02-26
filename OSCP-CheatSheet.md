@@ -5,6 +5,7 @@
 - [TABLE OF CONTENTS](#table-of-contents)
   - [Kali General Info](#kali-general-info)
   - [Terminal Resources](#terminal-resources)
+  - [Note Taking Tools](#note-taking-tools)
   - [OSCP Guides](#oscp-guides)
   - [Report Writing](#report-writing)
   - [Advice](#advice)
@@ -75,6 +76,9 @@
 - [tmux Wiki](https://github.com/tmux/tmux/wiki)
 - [My Custom Terminal Settings](https://github.com/cameronww7/Terminal-Customization)
 
+## Note Taking Tools
+- [CherryTree](https://www.giuspen.com/cherrytree/)
+- [Screenshots](https://getgreenshot.org/)
 
 ## OSCP Guides 
 - [Awesome OSCP GitHub](https://github.com/0x4D31/awesome-oscp)
