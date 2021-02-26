@@ -244,6 +244,7 @@
 - On-Screen Enumeration (IPs Unknown)
   - `nmap -sn -v -oN NMAP-UnknownIPs_01.txt <IP>/CIDR`
   - `autorecon <IP>/CIDR`
+  - `netdiscover -r <>/CIDR`
 
 - Automated Scans (IPs Known)
   - `autorecon <IP>`
@@ -273,10 +274,10 @@
     - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
 
 - DirBusting
-  - `gobuster dir -u <IP or URL> -w <Path to dir path file>` 
+  - `gobuster dir -u <IP or URL> -t 200 -w <Path to dir path file>` 
     - [CheatSheet](https://materials.rangeforce.com/tutorial/2020/03/26/Gobuster/)
-    - Example 1: `gobuster dir -u 10.129.1.135:80 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt` 
-    - Example 2: `gobuster dir -u 10.129.1.135:80 -w /usr/share/wordlists/dirb/common.txt` 
+    - Example 1: `gobuster dir -u http://10.129.1.135/nibbleblog/ -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt >> goBuster-01.txt` 
+    - Example 2: `gobuster dir -u http://10.129.1.135:80 -t 200 -w /usr/share/wordlists/dirb/common.txt >> goBuster-01.txt` 
 
 
 ## FTP - 21
