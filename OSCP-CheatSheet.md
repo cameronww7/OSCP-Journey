@@ -75,6 +75,7 @@
 - [tmux Wiki](https://github.com/tmux/tmux/wiki)
 - [My Custom Terminal Settings](https://github.com/cameronww7/Terminal-Customization)
 
+
 ## OSCP Guides 
 - [Awesome OSCP GitHub](https://github.com/0x4D31/awesome-oscp)
 - [The Journey to Try Harder: TJnull’s Preparation Guide for PWK/OSCP](https://www.netsecfocus.com/oscp/2019/03/29/The_Journey_to_Try_Harder-_TJNulls_Preparation_Guide_for_PWK_OSCP.html)
@@ -113,6 +114,7 @@
 ## General Resources
 - OSCP
   - [Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+
 - Courses
   - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
   - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course\windows-privilege-escalation/)
@@ -127,8 +129,10 @@
     - [Ignitetechnologies - HackTheBox-CTF-Writeups](https://github.com/Ignitetechnologies/HackTheBox-CTF-Writeups)
     - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
     - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
+  
   - VulnHub
     - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+  
   - THM (TryHackMe)
     - 
 
@@ -150,10 +154,13 @@
 - Resources
   - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
   - [Win File Perms](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line)
+
 - PrivEsc Courses
+  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
   - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
   - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
   - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
+
 - PrivEsc Cheatsheets/Script
   - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
   - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
@@ -163,8 +170,10 @@
   - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
   - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
   - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
+
 - VulnHub
   - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+
 - Other
   - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
 
@@ -174,9 +183,12 @@
   - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
   - [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
   - [Restricted Linux Shell Escaping Techniques](https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/)
+
 - PrivEsc Courses
+  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
   - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
   - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+
 - PrivEsc Cheatsheets/SCripts
   - [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
   - [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
@@ -187,6 +199,7 @@
   - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
   - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
   - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
+
 - Other
 
 ## Buffer Overflow Resources
