@@ -219,12 +219,11 @@
 - Tools To Know
   - [Autorecon](https://github.com/Tib3rius/AutoRecon)
   - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
-  - [nmap](https://nmap.org/)
-  - [ncat](https://nmap.org/ncat/)
-  - [SSH](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
-  - [gobuster](https://github.com/OJ/gobuster)
-  - [burp suite](https://portswigger.net/burp)
   - [nikto](https://tools.kali.org/information-gathering/nikto)
+  - [nmap](https://nmap.org/)
+  - [gobuster](https://github.com/OJ/gobuster)
+  - [ncat](https://nmap.org/ncat/)
+  - [burp suite](https://portswigger.net/burp)
   - [hydra](https://www.hackingarticles.in/comprehensive-guide-on-hydra-a-brute-forcing-tool/)
   - [enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)
   - [rpcclient](https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html)
@@ -234,6 +233,7 @@
   - [searchsploit](https://www.exploit-db.com/searchsploit)
   - [ftp](https://tldp.org/HOWTO/FTP-3.html)
   - [smtp](https://www.gmass.co/blog/smtp/)
+  - [SSH](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
   - [linenum.sh](https://github.com/rebootuser/LinEnum)
   - [linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
   - [msfvenom](https://www.offensive-security.com/metasploit-unleashed/msfvenom/)
@@ -243,8 +243,12 @@
 ## Enumeration
 - On-Screen Enumeration (IPs Unknown)
   - `nmap -sn -v -oN NMAP-UnknownIPs_01.txt <IP>/CIDR`
-  - `nmapAutomator <IP> All`
   - `autorecon <IP>/CIDR`
+
+- Automated Scans (IPs Known)
+  - `autorecon <IP>`
+  - `sudo nmapAutomator.sh --host <IP> --type All`
+  - `sudo nikto -Display 1234EP -o -Tuning 123bde NIKTO_SCAN.txt -host <IP/URL>`
 
 - On-Screen Enumeration (IPs Known)
   - Quick Scan
@@ -256,13 +260,13 @@
 
 - Saved Scans (IPs Known)
   - Quick Scan
-    - `sudo nmap -T4 -A -v -oN NMAP-MQS_<IP>_01.txt <IP>`
+    - `sudo nmap -T4 -A -v -oN /Manual-Scans/NMAP--QUICK--SCAN_<IP>_01.txt <IP>`
   - Full Scan
-    - `sudo nmap -T3 -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
+    - `sudo nmap -T3 -A -p- -v -oN /Manual-Scans/NMAP--FULL--SCAN_<IP>_01.txt <IP>`
   - [Vulner Scan (Website only)](https://github.com/vulnersCom/nmap-vulners)
-    - `sudo nmap -sV -v --script=vulners -oN NMAP-VULNERS_01_<IP>_01.txt <IP>`
+    - `sudo nmap -sV -v --script=vulners -oN /Manual-Scans/NMAP--VULNERS_01_<IP>_01.txt <IP>`
   - UDP Scan
-    - `sudo nmap -T3 -sU -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
+    - `sudo nmap -T3 -sU -A -p- -v -oN /Manual-Scans/NMAP-MFS_<IP>_01.txt <IP>`
 
 - Faster NMAP full port scan (IPs Known)
   - Finds all open ports than loops through service and version detection for those discovered
@@ -340,7 +344,7 @@
 
 ## HTTP - HTTPS - 80 - 443
 - Automatic scanners
-  - `sudonikto -h <URL>`
+  - `sudo nikto -h <URL>`
   - `sudo python crawleet.py -u <URL> -b -d 3 -e jpg,png,css -f -m -s -x php,txt -y --threads 20`
   - `sudo nmap -sV -v --script=vulners -oN NMAP-VULNERS_01_<IP>_01.txt <IP>`
 
