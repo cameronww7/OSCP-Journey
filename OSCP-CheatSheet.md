@@ -261,13 +261,13 @@
 
 - Saved Scans (IPs Known)
   - Quick Scan
-    - `sudo nmap -T4 -A -v -oN /Manual-Scans/NMAP--QUICK--SCAN_<IP>_01.txt <IP>`
+    - `sudo nmap -T4 -A -v -oN NMAP--QUICK--SCAN_<IP>_01.txt <IP>`
   - Full Scan
-    - `sudo nmap -T3 -A -p- -v -oN /Manual-Scans/NMAP--FULL--SCAN_<IP>_01.txt <IP>`
+    - `sudo nmap -T3 -A -p- -v -oN NMAP--FULL--SCAN_<IP>_01.txt <IP>`
   - [Vulner Scan (Website only)](https://github.com/vulnersCom/nmap-vulners)
-    - `sudo nmap -sV -v --script=vulners -oN /Manual-Scans/NMAP--VULNERS_01_<IP>_01.txt <IP>`
+    - `sudo nmap -sV -v --script=vulners -oN NMAP--VULNERS_01_<IP>_01.txt <IP>`
   - UDP Scan
-    - `sudo nmap -T3 -sU -A -p- -v -oN /Manual-Scans/NMAP-MFS_<IP>_01.txt <IP>`
+    - `sudo nmap -T3 -sU -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
 
 - Faster NMAP full port scan (IPs Known)
   - Finds all open ports than loops through service and version detection for those discovered
