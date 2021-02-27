@@ -253,11 +253,11 @@
 
 - On-Screen Enumeration (IPs Known)
   - Quick Scan
-    - `sudo nmap -T4 -A -v`
+    - `sudo nmap -T4 -A -v <IP>`
   - Full Scan
-    - `sudo nmap -T3 -A -p- -v`
+    - `sudo nmap -T3 -A -p- -v <IP>`
   - Vulners  (Website only)
-    - `sudo nmap -sV -v --script=vulners`
+    - `sudo nmap -sV -v --script=vulners <IP>`
 
 - Saved Scans (IPs Known)
   - Quick Scan
