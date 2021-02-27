@@ -35,7 +35,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - brainfuck
     - `[ ]` - shocker
     - `[ ]` - bashed
-    - `[ ]` - nibbles
+    - `[X]` - nibbles
     - `[ ]` - beep
     - `[ ]` - cronos
     - `[ ]` - nineveh
@@ -88,7 +88,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - grandpa
     - `[ ]` - silo
     - `[ ]` - bounty
-    - `[ ]` - jerry
+    - `[X]` - jerry
     - `[ ]` - conceal
     - `[ ]` - chatterbox
     - `[ ]` - Forest
