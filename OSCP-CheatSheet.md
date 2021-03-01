@@ -78,17 +78,24 @@
 - [59 Hosts to Glory — Passing the OSCP](https://medium.com/@Tib3rius/59-hosts-to-glory-passing-the-oscp-acf0fd384371)
 
 ## Kali General Info
-- [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
-- Listen for pings to test if you remote command worked
-- `tcpdump -i interface icmp`
-- Download all files from an ftp service
-- `wget -m --no-passive ftp://anonymous:anonymous@ipaddress`
-- Read zip file info
-- `7z l -slt File.zip`
-- Crack a password protected zip file
-- fcrack -D -p password_List File.zip
-- Useful tools
-- xclip
+- Pimping your Kali
+  - [OSCP Kali Setup](https://github.com/cameronww7/Kali-Setup)
+  - [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
+  - [Pimp My Kali](https://github.com/Dewalt-arch/pimpmykali)
+  - [HotWax](https://github.com/BrashEndeavours/hotwax)
+- Resources
+  - [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
+  - Listen for pings to test if you remote command worked
+  - `tcpdump -i interface icmp`
+  - Download all files from an ftp service
+  - `wget -m --no-passive ftp://anonymous:anonymous@ipaddress`
+  - Read zip file info
+  - `7z l -slt File.zip`
+  - Crack a password protected zip file
+  - fcrack -D -p password_List File.zip
+  - Useful tools
+  - xclip
+- 
 
 ## Terminal Resources
 - [How to use Tumx - IppSec](https://www.youtube.com/watch?v=Lqehvpe_djs)
