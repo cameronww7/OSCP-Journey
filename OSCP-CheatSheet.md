@@ -1183,7 +1183,8 @@
 - PrivEsc Resources
   - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
   - [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/16.html)
-  - [Windows Exploit Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+  - [Windows Exploit Suggester - AonCyberLabs](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+  - [Windows Exploit Suggester - 7Ragnarok7](https://github.com/7Ragnarok7/Windows-Exploit-Suggester-2)
   - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
   - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
   - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
