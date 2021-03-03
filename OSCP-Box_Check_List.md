@@ -81,7 +81,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[X]` - Blue
     - `[X]` - Devel
     - `[ ]` - Netmon
-    - `[ ]` - Optimum
+    - `[X]` - Optimum
     - `[ ]` - Bastard
     - `[ ]` - granny
     - `[ ]` - Arctic

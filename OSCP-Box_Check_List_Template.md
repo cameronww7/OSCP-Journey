@@ -77,7 +77,7 @@
     - `[ ]` - Blue
     - `[ ]` - Devel
     - `[ ]` - Netmon
-    - `[X]` - Optimum
+    - `[ ]` - Optimum
     - `[ ]` - Bastard
     - `[ ]` - granny
     - `[ ]` - Arctic
