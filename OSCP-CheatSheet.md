@@ -181,6 +181,7 @@
   - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
   - [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
   - [Restricted Linux Shell Escaping Techniques](https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/)
+  - [Spawning a TTY Shell](https://netsec.ws/?p=337)
 
 - Other
 
