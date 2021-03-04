@@ -34,7 +34,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[X]` - Lame
     - `[ ]` - brainfuck
     - `[ ]` - shocker
-    - `[ ]` - bashed
+    - `[X]` - bashed
     - `[X]` - nibbles
     - `[ ]` - beep
     - `[ ]` - cronos
