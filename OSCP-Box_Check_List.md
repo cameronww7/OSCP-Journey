@@ -83,7 +83,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Netmon
     - `[X]` - Optimum
     - `[ ]` - Bastard
-    - `[ ]` - granny
+    - `[X]` - granny
     - `[ ]` - Arctic
     - `[X]` - grandpa
     - `[ ]` - silo
