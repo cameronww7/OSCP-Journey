@@ -252,7 +252,7 @@
   - Finds all open ports than loops through service and version detection for those discovered
     - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
 
-- DirBusting
+- Directory Busting
   - Dirbuster
     - [Tool Description](https://tools.kali.org/web-applications/dirbuster)
   
