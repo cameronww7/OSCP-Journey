@@ -85,7 +85,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Bastard
     - `[ ]` - granny
     - `[ ]` - Arctic
-    - `[ ]` - grandpa
+    - `[X]` - grandpa
     - `[ ]` - silo
     - `[ ]` - bounty
     - `[X]` - jerry
