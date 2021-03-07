@@ -1677,6 +1677,7 @@
   - [swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
   - [PentestMonkey](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
   - [highon.coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
+  - [Cool Reverse Shell Generator](https://0day.exposed/reverseshell/)
 
 - Amazing tool for shell generation
 - 
