@@ -130,6 +130,8 @@
 ## General Resources
 - OSCP
   - [Unofficial Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+  - [OSCP Official Kali VM](https://help.offensive-security.com/hc/en-us/articles/360046292812-Penetration-Testing-with-Kali-Linux-Virtual-Machine)
+  - [OffSec PWK-Lab-Connectivity-Guide](https://help.offensive-security.com/hc/en-us/articles/360046733931-Offensive-Security-PWK-Lab-Connectivity-Guide)
 
 - Courses
   - [Ethical Hacking - The Cyber Mentor/TCM](https://www.udemy.com/course/practical-ethical-hacking/)
@@ -152,7 +154,7 @@
   - THM (TryHackMe)
   
 
-- CheatSheet
+- OSCP CheatSheets
   - [Oscp-Cheat-Sheet Megga - avi7611](https://github.com/avi7611/Oscp-Cheat-Sheet)
   - [liodeus OSCP-personal-cheatsheet](https://liodeus.github.io/2020/09/18/OSCP-personal-cheatsheet.html#enumeration)
   - [sushant747 total-oscp-guide](https://sushant747.gitbooks.io/total-oscp-guide/content/)
