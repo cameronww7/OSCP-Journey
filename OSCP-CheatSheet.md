@@ -17,6 +17,7 @@
   - [Buffer Overflow Resources](#buffer-overflow-resources)
   - [Tool Resources](#tool-resources)
   - [Enumeration](#enumeration)
+  - [Directory Busting](#directory-busting)
   - [FTP - 21](#ftp---21)
   - [SSH - 22](#ssh---22)
   - [DNS - 53](#dns---53)
@@ -86,16 +87,16 @@
 - Resources
   - [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
   - Listen for pings to test if you remote command worked
-  - `tcpdump -i interface icmp`
+    - `tcpdump -i interface icmp`
   - Download all files from an ftp service
-  - `wget -m --no-passive ftp://anonymous:anonymous@ipaddress`
+    - `wget -m --no-passive ftp://anonymous:anonymous@ipaddress`
   - Read zip file info
-  - `7z l -slt File.zip`
+    - `7z l -slt File.zip`
   - Crack a password protected zip file
-  - fcrack -D -p password_List File.zip
+    - fcrack -D -p password_List File.zip
   - Useful tools
-  - xclip
-- 
+    - xclip
+  
 
 ## Terminal Resources
 - [How to use Tumx - IppSec](https://www.youtube.com/watch?v=Lqehvpe_djs)
@@ -124,17 +125,18 @@
   - [TryHackMe - $10/M](https://tryhackme.com/login)
   - [VulnHub - $Free](https://www.vulnhub.com/)
   - [Proving Grounds - $20/M](https://www.offensive-security.com/labs/individual/)
+  - [Virtual Hacking Labs - $99/M](https://www.virtualhackinglabs.com/)
 
 ## General Resources
 - OSCP
-  - [Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+  - [Unofficial Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
 
 - Courses
-  - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
+  - [Ethical Hacking - The Cyber Mentor/TCM](https://www.udemy.com/course/practical-ethical-hacking/)
   - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course\windows-privilege-escalation/)
-  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
-  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+  - [Windows Privilege Escalation for Beginners - The Cyber Mentor/TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
+  - [Linux Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+  - [Linux Privilege Escalation for Beginners - The Cyber Mentor/TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
 
 - Video Guides
   - HTB (HackTheBox)
@@ -148,7 +150,7 @@
     - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
   
   - THM (TryHackMe)
-    - 
+  
 
 - CheatSheet
   - [Oscp-Cheat-Sheet Megga - avi7611](https://github.com/avi7611/Oscp-Cheat-Sheet)
@@ -226,9 +228,8 @@
   - `netdiscover -r <>/CIDR`
 
 - Automated Scans (IPs Known)
-  - `autorecon <IP>`
+  - `sudo autorecon <IP>`
   - `sudo nmapAutomator.sh --host <IP> --type All`
-  - `sudo nikto -Display 1234EP -o -Tuning 123bde NIKTO_SCAN.txt -host <IP/URL>`
 
 - On-Screen Enumeration (IPs Known)
   - Quick Scan
@@ -252,18 +253,22 @@
   - Finds all open ports than loops through service and version detection for those discovered
     - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
 
-- Directory Busting
-  - Dirbuster
-    - [Tool Description](https://tools.kali.org/web-applications/dirbuster)
-  
-  - GoBuster
-    - Resources
-      - [materials.rangeforce tutorial](https://materials.rangeforce.com/tutorial/2020/03/26/Gobuster/)
-      - [redteamtutorials tutorial](https://redteamtutorials.com/2018/11/19/gobuster-cheatsheet/)
-    - Examples
-      - `gobuster dir -u <IP or URL> -t 200 -w <Path to dir path file>`
-        - Example 1: `gobuster dir -u http://10.129.1.135/nibbleblog/ -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt >> goBuster-01.txt` 
-        - Example 2: `gobuster dir -u http://10.129.1.135:80 -t 200 -w /usr/share/wordlists/dirb/common.txt >> goBuster-01.txt`
+- Others
+  - `sudo nikto -Display 1234EP -o -Tuning 123bde NIKTO_SCAN.txt -host <IP/URL>`
+
+
+## Directory Busting
+- Dirbuster
+  - [Dirbuster Description](https://tools.kali.org/web-applications/dirbuster)
+
+- GoBuster
+  - Resources
+    - [materials.rangeforce tutorial](https://materials.rangeforce.com/tutorial/2020/03/26/Gobuster/)
+    - [redteamtutorials tutorial](https://redteamtutorials.com/2018/11/19/gobuster-cheatsheet/)
+  - Examples
+    - `gobuster dir -u <IP or URL> -t 200 -w <Path to dir path file>`
+      - Example 1: `gobuster dir -u http://10.129.1.135/nibbleblog/ -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt >> goBuster-01.txt` 
+      - Example 2: `gobuster dir -u http://10.129.1.135:80 -t 200 -w /usr/share/wordlists/dirb/common.txt >> goBuster-01.txt`
 
 
 ## FTP - 21
