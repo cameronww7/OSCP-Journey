@@ -221,6 +221,8 @@
   - [linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
   - [msfvenom](https://www.offensive-security.com/metasploit-unleashed/msfvenom/)
   - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
+  - [Impacket](https://github.com/SecureAuthCorp/impacket)
+    - [Impacket Tool Description](https://www.secureauth.com/labs/open-source-tools/impacket/)
 
 
 ## Enumeration
@@ -512,7 +514,8 @@
     - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection>
 
 - Deserialization
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Insecure%20Deserialization>
+  - [swisskyrepo - Insecure Deserialization](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Insecure%20Deserialization)
+  - [.NET - YSoSerial.Net](https://github.com/pwntester/ysoserial.net)
 
 - File upload
   - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files>
