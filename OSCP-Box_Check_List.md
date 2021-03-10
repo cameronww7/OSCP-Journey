@@ -80,7 +80,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[X]` - legacy
     - `[X]` - Blue
     - `[X]` - Devel
-    - `[ ]` - Netmon
+    - `[X]` - Netmon
     - `[X]` - Optimum
     - `[ ]` - Bastard
     - `[X]` - granny
