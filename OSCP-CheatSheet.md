@@ -166,6 +166,8 @@
 
 - Report Resources
   - [liodeus OSCP-exam-report-training](https://liodeus.github.io/2020/10/19/OSCP-exam-report-training.html)
+  - [OSCP-Exam-Report-Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template)
+  - [OSCP-Exam-Report-Template-Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown)
 
 
 ## Windows Resources
@@ -225,6 +227,7 @@
   - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
   - [Impacket](https://github.com/SecureAuthCorp/impacket)
     - [Impacket Tool Description](https://www.secureauth.com/labs/open-source-tools/impacket/)
+  - [FinalRecon - automatic web reconnaissance](https://github.com/thewhiteh4t/FinalRecon)
 
 
 ## Enumeration
