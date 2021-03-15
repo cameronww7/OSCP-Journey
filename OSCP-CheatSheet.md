@@ -152,7 +152,6 @@
     - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
   
   - THM (TryHackMe)
-  
 
 - OSCP CheatSheets
   - [Oscp-Cheat-Sheet Megga - avi7611](https://github.com/avi7611/Oscp-Cheat-Sheet)
@@ -168,6 +167,9 @@
   - [liodeus OSCP-exam-report-training](https://liodeus.github.io/2020/10/19/OSCP-exam-report-training.html)
   - [OSCP-Exam-Report-Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template)
   - [OSCP-Exam-Report-Template-Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown)
+
+- Other Resources
+  - [Some Tutorials and Things to Do while Hunting Particular Vulnerability](https://github.com/KathanP19/HowToHunt)
 
 
 ## Windows Resources
@@ -1599,6 +1601,7 @@
 - Already compiled exploit
   - <https://github.com/SecWiki/windows-kernel-exploits>
   - <https://github.com/abatchy17/WindowsExploits>
+  - <https://github.com/cyber-prog0x/PoC-Bank>
 
 - Windows XP
 - 
