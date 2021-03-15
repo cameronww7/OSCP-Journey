@@ -181,6 +181,7 @@
 
 ## Linux Resources
 - Resources
+  - [Linux Terminal Cheatsheet](https://dev.to/mauro_codes/linux-terminal-the-ultimate-cheat-sheet-2g5b)
   - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/)
   - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
   - [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
@@ -199,6 +200,7 @@
 
 ## Tool Resources
 - [Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+- [Random List of Hackin-Tools](https://github.com/lorenzoinvidia/Hackin-tools)
 - Tools To Know
   - [Autorecon](https://github.com/Tib3rius/AutoRecon)
   - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
