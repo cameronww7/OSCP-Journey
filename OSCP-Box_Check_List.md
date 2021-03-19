@@ -103,7 +103,7 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Buff
     - `[ ]` - Omni
     - `[ ]` - Worker
-    - `[ ]` - Json
+    - `[X]` - Json
 
 
 - `[ ]` - THM (TryHackMe)
