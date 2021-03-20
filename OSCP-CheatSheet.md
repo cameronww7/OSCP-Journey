@@ -85,7 +85,6 @@
   - [Pimp My Kali](https://github.com/Dewalt-arch/pimpmykali)
   - [HotWax](https://github.com/BrashEndeavours/hotwax)
 - Resources
-  - [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
   - Listen for pings to test if you remote command worked
     - `tcpdump -i interface icmp`
   - Download all files from an ftp service
@@ -370,6 +369,7 @@
   - Appearance -> Editor -> 404 Template (at the right)
   - Change the content for a php shell
   - <https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php>
+    - <https://github.com/flozz/p0wny-shell>
   - `http://<IP>/wp-content/themes/twentytwelve/404.php`
 
 - Drupal
