@@ -1838,6 +1838,7 @@
 
 
 ## Buffer Overflow
+- <https://github.com/cytopia/badchars>
 - Spike
   - `generic_send_tcp 192.168.174.1 31337 ~/Code/buffer-overflow/stats.spk 0 0`
 
