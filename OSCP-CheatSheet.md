@@ -1801,41 +1801,34 @@
 
 
 ## USEFUL WINDOWS COMMANDS
-- 
-  ```
-  net config Workstation
-  systeminfo
-  net users
-
-  ipconfig /all
-  netstat -ano
-
-  schtasks /query /fo LIST /v
-  tasklist /SVC
-  net start
-  DRIVERQUERY
-
-  reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
-  reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
-
-  dir /s pass == cred == vnc == .config
-  findstr /si password *.xml *.ini *.txt
-  reg query HKLM /f password /t REG_SZ /s
-  reg query HKCU /f password /t REG_SZ /s
-
-  # Disable windows defender
-  sc stop WinDefend
-
-  # Bypass restriction
-  powershell -nop -ep bypass
-
-  # List hidden files
-  dir /a
-
-  # Find a file
-  dir /b/s "<FILE>"
-  ```
-
+- General Config Commands
+  - `net config Workstation`
+  - `systeminfo`
+  - `net users`
+- Networking Commands
+  - `ipconfig /all`
+  - `netstat -ano`
+- Whats Going on
+  - `schtasks /query /fo LIST /v`
+  - `tasklist /SVC`
+  - `net start`
+  - `DRIVERQUERY`
+- Registry Queries
+  - `reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated`
+  - `reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated`
+- PasswordS tuff
+  - `dir /s pass == cred == vnc == .config`
+  - `findstr /si password *.xml *.ini *.txt`
+  - `reg query HKLM /f password /t REG_SZ /s`
+  - `reg query HKCU /f password /t REG_SZ /s`
+- Disable windows defender
+  - `sc stop WinDefend`
+- Bypass restriction
+  - `powershell -nop -ep bypass`
+- List hidden files
+  - `dir /a`
+- Find a file
+  - `dir /b/s "<FILE>"`
 
 ## ZIP
 - `fcrackzip -u -D -p '/usr/share/wordlists/rockyou.txt' file.zip`
