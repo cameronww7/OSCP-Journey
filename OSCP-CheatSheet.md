@@ -5,18 +5,29 @@
 - [TABLE OF CONTENTS](#table-of-contents)
   - [OSCP SubReddit](#oscp-subreddit)
   - [OSCP Guides](#oscp-guides)
-  - [Kali General Info](#kali-general-info)
+  - [Pimping your Kali](#pimping-your-kali)
   - [Terminal Resources](#terminal-resources)
   - [Note Taking Tools](#note-taking-tools)
   - [Report Writing](#report-writing)
   - [Advice](#advice)
   - [Hacking Labs](#hacking-labs)
   - [General Resources](#general-resources)
+    - [OSCP Useful Info](#oscp-useful-info)
+    - [OSCP Courses](#oscp-courses)
+    - [Video Guides On Hacking Labs](#video-guides-on-hacking-labs)
+    - [OSCP CheatSheets](#oscp-cheatsheets)
+    - [OSCP Report Resources](#oscp-report-resources)
+    - [Other Resources](#other-resources)
   - [Windows Resources](#windows-resources)
   - [Linux Resources](#linux-resources)
   - [Buffer Overflow Resources](#buffer-overflow-resources)
-  - [Tool Resources](#tool-resources)
+  - [Useful Tools for OSCP](#useful-tools-for-oscp)
   - [Enumeration](#enumeration)
+    - [On-Screen Enumeration (IPs Unknown)](#on-screen-enumeration-ips-unknown)
+    - [Automated Scans (IPs Known)](#automated-scans-ips-known)
+    - [On-Screen Enumeration (IPs Known)](#on-screen-enumeration-ips-known)
+    - [Saved Scans (IPs Known)](#saved-scans-ips-known)
+    - [Others](#others)
   - [Directory Busting](#directory-busting)
   - [FTP - 21](#ftp---21)
   - [SSH - 22](#ssh---22)
@@ -98,24 +109,12 @@
 - [A BEGINNERS GUIDE TO OSCP 2021](https://hxrrvs.medium.com/a-beginners-guide-to-oscp-2021-adb234be1ba0)
 - [59 Hosts to Glory — Passing the OSCP](https://medium.com/@Tib3rius/59-hosts-to-glory-passing-the-oscp-acf0fd384371)
 
-## Kali General Info
-- Pimping your Kali
+## Pimping your Kali
   - [OSCP Kali Setup](https://github.com/cameronww7/Kali-Setup)
   - [Terminal Setup Script](https://github.com/cameronww7/Kali-Setup)
   - [Pimp My Kali](https://github.com/Dewalt-arch/pimpmykali)
   - [HotWax](https://github.com/BrashEndeavours/hotwax)
-- Resources
-  - Listen for pings to test if you remote command worked
-    - `tcpdump -i interface icmp`
-  - Download all files from an ftp service
-    - `wget -m --no-passive ftp://anonymous:anonymous@ipaddress`
-  - Read zip file info
-    - `7z l -slt File.zip`
-  - Crack a password protected zip file
-    - fcrack -D -p password_List File.zip
-  - Useful tools
-    - xclip
-  
+
 
 ## Terminal Resources
 - [How to use Tumx - IppSec](https://www.youtube.com/watch?v=Lqehvpe_djs)
@@ -147,81 +146,78 @@
   - [Virtual Hacking Labs - $99/M](https://www.virtualhackinglabs.com/)
 
 ## General Resources
-- OSCP
-  - [Unofficial Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
-  - [OSCP Official Kali VM](https://help.offensive-security.com/hc/en-us/articles/360046292812-Penetration-Testing-with-Kali-Linux-Virtual-Machine)
-  - [OffSec PWK-Lab-Connectivity-Guide](https://help.offensive-security.com/hc/en-us/articles/360046733931-Offensive-Security-PWK-Lab-Connectivity-Guide)
+### OSCP Useful Info
+- [Unofficial Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+- [OSCP Official Kali VM](https://help.offensive-security.com/hc/en-us/articles/360046292812-Penetration-Testing-with-Kali-Linux-Virtual-Machine)
+- [OffSec PWK-Lab-Connectivity-Guide](https://help.offensive-security.com/hc/en-us/articles/360046733931-Offensive-Security-PWK-Lab-Connectivity-Guide)
 
-- Courses
-  - [Ethical Hacking - The Cyber Mentor/TCM](https://www.udemy.com/course/practical-ethical-hacking/)
-  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course\windows-privilege-escalation/)
-  - [Windows Privilege Escalation for Beginners - The Cyber Mentor/TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
-  - [Linux Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - [Linux Privilege Escalation for Beginners - The Cyber Mentor/TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+### OSCP Courses
+- [Ethical Hacking - The Cyber Mentor/TCM](https://www.udemy.com/course/practical-ethical-hacking/)
+- [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course\windows-privilege-escalation/)
+- [Windows Privilege Escalation for Beginners - The Cyber Mentor/TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
+- [Linux Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
+- [Linux Privilege Escalation for Beginners - The Cyber Mentor/TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
 
-- Video Guides
-  - HTB (HackTheBox)
-    - [Ippsec Youtube](https://www.youtube.com/c/ippsec)
-    - [Ippsec Youtube Playlists](https://www.youtube.com/c/ippsec/playlists)
-    - [Ignitetechnologies - HackTheBox-CTF-Writeups](https://github.com/Ignitetechnologies/HackTheBox-CTF-Writeups)
-    - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
-    - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
-  
-  - VulnHub
-    - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
-  
-  - THM (TryHackMe)
-
-- OSCP CheatSheets
-  - [Oscp-Cheat-Sheet Megga - avi7611](https://github.com/avi7611/Oscp-Cheat-Sheet)
-  - [liodeus OSCP-personal-cheatsheet](https://liodeus.github.io/2020/09/18/OSCP-personal-cheatsheet.html#enumeration)
-  - [sushant747 total-oscp-guide](https://sushant747.gitbooks.io/total-oscp-guide/content/)
-  - [TCM Prac Eth Hack Resources](https://github.com/TCM-Course-Resources/Practical-Ethical-Hacking-Resources)
-  - [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
-  - [scund00r - Passing OSCP](https://scund00r.com/all/oscp/2018/02/25/passing-oscp.html)
-  - [noobsec - oscp-cheatsheet](https://www.noobsec.net/oscp-cheatsheet/)
-  - [bytefellow - oscp-ultimate-cheatsheet](https://www.bytefellow.com/oscp-ultimate-cheatsheet/)
-
-- Report Resources
-  - [liodeus OSCP-exam-report-training](https://liodeus.github.io/2020/10/19/OSCP-exam-report-training.html)
-  - [OSCP-Exam-Report-Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template)
-  - [OSCP-Exam-Report-Template-Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown)
-
-- Other Resources
-  - [Some Tutorials and Things to Do while Hunting Particular Vulnerability](https://github.com/KathanP19/HowToHunt)
-
-
-## Windows Resources
-- Resources
-  - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
-  - [Win File Perms](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line)
+### Video Guides On Hacking Labs
+- HTB (HackTheBox)
+  - [Ippsec Youtube](https://www.youtube.com/c/ippsec)
+  - [Ippsec Youtube Playlists](https://www.youtube.com/c/ippsec/playlists)
+  - [Ignitetechnologies - HackTheBox-CTF-Writeups](https://github.com/Ignitetechnologies/HackTheBox-CTF-Writeups)
+  - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
+  - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
 
 - VulnHub
   - [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
 
+- THM (TryHackMe)
+
+### OSCP CheatSheets
+- [Oscp-Cheat-Sheet Megga - avi7611](https://github.com/avi7611/Oscp-Cheat-Sheet)
+- [liodeus OSCP-personal-cheatsheet](https://liodeus.github.io/2020/09/18/OSCP-personal-cheatsheet.html#enumeration)
+- [sushant747 total-oscp-guide](https://sushant747.gitbooks.io/total-oscp-guide/content/)
+- [TCM Prac Eth Hack Resources](https://github.com/TCM-Course-Resources/Practical-Ethical-Hacking-Resources)
+- [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
+- [scund00r - Passing OSCP](https://scund00r.com/all/oscp/2018/02/25/passing-oscp.html)
+- [noobsec - oscp-cheatsheet](https://www.noobsec.net/oscp-cheatsheet/)
+- [bytefellow - oscp-ultimate-cheatsheet](https://www.bytefellow.com/oscp-ultimate-cheatsheet/)
+
+### OSCP Report Resources
+- [liodeus OSCP-exam-report-training](https://liodeus.github.io/2020/10/19/OSCP-exam-report-training.html)
+- [OSCP-Exam-Report-Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template)
+- [OSCP-Exam-Report-Template-Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown)
+
+### Other Resources
+- [Some Tutorials and Things to Do while Hunting Particular Vulnerability](https://github.com/KathanP19/HowToHunt)
+
+
+## Windows Resources
+- [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
+- [Win File Perms](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line)
+
+- VulnHub
+- [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+
 - Other
-  - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
+- [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
 
 ## Linux Resources
-- Resources
-  - [Linux Terminal Cheatsheet](https://dev.to/mauro_codes/linux-terminal-the-ultimate-cheat-sheet-2g5b)
-  - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/)
-  - [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
-  - [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
-  - [Restricted Linux Shell Escaping Techniques](https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/)
-  - [Spawning a TTY Shell](https://netsec.ws/?p=337)
+- [Linux Terminal Cheatsheet](https://dev.to/mauro_codes/linux-terminal-the-ultimate-cheat-sheet-2g5b)
+- [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/)
+- [Path Traversals OWASP](https://owasp.org/www-community/attacks/Path_Traversal)
+- [Linux File Perms](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
+- [Restricted Linux Shell Escaping Techniques](https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/)
+- [Spawning a TTY Shell](https://netsec.ws/?p=337)
 
 - Other
 
 ## Buffer Overflow Resources
-- Resoureces
-  - [Buffer Overflows Made Easy - The Cyber Mentor](https://www.youtube.com/playlist?list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G)
-  - [TCM Buffer over Flows Made Easy](https://tcm-sec.com/buffer-overflows-made-easy/)
-  - [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
-  - [Buffer Overflow Prep](https://tryhackme.com/room/bufferoverflowprep)
+- [Buffer Overflows Made Easy - The Cyber Mentor](https://www.youtube.com/playlist?list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G)
+- [TCM Buffer over Flows Made Easy](https://tcm-sec.com/buffer-overflows-made-easy/)
+- [Buffer Overflow personal cheatsheet](https://liodeus.github.io/2020/08/11/bufferOverflow.html)
+- [Buffer Overflow Prep](https://tryhackme.com/room/bufferoverflowprep)
 
 
-## Tool Resources
+## Useful Tools for OSCP
 - [Approved Tools List](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
 - [Random List of Hackin-Tools](https://github.com/lorenzoinvidia/Hackin-tools)
 - Tools To Know
@@ -252,39 +248,39 @@
 
 
 ## Enumeration
-- On-Screen Enumeration (IPs Unknown)
-  - `nmap -sn -v -oN NMAP-UnknownIPs_01.txt <IP>/CIDR`
-  - `autorecon <IP>/CIDR`
-  - `netdiscover -r <>/CIDR`
+### On-Screen Enumeration (IPs Unknown)
+- `nmap -sn -v -oN NMAP-UnknownIPs_01.txt <IP>/CIDR`
+- `autorecon <IP>/CIDR`
+- `netdiscover -r <>/CIDR`
 
-- Automated Scans (IPs Known)
-  - `sudo autorecon <IP>`
-  - `sudo nmapAutomator.sh --host <IP> --type All`
+### Automated Scans (IPs Known)
+- `sudo autorecon <IP>`
+- `sudo nmapAutomator.sh --host <IP> --type All`
 
-- On-Screen Enumeration (IPs Known)
-  - Quick Scan
-    - `sudo nmap -T4 -A -v <IP>`
-  - Full Scan
-    - `sudo nmap -T3 -A -p- -v <IP>`
-  - Vulners  (Website only)
-    - `sudo nmap -sV -v --script=vulners <IP>`
+### On-Screen Enumeration (IPs Known)
+- Quick Scan
+  - `sudo nmap -T4 -A -v <IP>`
+- Full Scan
+  - `sudo nmap -T3 -A -p- -v <IP>`
+- Vulners  (Website only)
+  - `sudo nmap -sV -v --script=vulners <IP>`
 
-- Saved Scans (IPs Known)
-  - Quick Scan
-    - `sudo nmap -T4 -A -v -oN NMAP--QUICK--SCAN_<IP>_01.txt <IP>`
-  - Full Scan
-    - `sudo nmap -T3 -A -p- -v -oN NMAP--FULL--SCAN_<IP>_01.txt <IP>`
-  - [Vulner Scan (Website only)](https://github.com/vulnersCom/nmap-vulners)
-    - `sudo nmap -sV -v --script=vulners -oN NMAP--VULNERS_01_<IP>_01.txt <IP>`
-  - UDP Scan
-    - `sudo nmap -T3 -sU -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
+### Saved Scans (IPs Known)
+- Quick Scan
+  - `sudo nmap -T4 -A -v -oN NMAP--QUICK--SCAN_<IP>_01.txt <IP>`
+- Full Scan
+  - `sudo nmap -T3 -A -p- -v -oN NMAP--FULL--SCAN_<IP>_01.txt <IP>`
+- [Vulner Scan (Website only)](https://github.com/vulnersCom/nmap-vulners)
+  - `sudo nmap -sV -v --script=vulners -oN NMAP--VULNERS_01_<IP>_01.txt <IP>`
+- UDP Scan
+  - `sudo nmap -T3 -sU -A -p- -v -oN NMAP-MFS_<IP>_01.txt <IP>`
 
 - Faster NMAP full port scan (IPs Known)
-  - Finds all open ports than loops through service and version detection for those discovered
-    - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
+- Finds all open ports than loops through service and version detection for those discovered
+  - `ports=$(nmap -p- --min-rate=1000 -sT  -T4 <IP> | grep ^[0-9] | cut-d '/' -f 1 | tr '\n' ',' | sed s/,$//)nmap -sC -sV -p$ports -sT <IP>`
 
-- Others
-  - `sudo nikto -Display 1234EP -o -Tuning 123bde NIKTO_SCAN.txt -host <IP/URL>`
+### Others
+- `sudo nikto -Display 1234EP -o -Tuning 123bde NIKTO_SCAN.txt -host <IP/URL>`
 
 
 ## Directory Busting
@@ -349,8 +345,8 @@
 
 
 ## DNS - 53
-  - `dnsenum <DOMAIN>`
-  - `dnsrecon -d <DOMAIN>`
+- `dnsenum <DOMAIN>`
+- `dnsrecon -d <DOMAIN>`
 
 - Zone Transfers
   - `dnsrecon -d <DOMAIN> -a`
@@ -589,7 +585,7 @@
   - `snmpbulkwalk -c <COMMUNITY_STRING> -v<VERSION> <IP>`
   - `snmp-check <IP>`
 - Modifying SNMP values
-  - http://net-snmp.sourceforge.net/tutorial/tutorial-5/commands/snmpset.html
+  - <http://net-snmp.sourceforge.net/tutorial/tutorial-5/commands/snmpset.html>
 
 
 ## LDAP - 389
@@ -835,7 +831,7 @@
 
 - Manual exploit
   - Cheatsheet :
-    - https://www.asafety.fr/mysql-injection-cheat-sheet/
+    - <https://www.asafety.fr/mysql-injection-cheat-sheet/>
 
 
 ## RDP - 3389
