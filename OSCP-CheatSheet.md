@@ -56,7 +56,7 @@
   - [PASSWORD CRACKING](#password-cracking)
   - [PIVOTING](#pivoting)
   - [LINUX PRIVILEGE ESCALATION](#linux-privilege-escalation)
-    - [LPrivEsc Courses](#lprivesc-courses)
+    - [Linux PrivEsc Courses](#linux-privesc-courses)
     - [PrivEsc Cheatsheets/Scripts](#privesc-cheatsheetsscripts)
       - [Attacks](#attacks)
       - [Vulnerability scan](#vulnerability-scan)
@@ -65,6 +65,7 @@
     - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
     - [Linux Troubleshooting](#linux-troubleshooting)
   - [WINDOWS PRIVILEGE ESCALATION](#windows-privilege-escalation)
+    - [WINDOWS PrivEsc Courses](#windows-privesc-courses)
     - [PrivEsc Resources](#privesc-resources)
       - [Attacks](#attacks-1)
       - [Enumeration scripts](#enumeration-scripts)
@@ -1177,7 +1178,7 @@ The -j option is to keep all the connected session in the background.
 
 
 ## LINUX PRIVILEGE ESCALATION
-### LPrivEsc Courses
+### Linux PrivEsc Courses
 - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
 - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
 - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
@@ -1265,11 +1266,11 @@ The -j option is to keep all the connected session in the background.
 
 
 ## WINDOWS PRIVILEGE ESCALATION
-- PrivEsc Courses
-  - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
-  - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
-  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
-  - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
+### WINDOWS PrivEsc Courses
+- [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
+- [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
+- [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
+- [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
 ### PrivEsc Resources
 - [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
