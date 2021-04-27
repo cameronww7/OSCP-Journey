@@ -198,10 +198,10 @@
 - [Win File Perms](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line)
 
 - VulnHub
-- [Ignitetechnologies - Linux Priv Esc](https://github.com/Ignitetechnologies/Privilege-Escalation)
+  - [Linux Priv Esc - Ignitetechnologies](https://github.com/Ignitetechnologies/Privilege-Escalation)
 
 - Other
-- [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
+  - [Path Traversal](https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/)
 
 ## Linux Resources
 - [Linux Terminal Cheatsheet](https://dev.to/mauro_codes/linux-terminal-the-ultimate-cheat-sheet-2g5b)
