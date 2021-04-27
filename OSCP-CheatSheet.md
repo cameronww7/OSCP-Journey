@@ -264,7 +264,7 @@
   - [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)
   - [sipvicious](https://github.com/EnableSecurity/sipvicious)
   - [tnscmd10g](https://gitlab.com/kalilinux/packages/tnscmd10g)
-  - [whatweb[](](https://github.com/urbanadventurer/WhatWeb))
+  - [whatweb](https://github.com/urbanadventurer/WhatWeb)
   - [smtp-user-enum](https://gitlab.com/kalilinux/packages/smtp-user-enum)
   - [nishang](https://github.com/samratashok/nishang)
 
