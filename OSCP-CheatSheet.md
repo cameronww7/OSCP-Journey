@@ -57,16 +57,18 @@
   - [PIVOTING](#pivoting)
   - [LINUX PRIVILEGE ESCALATION](#linux-privilege-escalation)
     - [Linux PrivEsc Courses](#linux-privesc-courses)
-    - [PrivEsc Cheatsheets/Scripts](#privesc-cheatsheetsscripts)
+    - [Linux PrivEsc Resources](#linux-privesc-resources)
+    - [Linux PrivEsc Tools/Scripts](#linux-privesc-toolsscripts)
+      - [Methodology to follow](#methodology-to-follow)
       - [Attacks](#attacks)
       - [Vulnerability scan](#vulnerability-scan)
       - [Suid checker](#suid-checker)
-      - [Methodology to follow](#methodology-to-follow)
     - [Linux Priv Esc troubleshooting](#linux-priv-esc-troubleshooting)
     - [Linux Troubleshooting](#linux-troubleshooting)
   - [WINDOWS PRIVILEGE ESCALATION](#windows-privilege-escalation)
-    - [WINDOWS PrivEsc Courses](#windows-privesc-courses)
-    - [PrivEsc Resources](#privesc-resources)
+    - [Windows PrivEsc Courses](#windows-privesc-courses)
+    - [Windows PrivEsc Resources](#windows-privesc-resources)
+    - [Windows PrivEsc Tools/Scripts](#windows-privesc-toolsscripts)
       - [Attacks](#attacks-1)
       - [Enumeration scripts](#enumeration-scripts)
       - [Search for CVE](#search-for-cve)
@@ -1183,17 +1185,31 @@ The -j option is to keep all the connected session in the background.
 - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
 - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
 
-### PrivEsc Cheatsheets/Scripts
-- [Linux privilege escalation (enumeration) script - LinEnum.sh](https://github.com/rebootuser/LinEnum)
-- [Abusing SUDO (Linux Privilege Escalation)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
-- [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-- [GTFOBins](https://gtfobins.github.io/)
-- [g0tmi1k - basic-linux-privilege-escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-- [sushant747 - privilege_escalation_-_linux](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
-- [hacktricks - linux-privilege-escalation-checklist](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
-- [swisskyrepo - privilege_escalation_Linux](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
-- [lucyoa - kernel-exploits](https://github.com/lucyoa/kernel-exploits)
+### Linux PrivEsc Resources
 - [Linux Privilege Escalation: Automated Script](https://www.hackingarticles.in/linux-privilege-escalation-automated-script/)
+- [privilege_escalation_Linux - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
+- [Abusing SUDO (Linux Privilege Escalation - touhidshaikh)](https://touhidshaikh.com/blog/2018/04/11/abusing-sudo-linux-privilege-escalation/)
+- [basic-linux-privilege-escalation - g0tmi1k](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+- [privilege_escalation_-_linux - sushant747](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html)
+- [linux-privilege-escalation-checklist - hacktricks](https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist)
+- [kernel-exploits - lucyoa](https://github.com/lucyoa/kernel-exploits)
+
+### Linux PrivEsc Tools/Scripts
+- [Linux privilege escalation (enumeration) script - LinEnum.sh - rebootuser](https://github.com/rebootuser/LinEnum)
+- [Linux Privilege Escalation Awesome Script - LinPEAS.sh - carlospolop](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
+- [Linux Privilege Escalation Suggester Script - sushant747](https://github.com/mzet-/linux-exploit-suggester.git)
+- [Linux Privilege Escalation Checker Script - sushant747](https://github.com/sleventyeleven/linuxprivchecker.git)
+- [Linux Smart Enumeration - diego-treitos](https://github.com/diego-treitos/linux-smart-enumeration.git)
+- [Linux Privilege Escalation (Enumeration) Script - Citadel - redcode-labs](https://github.com/redcode-labs/Citadel.git)
+- [Linux Privilege Escalation (Enumeration) Script - Bashark - redcode-labs](https://github.com/redcode-labs/Bashark)
+- [Linux Privilege Escalation (Enumeration) Script - juicy-potato - ohpe](https://github.com/ohpe/juicy-potato.git)
+- [GTFOBins](https://gtfobins.github.io/)
+
+
+
+#### Methodology to follow
+- <https://guif.re/linuxeop>
+- <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md>
 
 #### Attacks
 - Enumeration scripts
@@ -1212,9 +1228,6 @@ The -j option is to keep all the connected session in the background.
 - `python suid3num.py`
 - <https://gtfobins.github.io/>
 
-#### Methodology to follow
-- <https://guif.re/linuxeop>
-- <https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md>
 - 
   ```
   sudo -l
@@ -1266,25 +1279,34 @@ The -j option is to keep all the connected session in the background.
 
 
 ## WINDOWS PRIVILEGE ESCALATION
-### WINDOWS PrivEsc Courses
+### Windows PrivEsc Courses
 - [PrivEsc Strategy](https://www.youtube.com/watch?v=VpNaPAh93vE)
 - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
 - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/)
 - [absolomb - 2018-01-26-Windows-Privilege-Escalation-Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
-### PrivEsc Resources
-- [sherlock.ps1](https://github.com/rasta-mouse/Sherlock)
-- [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/16.html)
+### Windows PrivEsc Resources
+- [FuzzySecurity - tutorials](https://www.fuzzysecurity.com/tutorials/16.html)
+- [checklist-windows-privilege-escalation - hacktricks](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
+- [privilege_escalation_windows - sushant747](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+- [windows-kernel-exploits - SecWiki](https://github.com/SecWiki/windows-kernel-exploits)
+
+### Windows PrivEsc Tools/Scripts
+- [Windows Privilege Escalation Awesome Scripts - winPEAS.exe - carlospolop](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS)
+- [sherlock.ps1 - rasta-mouse](https://github.com/rasta-mouse/Sherlock.git)
+- [Watson.ps1 - rasta-mouse](https://github.com/rasta-mouse/Watson.git)
 - [Windows Exploit Suggester - AonCyberLabs](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
 - [Windows Exploit Suggester - 7Ragnarok7](https://github.com/7Ragnarok7/Windows-Exploit-Suggester-2)
 - [Windows privilege escalation (enumeration) script - Powerless](https://github.com/M4ximuss/Powerless)
 - [Windows privilege escalation (enumeration) script - PowerUP](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
-- [Scripts - PEASS - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-- [Win Priv Escl](https://github.com/frizb/Windows-Privilege-Escalation)
-- [swisskyrepo - Privilege Escalation](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
-- [checklist-windows-privilege-escalation](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)
-- [sushant747 - privilege_escalation_windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
-- [SecWiki - windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits)
+- [Windows privilege escalation (enumeration) script - pentestmonkey](https://github.com/pentestmonkey/windows-privesc-check.git)
+- [Windows privilege escalation (enumeration) script - absolomb](https://github.com/absolomb/WindowsEnum.git)
+- [Windows privilege escalation (enumeration) script - bitsadmin](https://github.com/bitsadmin/wesng.git)
+- [Windows privilege escalation (enumeration) script - abatchy17](https://github.com/abatchy17/WindowsExploits.git)
+- [PowerSploit - PowerShellMafia](https://github.com/PowerShellMafia/PowerSploit)
+privilege-escalation-awesome-scripts-suite)
+- [Windows-Privilege-Escalation - frizb](https://github.com/frizb/Windows-Privilege-Escalation)
+- [Windows-Privilege-Escalation - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
 
 #### Attacks
 - Test if powershell is working without breaking shell
