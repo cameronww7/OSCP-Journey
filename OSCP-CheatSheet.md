@@ -566,7 +566,7 @@
   - [Upload InsecureFiles - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files)
 
 - SQL injection
-  - [mssql-sql-injection-cheat-sheet - pentestmonkey](http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)
+  - [mssql-sql-injection-cheat-sheet - pentestmonkey](https://pentestmonkey.net/category/cheat-sheet/sql-injection)
   - [sql-injection-authentication-bypass-cheat-sheet - pentestlab](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
   - [SQL Injection - swisskyrepo](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection)
   - [a-pentesters-guide-to-sql-injection-sqli](https://blog.cobalt.io/a-pentesters-guide-to-sql-injection-sqli-16fd570c3532)
