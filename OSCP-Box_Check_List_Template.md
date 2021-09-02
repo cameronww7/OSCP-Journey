@@ -18,11 +18,11 @@
   - [IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
 
 - Courses
-  - [Udemy - The Cyber Mentor - Ethical Hacking](https://www.udemy.com/course/practical-ethical-hacking/)
+  - [The Cyber Mentor - Practical Ethical Hacking - CEH](https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course)
   - [Windows Privilege Escalation for OSCP & Beyond! - Tib3rius](https://www.udemy.com/course/windows-privilege-escalation/)
-  - [Windows Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/windows-privilege-escalation-for-beginners/)
+  - [Windows Privilege Escalation for Beginners - TCM](https://academy.tcm-sec.com/p/windows-privilege-escalation-for-beginners)
   - [Linux Privilege Escalation for OSCP & Beyond! = Tib3rius](https://www.udemy.com/course/linux-privilege-escalation/)
-  - [Linux Privilege Escalation for Beginners - TCM](https://www.udemy.com/course/linux-privilege-escalation-for-beginners/)
+  - [Linux Privilege Escalation for Beginners - TCM](https://academy.tcm-sec.com/p/linux-privilege-escalation)
 
 
 - `[ ]` - HTB (Hack The Box)
