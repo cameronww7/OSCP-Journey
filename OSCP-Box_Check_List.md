@@ -1,5 +1,4 @@
 # OSCP-Box_Check_List
-Note This list is for my tracking I created a Template Copy of this in this Repo
 
 - Hacking Labs
   - [HackTheBox - $20/M](https://app.hackthebox.eu/home)
@@ -14,12 +13,9 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
   - [JSONSec OSCP Prep List](https://docs.google.com/spreadsheets/d/1wW2EOeUo5EkgePheuBfqeUh6Zuh4sPnYVwb7KusoSqc/edit#gid=0)
 
 - Guides/Help
+  - [HTB Writeups - IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
   - [HTB Writeups - Purp1eW0lf](https://github.com/Purp1eW0lf/HackTheBoxWriteups)
   - [HTB Writeups - ranakhalil101](https://medium.com/@ranakhalil101/hack-the-box-jarvis-writeup-w-o-metasploit-9f4cc7907c87)
-  - [HTB IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA)
-  - [HTB Oxdf](https://0xdf.gitlab.io/)
-  - [HTB Rana-Khalil](https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/linux-boxes)
-  - [HTB Hacking Articles](https://www.hackingarticles.in/category/ctf-challenges/)
 
 - Courses
   - [The Cyber Mentor - Practical Ethical Hacking - CEH](https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course)
@@ -29,14 +25,13 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
   - [Linux Privilege Escalation for Beginners - TCM](https://academy.tcm-sec.com/p/linux-privilege-escalation)
 
 
-
 - `[ ]` - HTB (Hack The Box)
   - `[ ]` - Linux
-    - `[X]` - Lame
+    - `[ ]` - Lame
     - `[ ]` - brainfuck
     - `[ ]` - shocker
-    - `[X]` - bashed
-    - `[X]` - nibbles
+    - `[ ]` - bashed
+    - `[ ]` - nibbles
     - `[ ]` - beep
     - `[ ]` - cronos
     - `[ ]` - nineveh
@@ -58,7 +53,6 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Blocky
     - `[ ]` - Frolic
     - `[ ]` - Postman
-    - `[ ]` - Mango
     - `[ ]` - Traverxec
     - `[ ]` - OpenAdmin
     - `[ ]` - Magic
@@ -68,28 +62,29 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Doctor
     - `[ ]` - SneakyMailer
     - `[ ]` - Vault
-    - `[ ]` - popcorn
     - `[ ]` - Celestial
-    - `[ ]` - Blocky (Good to practice with JD-GUI)
-    - `[ ]` - Falafel
     - `[ ]` - Zipper
     - `[ ]` - Unattended
     - `[ ]` - Help
-    - `[ ]` - Mango [Focus on creating your own Boolean Script]
+    - `[ ]` - Ophiuchi
+    - `[ ]` - Delivery
+    - `[ ]` - Ready
+    - `[ ]` - Time
+    - `[ ]` - Luanne
+    - `[ ]` - Passage
 
   - `[ ]` - Windows
-    - `[X]` - legacy
-    - `[X]` - Blue
-    - `[X]` - Devel
-    - `[X]` - Netmon
-    - `[X]` - Optimum
+    - `[ ]` - legacy
+    - `[ ]` - Blue
+    - `[ ]` - Devel
+    - `[ ]` - Optimum
     - `[ ]` - Bastard
-    - `[X]` - granny
+    - `[ ]` - granny
     - `[ ]` - Arctic
-    - `[X]` - grandpa
+    - `[ ]` - grandpa
     - `[ ]` - silo
     - `[ ]` - bounty
-    - `[X]` - jerry
+    - `[ ]` - jerry
     - `[ ]` - conceal
     - `[ ]` - chatterbox
     - `[ ]` - Forest
@@ -104,8 +99,39 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
     - `[ ]` - Buff
     - `[ ]` - Omni
     - `[ ]` - Worker
-    - `[X]` - Json
-
+    - `[ ]` - Json
+  
+  - More Challenging than OSCP - But Good Practice
+    - `[ ]` - Quick [Linux]
+    - `[ ]` - Kotarak [Linux]
+    - `[ ]` - falafel [Linux]
+    - `[ ]` - Devops [Linux]
+    - `[ ]` - Hawk [Linux]
+    - `[ ]` - Lightweight [Linux]
+    - `[ ]` - La Casa De Papel [Linux]
+    - `[ ]` - Jail [Linux]
+    - `[ ]` - Safe [Linux]
+    - `[ ]` - Bitlab [Linux]
+    - `[ ]` - October [Linux]
+    - `[ ]` - Mango [Linux]
+    - `[ ]` - Book [Linux]
+    - `[ ]` - Nest [Windows]
+    - `[ ]` - Sauna [Windows]
+    - `[ ]` - Cascade [Windows]
+    - `[ ]` - Querier [Windows]
+    - `[ ]` - BlackField [Windows]
+    - `[ ]` - APT [Windows]
+    - `[ ]` - Atom [Windows]
+    - `[ ]` - Jeeves [Windows]
+    - `[ ]` - Bart   [Windows]
+    - `[ ]` - Tally  [Windows]
+    - `[ ]` - Sizzle [Windows]
+    - `[ ]` - Sniper [Windows]
+    - `[ ]` - Control [Windows]
+    - `[ ]` - Netmon [Windows]
+    - `[ ]` - Cascade [Windows]
+    - `[ ]` - Querier [Windows]
+    - 
 
 - `[ ]` - THM (TryHackMe)
   - `[ ]` - Kenobi
@@ -144,30 +170,43 @@ Note This list is for my tracking I created a Template Copy of this in this Repo
 
 
 - `[ ]` - OSPG (OffSec Proving Grounds)
-  - `[ ]` - Lampiao
-  - `[ ]` - Sar
-  - `[ ]` - Inclusiveness
-  - `[ ]` - LazySysAdmin
-  - `[ ]` - FowSniff
-  - `[ ]` - Funbox
-  - `[ ]` - Nullbyte
-  - `[ ]` - Dawn
-  - `[ ]` - Sunset Midnight
-  - `[ ]` - MyCMS-MS
-  - `[ ]` - Vegata1
-  - `[ ]` - NoName
-  - `[ ]` - BossPlayersCTF
-  - `[ ]` - Bratarina
-  - `[ ]` - Dawn2
-  - `[ ]` - Covfefe
-  - `[ ]` - helpdesk
-  - `[ ]` - Hackerfest19
-  - `[ ]` - Internal
-  - `[ ]` - JISCTF
-  - `[ ]` - Pelican
-  - `[ ]` - Pwnlab
-  - `[ ]` - Webcal
-  - `[ ]` - ZenPhoto
+  - Linux
+    - `[ ]` - ClamAV
+    - `[ ]` - Wombo
+    - `[ ]` - Payday
+    - `[ ]` - Fail
+    - `[ ]` - Nibbles
+    - `[ ]` - Banzai
+    - `[ ]` - Hunit
+    - `[ ]` - Dibble
+    - `[ ]` - Zino
+    - `[ ]` - Hetemit
+    - `[ ]` - Peppo
+    - `[ ]` - Postfish
+    - `[ ]` - Malbec
+    - `[ ]` - Sybaris
+  - Windows
+    - `[ ]` - Nickel
+    - `[ ]` - Slort
+    - `[ ]` - Authby
+    - `[ ]` - Jacko
+    - `[ ]` - MeatHead
+    - `[ ]` - UT99
+    - `[ ]` - MedJed
+    - `[ ]` - Algeron
+    - `[ ]` - Billyboss
+    - `[ ]` - Butch
+    - `[ ]` - Kevin
+    - `[ ]` - Metallus
+  - Harder Boxes to Hit
+    - `[ ]` - Bratarina
+    - `[ ]` - Internal
+    - `[ ]` - Clyde
+    - `[ ]` - Vector
+    - `[ ]` - Shifty
+    - `[ ]` - XposedAPI
+    - `[ ]` - HelpDesk
+    - `[ ]` - Twiggy
 
 - `[ ]` - VulnHub
   - `[ ]` - GoldenEye1
