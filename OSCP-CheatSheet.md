@@ -71,6 +71,7 @@
     - [Windows PrivEsc Tools/Scripts](#windows-privesc-toolsscripts)
       - [Attacks](#attacks-1)
       - [Enumeration scripts](#enumeration-scripts)
+      - [Windows Shell Enumeration Commands](#windows-shell-enumeration-commands)
       - [Search for CVE](#search-for-cve)
       - [Post exploitation](#post-exploitation)
         - [Autorun](#autorun)
@@ -1371,6 +1372,55 @@ privilege-escalation-awesome-scripts-suite)
   - `powershell -exec bypass -command "& { Import-Module .\PowerUp.ps1; Invoke-AllChecks; }"`
   - `Powerless.bat`
   - `winPEAS.bat`
+
+#### Windows Shell Enumeration Commands
+- Windows System Enumeration
+  - `systeminfo`
+  - `systeminfo | findstr /b /C:"OS Name" /C:"OS Version" /C:"System Type"`
+  - `wmic qfe`
+    - Gives the patch information, lets you know what has been patched when
+  - `wmic qfe get Caption,Description,HotFixID,InstalledOn`
+    - Gives specific information thats more dense
+  - `wmic logicaldisk get caption,description,providername`
+    - Gives systems drive information
+
+- Windows User Enumeration
+  - `whoami`
+    - Tells you who you are
+  - `whoami /priv`
+    - Tells you what Privileges you have
+  - `whoami /groups`
+    - Tells you what privs you have for your group
+  - `net user`
+    - tells you what users you are
+  - `net user <USER NAME>`
+    - tells you what information about that user
+    - Can tell you what groups or different information
+  - `net localgroup`
+    - Tells you what groups there are
+  - `net localgroup <Group Name>`
+    - example net localgroup guest
+
+- Windows Network Enumeration
+  - `ipconfig`
+  - `ipconfig /all`
+  - `arp -a`
+  - `route print`
+    - Show Routing Table on Windows
+  - `netstat -ano`
+    - network utility that displays network  connections for Transmission Control Protocol, routing tables, and a  number of network interface and network protocol statistics
+
+- Windows Firewall/AV Enumeration
+  - `sc query windefend`
+    - tells you if windows defender is running
+  - `sc queryex type= service`
+    - tells you what services are running on that system
+  - `netsh advfirewall firewall dump`
+    - dumps the firewall settings
+  - `netsh firewall show state`
+    - dumps the firewall settings
+  - `netsh firewall show config`
+    - Tells you how the fire is configured
 
 
 #### Search for CVE
